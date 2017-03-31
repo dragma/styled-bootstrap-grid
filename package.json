@@ -2,7 +2,7 @@
   "name": "styled-bootstrap-grid",
   "version": "0.0.1",
   "description": "bootstrap grid system using styled components",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src -d dist",
     "postinstall": "npm run build",
