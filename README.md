@@ -44,7 +44,7 @@ html {
 ```
 ## Basics
 
-```jsx
+```javascript
 import React from 'react';
 import { Container, Row, Col } from 'styled-bootstrap-grid';
 
@@ -71,7 +71,7 @@ export default (props) => {
 ## Advanced
 This packages also exposes the `media` element. It can be used in your styled-components like this :
 
-```es6
+```javascript
 import React from 'react';
 import styled from 'styled-components';
 import { media } from 'styled-bootstrap-grid';
