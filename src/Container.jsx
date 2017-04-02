@@ -3,10 +3,11 @@ import React from 'react';
 import { Container, ContainerFluid } from './styled';
 
 const container = (props) => {
-  if (props.fluid) {
-    return <ContainerFluid data-name="container-fluid">{props.children}</ContainerFluid>;
+  const { fluid, children, ...otherProps } = props;
+  if (fluid) {
+    return <ContainerFluid data-name="container-fluid" {...otherProps}>{children}</ContainerFluid>;
   }
-  return <Container data-name="container">{props.children}</Container>;
+  return <Container data-name="container" {...otherProps}>{children}</Container>;
 };
 
 container.propTypes = {

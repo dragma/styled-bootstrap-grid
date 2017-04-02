@@ -2,7 +2,10 @@ import React from 'react';
 
 import { Row } from './styled';
 
-const row = props => <Row data-name="row">{props.children}</Row>;
+const row = props => {
+  const { children, ...otherProps } = props;
+  return <Row data-name="row" {...otherProps}>{children}</Row>;
+}
 
 row.propTypes = {
   children: React.PropTypes.any.isRequired,

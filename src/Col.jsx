@@ -4,122 +4,111 @@ import { Col } from './styled';
 
 
 const col = (props) => {
+
+  const {
+    sm,
+    smOffset,
+    smPush,
+    md,
+    mdOffset,
+    mdPush,
+    lg,
+    lgOffset,
+    lgPush,
+    xl,
+    xlOffset,
+    xlPush,
+    children,
+    ...otherProps,
+  } = props;
+
   let dataName = '';
   // xs
-  if (props.sm) {
-    dataName = `${dataName}col-sm-${props.sm} `;
+  if (sm) {
+    dataName = `${dataName}col-sm-${sm} `;
   }
-  if (props.smOffset) {
-    dataName = `${dataName}offset-sm-${props.smOffset}`;
+  if (smOffset) {
+    dataName = `${dataName}offset-sm-${smOffset}`;
   }
-  if (props.smPush) {
-    dataName = `${dataName}push-sm-${props.smPush}`;
+  if (smPush) {
+    dataName = `${dataName}push-sm-${smPush}`;
   }
 
   // md
-  if (props.md) {
-    dataName = `${dataName}col-md-${props.md} `;
+  if (md) {
+    dataName = `${dataName}col-md-${md} `;
   }
-  if (props.mdOffset) {
-    dataName = `${dataName}offset-md-${props.mdOffset}`;
+  if (mdOffset) {
+    dataName = `${dataName}offset-md-${mdOffset}`;
   }
-  if (props.mdPush) {
-    dataName = `${dataName}push-md-${props.mdPush}`;
+  if (mdPush) {
+    dataName = `${dataName}push-md-${mdPush}`;
   }
 
   // lg
-  if (props.lg) {
-    dataName = `${dataName}col-lg-${props.lg} `;
+  if (lg) {
+    dataName = `${dataName}col-lg-${lg} `;
   }
-  if (props.mdOffset) {
-    dataName = `${dataName}offset-md-${props.mdOffset}`;
+  if (mdOffset) {
+    dataName = `${dataName}offset-md-${mdOffset}`;
   }
-  if (props.mdPush) {
-    dataName = `${dataName}push-md-${props.mdPush}`;
+  if (mdPush) {
+    dataName = `${dataName}push-md-${mdPush}`;
   }
 
   // xl
-  if (props.xl) {
-    dataName = `${dataName}col-xl-${props.xl}`;
+  if (xl) {
+    dataName = `${dataName}col-xl-${xl}`;
   }
-  if (props.xlOffset) {
-    dataName = `${dataName}offset-xl-${props.xlOffset}`;
+  if (xlOffset) {
+    dataName = `${dataName}offset-xl-${xlOffset}`;
   }
-  if (props.xlPush) {
-    dataName = `${dataName}push-xl-${props.xlPush}`;
+  if (xlPush) {
+    dataName = `${dataName}push-xl-${xlPush}`;
   }
 
   return (
     <Col
-      sm={props.sm}
-      smOffset={props.smOffset}
-      smPush={props.smPush}
-      md={props.md}
-      mdOffset={props.mdOffset}
-      mdPush={props.mdPush}
-      lg={props.lg}
-      lgOffset={props.lgOffset}
-      lgPush={props.lgPush}
-      xl={props.xl}
-      xlOffset={props.xlOffset}
-      xlPush={props.xlPush}
+      sm={sm}
+      smOffset={smOffset}
+      smPush={smPush}
+      md={md}
+      mdOffset={mdOffset}
+      mdPush={mdPush}
+      lg={lg}
+      lgOffset={lgOffset}
+      lgPush={lgPush}
+      xl={xl}
+      xlOffset={xlOffset}
+      xlPush={xlPush}
       data-name={dataName}
+      {...otherProps}
     >
-      {props.children}
+      {children}
     </Col>
   );
 };
 
+const stringOrNumberReactPropType =
+  React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number,
+  ]).isRequired;
+
 col.propTypes = {
   children: React.PropTypes.any.isRequired,
-  sm: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  md: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  lg: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  xl: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  smOffset: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  mdOffset: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  lgOffset: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  xlOffset: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  smPush: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  mdPush: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  lgPush: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
-  xlPush: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
-  ]).isRequired,
+  sm: stringOrNumberReactPropType,
+  md: stringOrNumberReactPropType,
+  lg: stringOrNumberReactPropType,
+  xl: stringOrNumberReactPropType,
+  smOffset: stringOrNumberReactPropType,
+  mdOffset: stringOrNumberReactPropType,
+  lgOffset: stringOrNumberReactPropType,
+  xlOffset: stringOrNumberReactPropType,
+  smPush: stringOrNumberReactPropType,
+  mdPush: stringOrNumberReactPropType,
+  lgPush: stringOrNumberReactPropType,
+  xlPush: stringOrNumberReactPropType,
 };
 
 col.defaultProps = {
