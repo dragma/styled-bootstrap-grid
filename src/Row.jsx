@@ -4,11 +4,16 @@ import { Row } from './styled';
 
 const row = props => {
   const { children, ...otherProps } = props;
-  return <Row data-name="row" {...otherProps}>{children}</Row>;
+  return <Row
+    data-name="row"
+    {...otherProps}
+  >
+    {children}
+  </Row>;
 }
 
 row.propTypes = {
-  children: React.PropTypes.any.isRequired,
+  children: React.PropTypes.any,
 };
 
 row.defaultProps = {

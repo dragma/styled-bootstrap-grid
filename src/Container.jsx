@@ -11,7 +11,7 @@ const container = (props) => {
 };
 
 container.propTypes = {
-  children: React.PropTypes.any.isRequired,
+  children: React.PropTypes.any,
   fluid: React.PropTypes.bool.isRequired,
 };
 
