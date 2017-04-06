@@ -48,8 +48,8 @@ html {
 import React from 'react';
 import { Container, Row, Col } from 'styled-bootstrap-grid';
 
-export default (props) => {
-  <Whatever>
+export default (props) => 
+  <Whatever>
     <Container>
       <Row>
         <Col xl="1" lg="2" md="3" sm="12">
@@ -64,15 +64,13 @@ export default (props) => {
         </Col>
       </Row>
     </Container>
-  </Whatever>
-}
+  </Whatever>;
 ```
 
 ## Advanced
 This packages also exposes the `media` element. It can be used in your styled-components like this :
 
 ```javascript
-import React from 'react';
 import styled from 'styled-components';
 import { media } from 'styled-bootstrap-grid';
 
@@ -111,6 +109,7 @@ Using this `media` object will help you to build media-queries that will fit the
 | props | default | type | description |
 | - | - | - | - |
 | fluid | false | boolean | Equivalent to `container` and `container-fluid` |
+
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
 ### Row
@@ -131,6 +130,7 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 | xl | 0 | number *or* string | Goes from 1 to 12. Equivalent to `col-xl-*` |
 | xlOffset | 0 | number *or* string | Goes from 1 to 11. Equivalent to `offset-xl-*` |
 | xlPush | 0 | number *or* string | Goes from 1 to 11. Equivalent to `push-xl-*` |
+
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
 ## Dependencies
