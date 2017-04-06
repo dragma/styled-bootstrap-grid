@@ -19,8 +19,29 @@ const col = (props) => {
     xlOffset,
     xlPush,
     children,
-    ...otherProps,
   } = props;
+
+  const propsKeys = [
+    'sm',
+    'smOffset',
+    'smPush',
+    'md',
+    'mdOffset',
+    'mdPush',
+    'lg',
+    'lgOffset',
+    'lgPush',
+    'xl',
+    'xlOffset',
+    'xlPush',
+    'children',
+  ];
+
+  const otherProps =
+    Object
+      .keys(props)
+      .filter(key => propsKeys.indexOf(key) === -1)
+      .reduce((acc, key) => (acc[key] = props[key]), {});
 
   let dataName = '';
   // xs
