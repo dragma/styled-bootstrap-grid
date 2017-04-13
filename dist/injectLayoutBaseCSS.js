@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['', ''], ['', '']),
-    _templateObject2 = _taggedTemplateLiteral(['\n      ', '\n      ', '\n    '], ['\n      ', '\n      ', '\n    ']);
+    _templateObject2 = _taggedTemplateLiteral(['\n    ', '\n    ', '\n  '], ['\n    ', '\n    ', '\n  ']);
 
 var _styledComponent = require('styled component');
 
@@ -15,12 +15,9 @@ var defaultCSS = '\n  @-ms-viewport {\n    width: device-width;\n  }\n\n  html {
 
 exports.default = function () {
   var css = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-  var append = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-  if (css === null) {
+  if (css == null) {
     return (0, _styledComponent.injectGlobal)(_templateObject, defaultCSS);
-  } else if (append) {
-    return (0, _styledComponent.injectGlobal)(_templateObject2, defaultCSS, css);
   }
-  return (0, _styledComponent.injectGlobal)(_templateObject, css);
+  return (0, _styledComponent.injectGlobal)(_templateObject2, defaultCSS, css);
 };
