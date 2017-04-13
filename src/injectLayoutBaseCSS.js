@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled component';
+import { injectGlobal } from 'styled -components';
 
 const defaultCSS = `
   @-ms-viewport {

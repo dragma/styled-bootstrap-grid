@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var _templateObject = _taggedTemplateLiteral(['', ''], ['', '']),
     _templateObject2 = _taggedTemplateLiteral(['\n    ', '\n    ', '\n  '], ['\n    ', '\n    ', '\n  ']);
 
-var _styledComponent = require('styled component');
+var _styledComponents = require('styled -components');
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -17,7 +17,7 @@ exports.default = function () {
   var css = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
   if (css == null) {
-    return (0, _styledComponent.injectGlobal)(_templateObject, defaultCSS);
+    return (0, _styledComponents.injectGlobal)(_templateObject, defaultCSS);
   }
-  return (0, _styledComponent.injectGlobal)(_templateObject2, defaultCSS, css);
+  return (0, _styledComponents.injectGlobal)(_templateObject2, defaultCSS, css);
 };
