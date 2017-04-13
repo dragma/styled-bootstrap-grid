@@ -17,7 +17,8 @@ This module is also based on the [Twitter Bootstrap](https://v4-alpha.getbootstr
 
 ## Prerequisites
 
->> Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`. *from [Bootstrap documentation](https://v4-alpha.getbootstrap.com/getting-started/introduction/#responsive-meta-tag)*
+> Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`.
+> *from [Bootstrap documentation](https://v4-alpha.getbootstrap.com/getting-started/introduction/#responsive-meta-tag)*
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
