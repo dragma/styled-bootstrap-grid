@@ -16,13 +16,39 @@ This module is also based on the [Twitter Bootstrap](https://v4-alpha.getbootstr
 `npm i -S styled-bootstrap-grid`
 
 ## Prerequisites
-Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <head>.
+
+>> Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`. *from [Bootstrap documentation](https://v4-alpha.getbootstrap.com/getting-started/introduction/#responsive-meta-tag)*
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 ```
 
-You also must include these css lines in your `head` to make it work :
+You also must inject the bootstrap base CSS in your application root file, like this.
+
+```javascript
+// app.js
+
+import { injectLayoutBaseCSS } from 'styled-bootstrap-grid';
+
+injectLayoutBaseCSS();
+
+```
+
+You also can inject your own css like this :
+
+```javascript
+const customCSS = `
+  body {
+    // whatever
+  }
+`;
+
+injectLayoutBaseCSS(customCSS);
+```
+
+Basicaly, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
+
+the defaut bootstrap layout CSS is :
 
 ```css
 @-ms-viewport {
@@ -42,13 +68,14 @@ html {
           box-sizing: inherit;
 }
 ```
+
 ## Basics
 
 ```javascript
 import React from 'react';
 import { Container, Row, Col } from 'styled-bootstrap-grid';
 
-export default (props) => 
+export default (props) =>
   <Whatever>
     <Container>
       <Row>
@@ -140,4 +167,3 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 ## todo
 Because the module is meant to become 100% cssless, I must :
   * find a way to inject `<meta />` head element.
-  * find a way to inject the general css.
