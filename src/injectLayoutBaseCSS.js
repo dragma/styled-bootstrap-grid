@@ -19,15 +19,12 @@ const defaultCSS = `
   }
 `;
 
-export default (css = null, append = false) => {
-  if (css === null) {
+export default (css = null) => {
+  if (css == null) {
     return injectGlobal`${defaultCSS}`;
   }
-  else if (append) {
-    return injectGlobal`
-      ${defaultCSS}
-      ${css}
-    `;
-  }
-  return injectGlobal`${css}`
+  return injectGlobal`
+    ${defaultCSS}
+    ${css}
+  `;
 }
