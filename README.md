@@ -166,5 +166,5 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 * [styled-components](https://www.npmjs.com/package/styled-components)
 
 ## todo
-Because the module is meant to become 100% cssless, I must :
-  * find a way to inject `<meta />` head element.
+Any idea ?
+Please [leave a suggestion](https://github.com/dragma/styled-bootstrap-grid/issues).
