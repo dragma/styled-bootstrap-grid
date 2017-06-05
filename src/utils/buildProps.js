@@ -1,4 +1,4 @@
-const (props, propsKeys = ['children']) => {
+const buildProps = (props, propsKeys = ['children']) => {
   const otherProps =
     Object
       .keys(props)
@@ -9,4 +9,6 @@ const (props, propsKeys = ['children']) => {
         }, {}
       );
   return otherProps;
-}
+};
+
+export default buildProps;
