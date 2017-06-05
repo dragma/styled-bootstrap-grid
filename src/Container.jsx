@@ -1,5 +1,6 @@
 import React from 'react';
 
+import buildProps from './utils/buildProps';
 import { Container, ContainerFluid } from './styled';
 
 const container = (props) => {
@@ -10,11 +11,7 @@ const container = (props) => {
     'children',
   ];
 
-  const otherProps =
-    Object
-      .keys(props)
-      .filter(key => propsKeys.indexOf(key) === -1)
-      .reduce((acc, key) => (acc[key] = props[key]), {});
+  const otherProps = buildProps(props, propsKeys);
 
   if (fluid) {
     return <ContainerFluid data-name="container-fluid" {...otherProps}>{children}</ContainerFluid>;

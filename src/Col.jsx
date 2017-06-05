@@ -1,7 +1,7 @@
 import React from 'react';
 
+import buildProps from './utils/buildProps';
 import { Col } from './styled';
-
 
 const col = (props) => {
 
@@ -37,11 +37,7 @@ const col = (props) => {
     'children',
   ];
 
-  const otherProps =
-    Object
-      .keys(props)
-      .filter(key => propsKeys.indexOf(key) === -1)
-      .reduce((acc, key) => (acc[key] = props[key]), {});
+  const otherProps = buildProps(props, propsKeys);
 
   let dataName = '';
   // xs
@@ -49,10 +45,10 @@ const col = (props) => {
     dataName = `${dataName}col-sm-${sm} `;
   }
   if (smOffset) {
-    dataName = `${dataName}offset-sm-${smOffset}`;
+    dataName = `${dataName}offset-sm-${smOffset} `;
   }
   if (smPush) {
-    dataName = `${dataName}push-sm-${smPush}`;
+    dataName = `${dataName}push-sm-${smPush} `;
   }
 
   // md
@@ -60,10 +56,10 @@ const col = (props) => {
     dataName = `${dataName}col-md-${md} `;
   }
   if (mdOffset) {
-    dataName = `${dataName}offset-md-${mdOffset}`;
+    dataName = `${dataName}offset-md-${mdOffset} `;
   }
   if (mdPush) {
-    dataName = `${dataName}push-md-${mdPush}`;
+    dataName = `${dataName}push-md-${mdPush} `;
   }
 
   // lg
@@ -71,21 +67,21 @@ const col = (props) => {
     dataName = `${dataName}col-lg-${lg} `;
   }
   if (mdOffset) {
-    dataName = `${dataName}offset-md-${mdOffset}`;
+    dataName = `${dataName}offset-md-${mdOffset} `;
   }
   if (mdPush) {
-    dataName = `${dataName}push-md-${mdPush}`;
+    dataName = `${dataName}push-md-${mdPush} `;
   }
 
   // xl
   if (xl) {
-    dataName = `${dataName}col-xl-${xl}`;
+    dataName = `${dataName}col-xl-${xl} `;
   }
   if (xlOffset) {
-    dataName = `${dataName}offset-xl-${xlOffset}`;
+    dataName = `${dataName}offset-xl-${xlOffset} `;
   }
   if (xlPush) {
-    dataName = `${dataName}push-xl-${xlPush}`;
+    dataName = `${dataName}push-xl-${xlPush} `;
   }
 
   return (

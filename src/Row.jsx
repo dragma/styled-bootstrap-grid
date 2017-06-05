@@ -1,5 +1,6 @@
 import React from 'react';
 
+import buildProps from './utils/buildProps';
 import { Row } from './styled';
 
 const row = props => {
@@ -9,11 +10,7 @@ const row = props => {
     'children',
   ];
 
-  const otherProps =
-    Object
-      .keys(props)
-      .filter(key => propsKeys.indexOf(key) === -1)
-      .reduce((acc, key) => (acc[key] = props[key]), {});
+  const otherProps = buildProps(props, propsKeys);
 
   return <Row
     data-name="row"
