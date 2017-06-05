@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _buildProps = require('./utils/buildProps');
+
+var _buildProps2 = _interopRequireDefault(_buildProps);
+
 var _styled = require('./styled');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -32,11 +36,7 @@ var col = function col(props) {
 
   var propsKeys = ['sm', 'smOffset', 'smPush', 'md', 'mdOffset', 'mdPush', 'lg', 'lgOffset', 'lgPush', 'xl', 'xlOffset', 'xlPush', 'children'];
 
-  var otherProps = Object.keys(props).filter(function (key) {
-    return propsKeys.indexOf(key) === -1;
-  }).reduce(function (acc, key) {
-    return acc[key] = props[key];
-  }, {});
+  var otherProps = (0, _buildProps2.default)(props, propsKeys);
 
   var dataName = '';
   // xs
@@ -44,10 +44,10 @@ var col = function col(props) {
     dataName = dataName + 'col-sm-' + sm + ' ';
   }
   if (smOffset) {
-    dataName = dataName + 'offset-sm-' + smOffset;
+    dataName = dataName + 'offset-sm-' + smOffset + ' ';
   }
   if (smPush) {
-    dataName = dataName + 'push-sm-' + smPush;
+    dataName = dataName + 'push-sm-' + smPush + ' ';
   }
 
   // md
@@ -55,10 +55,10 @@ var col = function col(props) {
     dataName = dataName + 'col-md-' + md + ' ';
   }
   if (mdOffset) {
-    dataName = dataName + 'offset-md-' + mdOffset;
+    dataName = dataName + 'offset-md-' + mdOffset + ' ';
   }
   if (mdPush) {
-    dataName = dataName + 'push-md-' + mdPush;
+    dataName = dataName + 'push-md-' + mdPush + ' ';
   }
 
   // lg
@@ -66,21 +66,21 @@ var col = function col(props) {
     dataName = dataName + 'col-lg-' + lg + ' ';
   }
   if (mdOffset) {
-    dataName = dataName + 'offset-md-' + mdOffset;
+    dataName = dataName + 'offset-md-' + mdOffset + ' ';
   }
   if (mdPush) {
-    dataName = dataName + 'push-md-' + mdPush;
+    dataName = dataName + 'push-md-' + mdPush + ' ';
   }
 
   // xl
   if (xl) {
-    dataName = dataName + 'col-xl-' + xl;
+    dataName = dataName + 'col-xl-' + xl + ' ';
   }
   if (xlOffset) {
-    dataName = dataName + 'offset-xl-' + xlOffset;
+    dataName = dataName + 'offset-xl-' + xlOffset + ' ';
   }
   if (xlPush) {
-    dataName = dataName + 'push-xl-' + xlPush;
+    dataName = dataName + 'push-xl-' + xlPush + ' ';
   }
 
   return _react2.default.createElement(

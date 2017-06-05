@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _buildProps = require('./utils/buildProps');
+
+var _buildProps2 = _interopRequireDefault(_buildProps);
+
 var _styled = require('./styled');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -20,11 +24,7 @@ var row = function row(props) {
 
   var propsKeys = ['children'];
 
-  var otherProps = Object.keys(props).filter(function (key) {
-    return propsKeys.indexOf(key) === -1;
-  }).reduce(function (acc, key) {
-    return acc[key] = props[key];
-  }, {});
+  var otherProps = (0, _buildProps2.default)(props, propsKeys);
 
   return _react2.default.createElement(
     _styled.Row,
