@@ -24,8 +24,10 @@
     "url": "https://github.com/dragma/styled-bootstrap-grid/issues"
   },
   "homepage": "https://github.com/dragma/styled-bootstrap-grid#readme",
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0"
+  },
   "dependencies": {
-    "react": "^15.4.2",
     "styled-components": "^1.4.4"
   },
   "devDependencies": {
