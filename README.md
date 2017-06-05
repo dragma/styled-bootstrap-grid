@@ -7,7 +7,7 @@ This module is based on the [styled-components](https://www.npmjs.com/package/st
 This module is highly inspired by the awesome work done on the [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) module.
 
 This module is also based on the [Twitter Bootstrap](https://v4-alpha.getbootstrap.com/getting-started/download/) v4.0.0-alpha.6 layout CSS.
-**The css provided to styled components is not mine.**
+**The css provided to styled bootstrap grid is not mine.**
 
 > For more information about how does this grid system works *(I mean with classes like containers, row, col, offset, push)* , please refer to the official [Twitter Bootstrap layout documentation](https://v4-alpha.getbootstrap.com/layout/overview/).
 
