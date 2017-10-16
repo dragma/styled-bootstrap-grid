@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _buildProps = require('./utils/buildProps');
 
 var _buildProps2 = _interopRequireDefault(_buildProps);
@@ -42,8 +46,8 @@ var container = function container(props) {
 };
 
 container.propTypes = {
-  children: _react2.default.PropTypes.any,
-  fluid: _react2.default.PropTypes.bool.isRequired
+  children: _propTypes2.default.any,
+  fluid: _propTypes2.default.bool.isRequired
 };
 
 container.defaultProps = {

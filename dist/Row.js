@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _buildProps = require('./utils/buildProps');
 
 var _buildProps2 = _interopRequireDefault(_buildProps);
@@ -36,7 +40,7 @@ var row = function row(props) {
 };
 
 row.propTypes = {
-  children: _react2.default.PropTypes.any
+  children: _propTypes2.default.any
 };
 
 row.defaultProps = {

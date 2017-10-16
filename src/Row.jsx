@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import buildProps from './utils/buildProps';
 import { Row } from './styled';
@@ -21,7 +22,7 @@ const row = props => {
 }
 
 row.propTypes = {
-  children: React.PropTypes.any,
+  children: PropTypes.any,
 };
 
 row.defaultProps = {

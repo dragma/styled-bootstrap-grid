@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import buildProps from './utils/buildProps';
 import { Col } from './styled';
@@ -107,13 +108,13 @@ const col = (props) => {
 };
 
 const stringOrNumberReactPropType =
-  React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
+  PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
   ]).isRequired;
 
 col.propTypes = {
-  children: React.PropTypes.any.isRequired,
+  children: PropTypes.any.isRequired,
   sm: stringOrNumberReactPropType,
   md: stringOrNumberReactPropType,
   lg: stringOrNumberReactPropType,

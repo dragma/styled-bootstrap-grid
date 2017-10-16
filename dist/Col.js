@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _buildProps = require('./utils/buildProps');
 
 var _buildProps2 = _interopRequireDefault(_buildProps);
@@ -104,10 +108,10 @@ var col = function col(props) {
   );
 };
 
-var stringOrNumberReactPropType = _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.number]).isRequired;
+var stringOrNumberReactPropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired;
 
 col.propTypes = {
-  children: _react2.default.PropTypes.any.isRequired,
+  children: _propTypes2.default.any.isRequired,
   sm: stringOrNumberReactPropType,
   md: stringOrNumberReactPropType,
   lg: stringOrNumberReactPropType,

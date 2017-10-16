@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import buildProps from './utils/buildProps';
 import { Container, ContainerFluid } from './styled';
@@ -20,8 +21,8 @@ const container = (props) => {
 };
 
 container.propTypes = {
-  children: React.PropTypes.any,
-  fluid: React.PropTypes.bool.isRequired,
+  children: PropTypes.any,
+  fluid: PropTypes.bool.isRequired,
 };
 
 container.defaultProps = {
