@@ -8,11 +8,19 @@ const sizes = {
 };
 
 const media = Object.keys(sizes).reduce((accumulator, label) => {
-  accumulator[label] = (...args) => css`
-    @media (min-width: ${sizes[label]}px) {
-      ${css(...args)}
-    }
-  `;
+  if (label === 'phone') {
+    accumulator[label] = (...args) => css`
+	  @media (max-width: ${sizes.tablet - 1}px) {
+	    ${css(...args)}
+	  }
+	`;
+  } else {
+    accumulator[label] = (...args) => css`
+      @media (min-width: ${sizes[label]}px) {
+        ${css(...args)}
+      }
+    `;
+  }
   return accumulator;
 }, {});
 

@@ -6,7 +6,8 @@ const buildProps = (props, propsKeys = ['children']) => {
       .reduce((acc, key) => {
           acc[key] = props[key];
           return acc;
-        }, {}
+        },
+        {},
       );
   return otherProps;
 };
