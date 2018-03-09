@@ -152,8 +152,8 @@ const Col = styled.div`
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: ${p => p.theme.styledBootstrapGrid.getColPadding()}px;
+  padding-left: ${p => p.theme.styledBootstrapGrid.getColPadding()}px;
   ${
     props => (
       props.sm

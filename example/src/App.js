@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Container, Row, Col } from 'styled-bootstrap-grid';
+import { Container, Row, Col } from './styled-bootstrap-grid';
 
 const Pre = styled.pre`
   display: inline-block;

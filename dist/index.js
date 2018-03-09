@@ -51,7 +51,7 @@ Object.defineProperty(exports, 'injectLayoutBaseCSS', {
 
 var _ThemeProvider = require('./ThemeProvider');
 
-Object.defineProperty(exports, 'gridThemeProviderBuilder', {
+Object.defineProperty(exports, 'GridThemeProvider', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ThemeProvider).default;

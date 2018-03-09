@@ -10,27 +10,27 @@ const Row = styled.div`
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
+  margin-left: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
 
   ${media.phone`
-    padding-right: -15px;
-    padding-left: -15px;
+    padding-right: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
+    padding-left: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
   `}
 
   ${media.tablet`
-    padding-right: -15px;
-    padding-left: -15px;
+    padding-right: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
+    padding-left: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
   `}
 
   ${media.desktop`
-    padding-right: -15px;
-    padding-left: -15px;
+    padding-right: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
+    padding-left: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
   `}
 
   ${media.giant`
-    padding-right: -15px;
-    padding-left: -15px;
+    padding-right: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
+    padding-left: -${p => p.theme.styledBootstrapGrid.getRowPadding()}px;
   `}
 `;
 
