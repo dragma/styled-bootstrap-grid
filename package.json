@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src -d dist",
+    "build:watch": "./node_modules/.bin/babel -w src -d dist",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,5 +34,8 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "styled-components": "^1.4.4"
+  },
+  "dependencies": {
+    "create-react-app": "^1.5.2"
   }
 }

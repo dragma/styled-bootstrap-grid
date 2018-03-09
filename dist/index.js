@@ -49,4 +49,13 @@ Object.defineProperty(exports, 'injectLayoutBaseCSS', {
   }
 });
 
+var _ThemeProvider = require('./ThemeProvider');
+
+Object.defineProperty(exports, 'gridThemeProviderBuilder', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ThemeProvider).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
