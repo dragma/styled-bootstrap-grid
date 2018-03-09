@@ -87,7 +87,7 @@ export default (props) =>
     </Container>
     <Container fluid>
       <Row>
-        <Col xl={1} xlOffset={4}>
+        <Col sm={12} md={4} mdOffset={4}>
             Hello Bootstrap Fluid Layout
         </Col>
       </Row>
@@ -95,7 +95,64 @@ export default (props) =>
   </Whatever>;
 ```
 
+**Attention** : For full phone / desktop compatibility, both `sm` & `md` props must at least be set to `Col` component.
+
 ## Advanced
+
+### Custom gutter
+
+The package exposes a `GridThemeProvider` that allows few custom theming properties. With this provider you can :
+
+- Change the `Container` padding left and right default value
+- Change the `Row` padding left and right default value
+- Change the `Col` padding left and right default value
+
+The `GridThemeProvider` can be wraped (or wraped-in) the `styled-component`'s `ThemeProvider`.
+
+Example :
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { injectLayoutBaseCSS, GridThemeProvider } from 'styled-bootstrap-grid';
+import { ThemeProvider } from 'styled-components';
+
+import App from './whatever/app/folder';
+
+injectLayoutBaseCSS();
+
+const gridTheme = {
+  row: {
+    padding: 10, // default 15
+  },
+  col: {
+    padding: 5, // default 15
+  },
+  container: {
+    padding: 0, // default 15
+  },
+};
+const styledTheme = {
+  mainColor: 'purple',
+}
+
+ReactDOM.render(
+  <ThemeProvider
+    theme={styledTheme}
+  >
+    <GridThemeProvider
+      gridTheme={gridTheme}
+    >
+      <App />
+    </GridThemeProvider>
+  </ThemeProvider>,
+  document.getElementById('root')
+);
+
+```
+
+### Media
+
 This packages also exposes the `media` element. It can be used in your styled-components like this :
 
 ```javascript
@@ -125,12 +182,36 @@ Using this `media` object will help you to build media-queries that will fit the
 
 | name | css generated |
 | - | - |
-| phone | `@media (min-width: 576px) { /* */ }`
+| phone | `@media (max-width: 767px) { /* */ }`
 | tablet | `@media (min-width: 768px) { /* */ }`
 | desktop | `@media (min-width: 992px) { /* */ }`
 | giant | `@media (min-width: 1200px) { /* */ }`
 
 ## Props definition
+
+### GridThemeProvider
+
+| props | default | type | description |
+| - | - | - | - |
+| gridTheme | undefined | Object | See description below(*) |
+
+(*)
+
+```javascript
+
+const gridTheme = {
+  row: {
+    padding: 10, // default 15
+  },
+  col: {
+    padding: 5, // default 15
+  },
+  container: {
+    padding: 0, // default 15
+  },
+}
+
+```
 
 ### Container
 
@@ -141,9 +222,11 @@ Using this `media` object will help you to build media-queries that will fit the
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
 ### Row
+
 `Row` element has no props, except the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
 ### Col
+
 | props | default | type | description |
 | - | - | - | - |
 | sm | 0 | number *or* string | Goes from 1 to 12. Equivalent to `col-sm-*` |
@@ -161,10 +244,22 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
+## Run example
+
+To run the example
+
+1. Open a terminal and install `styled-bootstrap-grid`'s dependencies with `npm i`
+2. Run `npm run build:watch`
+3. Open a terminal and  go to `example`'s directory with `cd <styled-bootstrap-grid folder path>/example`
+4. Install `example`'s dependencies with `yarn`
+5. Run `yarn start`
+
 ## Dependencies
-* [react](https://www.npmjs.com/package/react)
-* [styled-components](https://www.npmjs.com/package/styled-components)
+
+- [react](https://www.npmjs.com/package/react)
+- [styled-components](https://www.npmjs.com/package/styled-components)
 
 ## todo
+
 Any idea ?
 Please [leave a suggestion](https://github.com/dragma/styled-bootstrap-grid/issues).
