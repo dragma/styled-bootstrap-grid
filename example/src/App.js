@@ -326,6 +326,38 @@ class App extends Component {
         </Row>
         <TitleRow>
           <Col col={12}>
+            <h3>Reordering: Order classes</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#order-classes">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
+        <Row>
+          <Col col order="last" xlOrder="last">
+            Fourth, but first
+            <Pre>
+              &lt;div class="col order-last order-xl-last" /&gt;
+            </Pre>
+          </Col>
+          <Col col>
+            Second, but unordered
+            <Pre>
+              &lt;div class="col" /&gt;
+            </Pre>
+          </Col>
+          <Col col>
+            Third, but unordered
+            <Pre>
+              &lt;div class="col" /&gt;
+            </Pre>
+          </Col>
+          <Col col order="first" xlOrder="first">
+            first, but Fourth
+            <Pre>
+              &lt;div class="col order-first order-xl-first" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <TitleRow>
+          <Col col={12}>
             <h3>Offsetting columns: Offset classes</h3>
             <a href="https://getbootstrap.com/docs/4.0/layout/grid/#offset-classes">Bootstrap documentation</a>
           </Col>
