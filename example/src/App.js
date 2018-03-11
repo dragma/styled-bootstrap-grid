@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import { Container, Row, Col } from './styled-bootstrap-grid';
 
+const TitleRow = styled(Row)`
+  margin-bottom: 10px;
+`
 const Pre = styled.pre`
   display: inline-block;
   width: 100%;
@@ -16,25 +19,44 @@ class App extends Component {
   render() {
     return (
       <Container>
+        <TitleRow>
+          <Col col={12}>
+            <h3>Auto-layout columns: Equal-width</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#equal-width">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
         <Row>
-          <Col sm={12} md={6} mdOffset={3}>
+          <Col col>
             <Pre>
-              container: fluid & sm: 12 & md: 6 & md-offset: 3
+              &lt;div class="col-5" /&gt;
             </Pre>
           </Col>
-          <Col sm={12} md={6}>
+          <Col col>
             <Pre>
-              container: fluid & sm: 12 & md: 6
+              &lt;div class="col-4" /&gt;
             </Pre>
           </Col>
-          <Col sm={12} md={2}>
+        </Row>
+        <TitleRow>
+          <Col col={12}>
+            <h3>Auto-layout columns: Setting one column width</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#setting-one-column-width">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
+        <Row>
+          <Col col>
             <Pre>
-              container: fluid & sm: 12 & md: 2
+              &lt;div class="col" /&gt;
             </Pre>
           </Col>
-          <Col sm={12} md={4}>
+          <Col col={2}>
             <Pre>
-              container: fluid & sm: 12 & md: 4
+              &lt;div class="col-2" /&gt;
+            </Pre>
+          </Col>
+          <Col col>
+            <Pre>
+              &lt;div class="col" /&gt;
             </Pre>
           </Col>
         </Row>
