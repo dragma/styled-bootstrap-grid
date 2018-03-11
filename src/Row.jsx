@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import buildProps from './utils/buildProps';
 import { Row } from './styled';
 
 const row = props => {
-  const { children } = props;
+  const {
+    children,
+    alignItems,
+    ...otherProps,
+  } = props;
 
-  const propsKeys = [
-    'children',
-  ];
+  let dataName = 'row';
 
-  const otherProps = buildProps(props, propsKeys);
+  if (alignItems) {
+    dataName = `${dataName} align-items-${alignItems}`
+  }
 
+  dataName = dataName.trim();
   return <Row
-    data-name="row"
+    alignItems={alignItems}
+    data-name={dataName}
     {...otherProps}
   >
     {children}
@@ -23,6 +28,7 @@ const row = props => {
 
 row.propTypes = {
   children: PropTypes.any,
+  alignItems: PropTypes.string,
 };
 
 row.defaultProps = {
