@@ -108,6 +108,106 @@ class App extends Component {
         </Row>
         <TitleRow>
           <Col col={12}>
+            <h3>Alignment: Vertical alignment</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#vertical-alignment">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
+        <Row alignItems="start">
+          <Col col={6}>
+            <Pre>
+              &lt;div class="row align-items-start" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;div /&gt;
+            </Pre>
+          </Col>
+          <Col col={6}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row alignItems="center">
+          <Col col={6}>
+            <Pre>
+              &lt;div class="row align-items-center" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;div /&gt;
+            </Pre>
+          </Col>
+          <Col col={6}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row alignItems="end">
+          <Col col={6}>
+            <Pre>
+              &lt;div class="row align-items-end" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;div /&gt;
+            </Pre>
+          </Col>
+          <Col col={6}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row alignItems="baseline">
+          <Col col={6}>
+            <Pre>
+              &lt;div class="row align-items-baseline" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;div /&gt;
+            </Pre>
+          </Col>
+          <Col col={6}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row alignItems="stretch">
+          <Col col={6}>
+            <Pre>
+              &lt;div class="row align-items-stretch" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;div /&gt;
+            </Pre>
+          </Col>
+          <Col col={6}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <TitleRow>
+          <Col col={12}>
             <h3>Offsetting columns: Offset classes</h3>
             <a href="https://getbootstrap.com/docs/4.0/layout/grid/#offset-classes">Bootstrap documentation</a>
           </Col>
