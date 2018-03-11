@@ -105,7 +105,33 @@ const css = {
     9: `margin-left: 75%;`,
     10: `margin-left: 83.333333%;`,
     11: `margin-left: 91.666667%;`,
-  }
+  },
+  alignSelf: {
+    auto: `
+      -ms-flex-item-align: auto !important;
+      align-self: auto !important;
+    `,
+    start: `
+      -ms-flex-item-align: start !important;
+      align-self: flex-start !important;
+    `,
+    end: `
+      -ms-flex-item-align: end !important;
+      align-self: flex-end !important;
+    `,
+    center: `
+      -ms-flex-item-align: center !important;
+      align-self: center !important;
+    `,
+    baseline: `
+      -ms-flex-item-align: baseline !important;
+      align-self: baseline !important;
+    `,
+    stretch: `
+      -ms-flex-item-align: stretch !important;
+      align-self: stretch !important;
+    `,
+  },
 }
 
 const Col = styled.div`
@@ -118,22 +144,27 @@ const Col = styled.div`
   ${p => p.col && css.col[p.col]}
   ${p => p.offset && css.offset[p.offset]}
   ${p => p.auto && css.col.auto}
+  ${p => p.alignSelf && css.alignSelf[p.alignSelf]}
 
   ${p => p.sm && media.sm`${css.col[p.sm]}`}
   ${p => !isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
   ${p => p.smAuto && media.sm`${css.col.auto}`}
+  ${p => p.smAlignSelf && media.sm`${css.alignSelf[p.smAlignSelf]}`}
 
   ${p => p.md && media.md`${css.col[p.md]}`}
   ${p => !isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
   ${p => p.mdAuto && media.md`${css.col.auto}`}
+  ${p => p.mdAlignSelf && media.md`${css.alignSelf[p.mdAlignSelf]}`}
 
   ${p => p.lg && media.lg`${css.col[p.lg]}`}
   ${p => !isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
   ${p => p.lgAuto && media.lg`${css.col.auto}`}
+  ${p => p.lgAlignSelf && media.lg`${css.alignSelf[p.lgAlignSelf]}`}
 
   ${p => p.xl && media.xl`${css.col[p.xl]}`}
   ${p => !isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
   ${p => p.xlAuto && media.xl`${css.col.auto}`}
+  ${p => p.xlAlignSelf && media.xl`${css.alignSelf[p.xlAlignSelf]}`}
 `;
 
 export default Col;
