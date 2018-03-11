@@ -62,6 +62,29 @@ class App extends Component {
         </Row>
         <TitleRow>
           <Col col={12}>
+            <h3>Auto-layout columns: Variable width content</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#variable-width-content">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
+        <Row>
+          <Col col xl={2}>
+            <Pre>
+              &lt;div class="col col-xl-2" /&gt;
+            </Pre>
+          </Col>
+          <Col col xlAuto>
+            <Pre>
+              &lt;div class=" col col-xl-auto" /&gt;
+            </Pre>
+          </Col>
+          <Col col xl={2}>
+            <Pre>
+              &lt;div class="col col-xl-2" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <TitleRow>
+          <Col col={12}>
             <h3>Offsetting columns: Offset classes</h3>
             <a href="https://getbootstrap.com/docs/4.0/layout/grid/#offset-classes">Bootstrap documentation</a>
           </Col>
