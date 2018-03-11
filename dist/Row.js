@@ -27,7 +27,12 @@ var row = function row(props) {
       mdAlignItems = props.mdAlignItems,
       lgAlignItems = props.lgAlignItems,
       xlAlignItems = props.xlAlignItems,
-      otherProps = _objectWithoutProperties(props, ['children', 'alignItems', 'smAlignItems', 'mdAlignItems', 'lgAlignItems', 'xlAlignItems']);
+      justifyContent = props.justifyContent,
+      smJustifyContent = props.smJustifyContent,
+      mdJustifyContent = props.mdJustifyContent,
+      lgJustifyContent = props.lgJustifyContent,
+      xlJustifyContent = props.xlJustifyContent,
+      otherProps = _objectWithoutProperties(props, ['children', 'alignItems', 'smAlignItems', 'mdAlignItems', 'lgAlignItems', 'xlAlignItems', 'justifyContent', 'smJustifyContent', 'mdJustifyContent', 'lgJustifyContent', 'xlJustifyContent']);
 
   var dataName = 'row';
 
@@ -46,6 +51,21 @@ var row = function row(props) {
   if (xlAlignItems) {
     dataName = dataName + ' align-items-xl-' + xlAlignItems;
   }
+  if (justifyContent) {
+    dataName = dataName + ' justify-content-' + justifyContent;
+  }
+  if (smJustifyContent) {
+    dataName = dataName + ' justify-content-sm-' + smJustifyContent;
+  }
+  if (mdJustifyContent) {
+    dataName = dataName + ' justify-content-md-' + mdJustifyContent;
+  }
+  if (lgJustifyContent) {
+    dataName = dataName + ' justify-content-lg-' + lgJustifyContent;
+  }
+  if (xlJustifyContent) {
+    dataName = dataName + ' justify-content-xl-' + xlJustifyContent;
+  }
 
   dataName = dataName.trim();
   return _react2.default.createElement(
@@ -56,6 +76,11 @@ var row = function row(props) {
       mdAlignItems: mdAlignItems,
       lgAlignItems: lgAlignItems,
       xlAlignItems: xlAlignItems,
+      justifyContent: justifyContent,
+      smJustifyContent: smJustifyContent,
+      mdJustifyContent: mdJustifyContent,
+      lgJustifyContent: lgJustifyContent,
+      xlJustifyContent: xlJustifyContent,
       'data-name': dataName
     }, otherProps),
     children
@@ -68,7 +93,12 @@ row.propTypes = {
   smAlignItems: _propTypes2.default.string,
   mdAlignItems: _propTypes2.default.string,
   lgAlignItems: _propTypes2.default.string,
-  xlAlignItems: _propTypes2.default.string
+  xlAlignItems: _propTypes2.default.string,
+  justifyContent: _propTypes2.default.string,
+  smJustifyContent: _propTypes2.default.string,
+  mdJustifyContent: _propTypes2.default.string,
+  lgJustifyContent: _propTypes2.default.string,
+  xlJustifyContent: _propTypes2.default.string
 };
 
 row.defaultProps = {

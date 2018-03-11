@@ -14,22 +14,16 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _buildProps = require('./utils/buildProps');
-
-var _buildProps2 = _interopRequireDefault(_buildProps);
-
 var _styled = require('./styled');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var container = function container(props) {
   var fluid = props.fluid,
-      children = props.children;
-
-
-  var propsKeys = ['fluid', 'children'];
-
-  var otherProps = (0, _buildProps2.default)(props, propsKeys);
+      children = props.children,
+      otherProps = _objectWithoutProperties(props, ['fluid', 'children']);
 
   if (fluid) {
     return _react2.default.createElement(

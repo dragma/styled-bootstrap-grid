@@ -10,7 +10,7 @@ var _styledComponents = require('styled-components');
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var sizes = {
+var breakpoints = {
   giant: 1200,
   xl: 1200,
   desktop: 992,
@@ -21,9 +21,9 @@ var sizes = {
   sm: 576
 };
 
-var media = Object.keys(sizes).reduce(function (accumulator, label) {
+var media = Object.keys(breakpoints).reduce(function (accumulator, label) {
   accumulator[label] = function () {
-    return (0, _styledComponents.css)(_templateObject, sizes[label], _styledComponents.css.apply(undefined, arguments));
+    return (0, _styledComponents.css)(_templateObject, breakpoints[label], _styledComponents.css.apply(undefined, arguments));
   };
   return accumulator;
 }, {});

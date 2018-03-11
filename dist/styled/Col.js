@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: 15px;\n  padding-left: 15px;\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n'], ['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: 15px;\n  padding-left: 15px;\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['', ''], ['', '']);
 
 var _styledComponents = require('styled-components');
@@ -49,15 +49,58 @@ var css = {
     9: 'margin-left: 75%;',
     10: 'margin-left: 83.333333%;',
     11: 'margin-left: 91.666667%;'
-  }
+  },
+  order: {
+    first: '\n      -webkit-box-ordinal-group: 0;\n      -ms-flex-order: -1;\n      order: -1;\n    ',
+    last: '\n      -webkit-box-ordinal-group: 14;\n      -ms-flex-order: 13;\n      order: 13;\n    ',
+    0: '\n      -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n      order: 0;\n    ',
+    1: '\n      -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n      order: 1;\n    ',
+    2: '\n      -webkit-box-ordinal-group: 3;\n      -ms-flex-order: 2;\n      order: 2;\n    ',
+    3: '\n      -webkit-box-ordinal-group: 4;\n      -ms-flex-order: 3;\n      order: 3;\n    ',
+    4: '\n      -webkit-box-ordinal-group: 5;\n      -ms-flex-order: 4;\n      order: 4;\n    ',
+    5: '\n      -webkit-box-ordinal-group: 6;\n      -ms-flex-order: 5;\n      order: 5;\n    ',
+    6: '\n      -webkit-box-ordinal-group: 7;\n      -ms-flex-order: 6;\n      order: 6;\n    ',
+    7: '\n      -webkit-box-ordinal-group: 8;\n      -ms-flex-order: 7;\n      order: 7;\n    ',
+    8: '\n      -webkit-box-ordinal-group: 9;\n      -ms-flex-order: 8;\n      order: 8;\n    ',
+    9: '\n      -webkit-box-ordinal-group: 10;\n      -ms-flex-order: 9;\n      order: 9;\n    ',
+    10: '\n      -webkit-box-ordinal-group: 11;\n      -ms-flex-order: 10;\n      order: 10;\n    ',
+    11: '\n      -webkit-box-ordinal-group: 12;\n      -ms-flex-order: 11;\n      order: 11;\n    ',
+    12: '\n      -webkit-box-ordinal-group: 13;\n      -ms-flex-order: 12;\n      order: 12;\n    '
+  },
+  alignSelf: {
+    auto: '\n      -ms-flex-item-align: auto !important;\n      align-self: auto !important;\n    ',
+    start: '\n      -ms-flex-item-align: start !important;\n      align-self: flex-start !important;\n    ',
+    end: '\n      -ms-flex-item-align: end !important;\n      align-self: flex-end !important;\n    ',
+    center: '\n      -ms-flex-item-align: center !important;\n      align-self: center !important;\n    ',
+    baseline: '\n      -ms-flex-item-align: baseline !important;\n      align-self: baseline !important;\n    ',
+    stretch: '\n      -ms-flex-item-align: stretch !important;\n      align-self: stretch !important;\n    '
+  },
+  noGutter: '\n    margin-right: 0;\n    margin-left: 0;\n  '
 };
 
 var Col = _styledComponents2.default.div(_templateObject, function (p) {
+  if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
+    return 15;
+  }
+  return p.theme.styledBootstrapGrid.getColPadding();
+}, function (p) {
+  if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
+    return 15;
+  }
+  return p.theme.styledBootstrapGrid.getColPadding();
+}, function (p) {
+  console.log(p);
+  return p.noGutter && css.noGutter;
+}, function (p) {
   return p.col && css.col[p.col];
 }, function (p) {
   return p.offset && css.offset[p.offset];
 }, function (p) {
   return p.auto && css.col.auto;
+}, function (p) {
+  return p.alignSelf && css.alignSelf[p.alignSelf];
+}, function (p) {
+  return p.order && css.order[p.order];
 }, function (p) {
   return p.sm && _media2.default.sm(_templateObject2, css.col[p.sm]);
 }, function (p) {
@@ -65,11 +108,19 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.smAuto && _media2.default.sm(_templateObject2, css.col.auto);
 }, function (p) {
+  return p.smAlignSelf && _media2.default.sm(_templateObject2, css.alignSelf[p.smAlignSelf]);
+}, function (p) {
+  return p.smOrder && _media2.default.sm(_templateObject2, css.order[p.smOrder]);
+}, function (p) {
   return p.md && _media2.default.md(_templateObject2, css.col[p.md]);
 }, function (p) {
   return !isNaN(parseInt(p.mdOffset, 10)) && _media2.default.md(_templateObject2, css.offset[p.mdOffset]);
 }, function (p) {
   return p.mdAuto && _media2.default.md(_templateObject2, css.col.auto);
+}, function (p) {
+  return p.mdAlignSelf && _media2.default.md(_templateObject2, css.alignSelf[p.mdAlignSelf]);
+}, function (p) {
+  return p.mdOrder && _media2.default.md(_templateObject2, css.order[p.mdOrder]);
 }, function (p) {
   return p.lg && _media2.default.lg(_templateObject2, css.col[p.lg]);
 }, function (p) {
@@ -77,11 +128,19 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.lgAuto && _media2.default.lg(_templateObject2, css.col.auto);
 }, function (p) {
+  return p.lgAlignSelf && _media2.default.lg(_templateObject2, css.alignSelf[p.lgAlignSelf]);
+}, function (p) {
+  return p.lgOrder && _media2.default.lg(_templateObject2, css.order[p.lgOrder]);
+}, function (p) {
   return p.xl && _media2.default.xl(_templateObject2, css.col[p.xl]);
 }, function (p) {
   return !isNaN(parseInt(p.xlOffset, 10)) && _media2.default.xl(_templateObject2, css.offset[p.xlOffset]);
 }, function (p) {
   return p.xlAuto && _media2.default.xl(_templateObject2, css.col.auto);
+}, function (p) {
+  return p.xlAlignSelf && _media2.default.xl(_templateObject2, css.alignSelf[p.xlAlignSelf]);
+}, function (p) {
+  return p.xlOrder && _media2.default.xl(_templateObject2, css.order[p.xlOrder]);
 });
 
 exports.default = Col;
