@@ -3,38 +3,26 @@ import styled from 'styled-components';
 import media from './media';
 
 const Container = styled.div`
-  position: relative;
-  margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
-  padding-right: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-  padding-left: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
+  margin-left: auto;
 
   ${media.phone`
-    padding-right: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    padding-left: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    width: 540px;
-    max-width: 100%;
+    max-width: 540px;
   `}
 
   ${media.tablet`
-    padding-right: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    padding-left: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    width: 720px;
-    max-width: 100%;
+    max-width: 720px;
   `}
 
   ${media.desktop`
-    padding-right: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    padding-left: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    width: 960px;
-    max-width: 100%;
+    max-width: 960px;
   `}
 
   ${media.giant`
-    padding-right: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    padding-left: ${p => p.theme.styledBootstrapGrid.getContainerPadding()}px;
-    width: 1140px;
-    max-width: 100%;
+    max-width: 1140px;
   `}
 `;
 
