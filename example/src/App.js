@@ -202,7 +202,25 @@ class App extends Component {
           </Col>
           <Col col={6}>
             <Pre>
-              &lt;div class="col-6 offset-6" /&gt;
+              &lt;div class="col-6 offset-6 " /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row style={{ height: 150 }}>
+          <Col col alignSelf="start">
+            <Pre>
+              &lt;div class="col align-self-start" /&gt;
+            </Pre>
+          </Col>
+          <Col col alignSelf="center">
+            <Pre>
+              &lt;div class="col align-self-center" /&gt;
+            </Pre>
+          </Col>
+          <Col col alignSelf="end">
+            <Pre>
+              &lt;div class="col align-self-end" /&gt;
             </Pre>
           </Col>
         </Row>
