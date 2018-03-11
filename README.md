@@ -6,7 +6,7 @@ This module is based on the [styled-components](https://www.npmjs.com/package/st
 
 This module is highly inspired by the awesome work done on the [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) module.
 
-This module is also based on the [Twitter Bootstrap](https://v4-alpha.getbootstrap.com/getting-started/download/) v4.0.0-alpha.6 layout CSS.
+This module is also based on the [Twitter Bootstrap](https://getbootstrap.com/) v4.0.0 `bootstrap-grid.css`.
 **The css provided to styled bootstrap grid is not mine.**
 
 > For more information about how does this grid system works *(I mean with classes like containers, row, col, offset, push)* , please refer to the official [Twitter Bootstrap layout documentation](https://v4-alpha.getbootstrap.com/layout/overview/).
@@ -18,7 +18,7 @@ This module is also based on the [Twitter Bootstrap](https://v4-alpha.getbootstr
 ## Prerequisites
 
 > Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`.
-> *from [Bootstrap documentation](https://v4-alpha.getbootstrap.com/getting-started/introduction/#responsive-meta-tag)*
+> *from [Bootstrap documentation](https://getbootstrap.com/docs/4.0/getting-started/introduction/#responsive-meta-tag)*
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -80,22 +80,20 @@ export default (props) =>
   <Whatever>
     <Container>
       <Row>
-        <Col xl="1" lg="2" md="3" sm="12">
+        <Col col xl="1" lg="2" md="3" sm="6">
             Hello Bootstrap Layout
         </Col>
       </Row>
     </Container>
     <Container fluid>
       <Row>
-        <Col sm={12} md={4} mdOffset={4}>
+        <Col col={6} sm={5} md={4} mdOffset={4}>
             Hello Bootstrap Fluid Layout
         </Col>
       </Row>
     </Container>
   </Whatever>;
 ```
-
-**Attention** : For full phone / desktop compatibility, both `sm` & `md` props must at least be set to `Col` component.
 
 ## Advanced
 
@@ -164,13 +162,25 @@ const CustomDiv = styled.div`
   ${media.phone`
     color: blue;
   `}
+  ${media.sm`
+    color: blue;
+  `}
   ${media.tablet`
+    color: red;
+  `}
+  ${media.md`
     color: red;
   `}
   ${media.desktop`
     color: purple;
   `}
+  ${media.lg`
+    color: purple;
+  `}
   ${media.giant`
+    color: yellow;
+  `}
+  ${media.xl`
     color: yellow;
   `}
 `;
@@ -180,12 +190,12 @@ export default CustomDiv;
 
 Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
-| name | css generated |
-| - | - |
-| phone | `@media (max-width: 767px) { /* */ }`
-| tablet | `@media (min-width: 768px) { /* */ }`
-| desktop | `@media (min-width: 992px) { /* */ }`
-| giant | `@media (min-width: 1200px) { /* */ }`
+| name | alias | css generated |
+| - | - | - |
+| sm | *phone* | `@media (min-width: 767px) { /* */ }`
+| md | *tablet* | `@media (min-width: 768px) { /* */ }`
+| lg | *desktop* | `@media (min-width: 992px) { /* */ }`
+| xl | *giant* | `@media (min-width: 1200px) { /* */ }`
 
 ## Props definition
 
@@ -223,24 +233,51 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 
 ### Row
 
-`Row` element has no props, except the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
+| props | default | type | description |
+| - | - | - | - |
+| alignItems | `undefined` | `string` | `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-items-{value}` |
+| smAlignItems | `undefined` | `string` | `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-items-sm-{value}` |
+| mdAlignItems | `undefined` | `string` | `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-items-md-{value}` |
+| lgAlignItems | `undefined` | `string` | `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-items-lg-{value}` |
+| xlAlignItems | `undefined` | `string` | `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-items-xl-{value}` |
+| justifyContent | `undefined` | `string` | `start` or `end` or `center` or `between` or `around`. Equivalent to `justify-content-{value}` |
+| smJustifyContent | `undefined` | `string` | `start` or `end` or `center` or `between` or `around`. Equivalent to `justify-content-sm-{value}` |
+| mdJustifyContent | `undefined` | `string` | `start` or `end` or `center` or `between` or `around`. Equivalent to `justify-content-md-{value}` |
+| lgJustifyContent | `undefined` | `string` | `start` or `end` or `center` or `between` or `around`. Equivalent to `justify-content-lg-{value}` |
+| xlJustifyContent | `undefined` | `string` | `start` or `end` or `center` or `between` or `around`. Equivalent to `justify-content-xl-{value}` |
+
+Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
 ### Col
 
 | props | default | type | description |
 | - | - | - | - |
-| sm | 0 | number *or* string | Goes from 1 to 12. Equivalent to `col-sm-*` |
-| smOffset | 0 | number *or* string | Goes from 1 to 11. Equivalent to `offset-sm-*` |
-| smPush | 0 | number *or* string | Goes from 1 to 11. Equivalent to `push-sm-*` |
-| md | 0 | number *or* string | Goes from 1 to 12. Equivalent to `col-md-*` |
-| mdOffset | 0 | number *or* string | Goes from 1 to 11. Equivalent to `offset-md-*` |
-| mdPush | 0 | number *or* string | Goes from 1 to 11. Equivalent to `push-md-*` |
-| lg | 0 | number *or* string | Goes from 1 to 12. Equivalent to `col-lg-*` |
-| lgOffset | 0 | number *or* string | Goes from 1 to 11. Equivalent to `offset-lg-*` |
-| lgPush | 0 | number *or* string | Goes from 1 to 11. Equivalent to `push-lg-*` |
-| xl | 0 | number *or* string | Goes from 1 to 12. Equivalent to `col-xl-*` |
-| xlOffset | 0 | number *or* string | Goes from 1 to 11. Equivalent to `offset-xl-*` |
-| xlPush | 0 | number *or* string | Goes from 1 to 11. Equivalent to `push-xl-*` |
+| col | `undefined` | `number` *or* `string` *or* `boolean` | Goes from 1 to 12. Equivalent to `col-*` (or `col` in case of `true`) |
+| offset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-*` |
+| auto | `undefined` | `boolean` | Equivalent to `col-auto` |
+| alignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-{value}` |
+| order | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-{value}` |
+| noGutter | `undefined` | `boolean` | Equivalent to `no-gutter` |
+| sm | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
+| smOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-sm-*` |
+| smAuto | `undefined` | `boolean` | Equivalent to `col-sm-auto` |
+| smAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-sm-{value}` |
+| smOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-sm-{value}` |
+| md | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
+| mdOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-md-*` |
+| mdAuto | `undefined` | `boolean` | Equivalent to `col-md-auto` |
+| mdAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-md-{value}` |
+| mdOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-md-{value}` |
+| lg | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
+| lgOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-lg-*` |
+| lgAuto | `undefined` | `boolean` | Equivalent to `col-lg-auto` |
+| lgAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-lg-{value}` |
+| lgOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-lg-{value}` |
+| xl | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
+| xlOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-xl-*` |
+| xlAuto | `undefined` | `boolean` | Equivalent to `col-xl-auto` |
+| xlAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-xl-{value}` |
+| xlOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-xl-{value}` |
 
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
@@ -261,5 +298,7 @@ To run the example
 
 ## todo
 
-Any idea ?
+- complete web documentation
+
+Any othre idea ?
 Please [leave a suggestion](https://github.com/dragma/styled-bootstrap-grid/issues).
