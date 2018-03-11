@@ -60,6 +60,26 @@ class App extends Component {
             </Pre>
           </Col>
         </Row>
+        <TitleRow>
+          <Col col={12}>
+            <h3>Offsetting columns: Offset classes</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#offset-classes">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
+        <Row>
+          <Col offset={6} col={6}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <Row>
+          <Col smOffset={3} sm={6} col={12} xl={5} xlOffset={0}>
+            <Pre>
+              &lt;div class="col-sm-6 offset-sm-3 col-12 col-xl-5 offset-xl-0" /&gt;
+            </Pre>
+          </Col>
+        </Row>
       </Container>
     );
   }
