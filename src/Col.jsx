@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import buildProps from './utils/buildProps';
 import { Col } from './styled';
 
 const col = (props) => {
@@ -32,10 +31,11 @@ const col = (props) => {
     xlAuto,
     xlAlignSelf,
     xlOrder,
+    noGutter,
     children,
     ...otherProps,
   } = props;
-  console.log('alignSelf', alignSelf)
+
   let dataName = '';
   if (col) {
     if (!isNaN(parseInt(col, 10))) {
@@ -137,6 +137,10 @@ const col = (props) => {
     dataName = `${dataName} order-xl-${xlOrder}`;
   }
 
+  if (noGutter) {
+    dataName = `${dataName} no-gutter`;
+  }
+
   dataName = dataName.trim();
   return (
     <Col
@@ -170,6 +174,7 @@ const col = (props) => {
       xlAlignSelf={xlAlignSelf}
       xlOrder={xlOrder}
 
+      noGutter={noGutter}
       data-name={dataName}
       {...otherProps}
     >
@@ -192,7 +197,9 @@ const stringOrNumberorBooleanReactPropType =
   ]);
 
 col.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.any,
+  noGutter: PropTypes.bool,
+
   col: stringOrNumberorBooleanReactPropType,
   auto: PropTypes.bool,
   alignSelf: PropTypes.string,

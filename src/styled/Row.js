@@ -65,8 +65,18 @@ const Row = styled.div`
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -${p => {
+    if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getRowPadding) {
+      return 15;
+    }
+    return p.theme.styledBootstrapGrid.getRowPadding();
+  }}px;
+  margin-left: -${p => {
+    if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getRowPadding) {
+      return 15;
+    }
+    return p.theme.styledBootstrapGrid.getRowPadding();
+  }}px;
 
   ${p => p.alignItems && css.alignItems[p.alignItems]}
   ${p => p.smAlignItems && media.sm`${css.alignItems[p.smAlignItems]}`}

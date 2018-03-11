@@ -13,13 +13,13 @@ injectLayoutBaseCSS();
 
 const theme = {
   row: {
-    padding: 0,
+    padding: 10,
   },
   col: {
-    padding: 0,
+    padding: 10,
   },
   container: {
-    padding: 0,
+    padding: 10,
   },
 }
 

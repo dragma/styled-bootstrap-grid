@@ -209,14 +209,33 @@ const css = {
       align-self: stretch !important;
     `,
   },
+  noGutter: `
+    margin-right: 0;
+    margin-left: 0;
+  `,
 }
 
 const Col = styled.div`
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: ${p => {
+    if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
+      return 15;
+    }
+    return p.theme.styledBootstrapGrid.getColPadding();
+  }}px;
+  padding-left: ${p => {
+    if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
+      return 15;
+    }
+    return p.theme.styledBootstrapGrid.getColPadding();
+  }}px;
+
+  ${p => {
+    console.log(p);
+    return p.noGutter && css.noGutter;
+  }}
 
   ${p => p.col && css.col[p.col]}
   ${p => p.offset && css.offset[p.offset]}
