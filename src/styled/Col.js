@@ -12,6 +12,13 @@ const css = {
       flex-grow: 1;
       max-width: 100%;
     `,
+    auto: `
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+    `,
     1: `
       -webkit-box-flex: 0;
       -ms-flex: 0 0 8.333333%;
@@ -110,18 +117,23 @@ const Col = styled.div`
 
   ${p => p.col && css.col[p.col]}
   ${p => p.offset && css.offset[p.offset]}
+  ${p => p.auto && css.col.auto}
 
   ${p => p.sm && media.sm`${css.col[p.sm]}`}
   ${p => !isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
+  ${p => p.smAuto && media.sm`${css.col.auto}`}
 
   ${p => p.md && media.md`${css.col[p.md]}`}
   ${p => !isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
+  ${p => p.mdAuto && media.md`${css.col.auto}`}
 
   ${p => p.lg && media.lg`${css.col[p.lg]}`}
   ${p => !isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
+  ${p => p.lgAuto && media.lg`${css.col.auto}`}
 
   ${p => p.xl && media.xl`${css.col[p.xl]}`}
   ${p => !isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
+  ${p => p.xlAuto && media.xl`${css.col.auto}`}
 `;
 
 export default Col;

@@ -8,16 +8,18 @@ const col = (props) => {
 
   const {
     col,
-    children,
     offset,
+    auto,
     sm,
     smOffset,
+    smAuto,
     md,
     mdOffset,
     lg,
     lgOffset,
     xl,
     xlOffset,
+    children,
     ...otherProps,
   } = props;
 
@@ -32,11 +34,17 @@ const col = (props) => {
   if (!isNaN(parseInt(offset, 10))) {
     dataName = `${dataName} offset-${offset}`;
   }
+  if (auto) {
+    dataName = `${dataName} col-auto`;
+  }
   if (!isNaN(parseInt(sm, 10))) {
     dataName = `${dataName} col-sm-${sm}`;
   }
   if (!isNaN(parseInt(smOffset, 10))) {
     dataName = `${dataName} offset-sm-${smOffset}`;
+  }
+  if (smAuto) {
+    dataName = `${dataName} col-sm-auto`;
   }
   if (!isNaN(parseInt(md, 10))) {
     dataName = `${dataName} col-md-${md}`;
@@ -62,18 +70,23 @@ const col = (props) => {
     <Col
       col={col}
       offset={offset}
+      auto={auto}
 
       sm={sm}
       smOffset={smOffset}
+      smAuto={smAuto}
 
       md={md}
       mdOffset={mdOffset}
+      mdAuto={smAuto}
 
       lg={lg}
       lgOffset={lgOffset}
+      lgAuto={smAuto}
 
       xl={xl}
       xlOffset={xlOffset}
+      xlAuto={smAuto}
 
       data-name={dataName}
       {...otherProps}
