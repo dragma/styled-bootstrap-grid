@@ -208,6 +208,106 @@ class App extends Component {
         </Row>
         <TitleRow>
           <Col col={12}>
+            <h3>Alignment: Horizontal alignment</h3>
+            <a href="https://getbootstrap.com/docs/4.0/layout/grid/#horizontal-alignment">Bootstrap documentation</a>
+          </Col>
+        </TitleRow>
+        <Row justifyContent="start">
+          <Col col={3}>
+            <Pre>
+              &lt;div class="row justify-content-start" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;/div&gt;
+            </Pre>
+          </Col>
+          <Col col={3}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row justifyContent="end" smAlignItems="end">
+          <Col col={3}>
+            <Pre>
+              &lt;div class="row justify-content-end justify-content-sm-end" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;/div&gt;
+            </Pre>
+          </Col>
+          <Col col={3}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row justifyContent="center">
+          <Col col={3}>
+            <Pre>
+              &lt;div class="row justify-content-center" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;/div&gt;
+            </Pre>
+          </Col>
+          <Col col={3}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row justifyContent="between">
+          <Col col={3}>
+            <Pre>
+              &lt;div class="row justify-content-between" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;/div&gt;
+            </Pre>
+          </Col>
+          <Col col={3}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <br />
+        <Row justifyContent="around">
+          <Col col={3}>
+            <Pre>
+              &lt;div class="row justify-content-around" &gt;
+            </Pre>
+            <Pre>
+              &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+            <Pre>
+              &lt;/div&gt;
+            </Pre>
+          </Col>
+          <Col col={3}>
+            <Pre>
+              &lt;div class="col-6 offset-6" /&gt;
+            </Pre>
+          </Col>
+        </Row>
+        <TitleRow>
+          <Col col={12}>
             <h3>Offsetting columns: Offset classes</h3>
             <a href="https://getbootstrap.com/docs/4.0/layout/grid/#offset-classes">Bootstrap documentation</a>
           </Col>
