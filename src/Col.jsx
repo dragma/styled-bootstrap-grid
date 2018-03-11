@@ -15,10 +15,13 @@ const col = (props) => {
     smAuto,
     md,
     mdOffset,
+    mdAuto,
     lg,
     lgOffset,
+    lgAuto,
     xl,
     xlOffset,
+    xlAuto,
     children,
     ...otherProps,
   } = props;
@@ -37,8 +40,13 @@ const col = (props) => {
   if (auto) {
     dataName = `${dataName} col-auto`;
   }
-  if (!isNaN(parseInt(sm, 10))) {
-    dataName = `${dataName} col-sm-${sm}`;
+
+  if (sm) {
+    if (!isNaN(parseInt(sm, 10))) {
+      dataName = `${dataName} col-sm-${sm}`;
+    } else {
+      dataName = `${dataName} col-sm`;
+    }
   }
   if (!isNaN(parseInt(smOffset, 10))) {
     dataName = `${dataName} offset-sm-${smOffset}`;
@@ -46,23 +54,47 @@ const col = (props) => {
   if (smAuto) {
     dataName = `${dataName} col-sm-auto`;
   }
-  if (!isNaN(parseInt(md, 10))) {
-    dataName = `${dataName} col-md-${md}`;
+
+  if (md) {
+    if (!isNaN(parseInt(md, 10))) {
+      dataName = `${dataName} col-md-${md}`;
+    } else {
+      dataName = `${dataName} col-md`;
+    }
   }
   if (!isNaN(parseInt(mdOffset, 10))) {
     dataName = `${dataName} offset-md-${mdOffset}`;
   }
-  if (!isNaN(parseInt(lg, 10))) {
-    dataName = `${dataName} col-lg-${lg}`;
+  if (mdAuto) {
+    dataName = `${dataName} col-md-auto`;
+  }
+
+  if (lg) {
+    if (!isNaN(parseInt(lg, 10))) {
+      dataName = `${dataName} col-lg-${lg}`;
+    } else {
+      dataName = `${dataName} col-lg`;
+    }
   }
   if (!isNaN(parseInt(lgOffset, 10))) {
     dataName = `${dataName} offset-lg-${lgOffset}`;
   }
-  if (!isNaN(parseInt(xl, 10))) {
-    dataName = `${dataName} col-xl-${xl}`;
+  if (lgAuto) {
+    dataName = `${dataName} col-lg-auto`;
+  }
+
+  if (xl) {
+    if (!isNaN(parseInt(xl, 10))) {
+      dataName = `${dataName} col-xl-${xl}`;
+    } else {
+      dataName = `${dataName} col-xl`;
+    }
   }
   if (!isNaN(parseInt(xlOffset, 10))) {
     dataName = `${dataName} offset-xl-${xlOffset}`;
+  }
+  if (xlAuto) {
+    dataName = `${dataName} col-xl-auto`;
   }
 
   dataName = dataName.trim();
@@ -78,15 +110,15 @@ const col = (props) => {
 
       md={md}
       mdOffset={mdOffset}
-      mdAuto={smAuto}
+      mdAuto={mdAuto}
 
       lg={lg}
       lgOffset={lgOffset}
-      lgAuto={smAuto}
+      lgAuto={lgAuto}
 
       xl={xl}
       xlOffset={xlOffset}
-      xlAuto={smAuto}
+      xlAuto={xlAuto}
 
       data-name={dataName}
       {...otherProps}
@@ -112,10 +144,23 @@ const stringOrNumberorBooleanReactPropType =
 col.propTypes = {
   children: PropTypes.any.isRequired,
   col: stringOrNumberorBooleanReactPropType,
-  sm: stringOrNumberReactPropType,
+  auto: PropTypes.bool,
+
+  sm: stringOrNumberorBooleanReactPropType,
   smOffset: stringOrNumberReactPropType,
-  md: stringOrNumberReactPropType,
+  smAuto: PropTypes.bool,
+
+  md: stringOrNumberorBooleanReactPropType,
   mdOffset: stringOrNumberReactPropType,
+  mdAuto: PropTypes.bool,
+
+  lg: stringOrNumberorBooleanReactPropType,
+  lgOffset: stringOrNumberReactPropType,
+  lgAuto: PropTypes.bool,
+
+  xl: stringOrNumberorBooleanReactPropType,
+  xlOffset: stringOrNumberReactPropType,
+  xlAuto: PropTypes.bool,
 };
 
 col.defaultProps = {
