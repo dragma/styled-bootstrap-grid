@@ -11,6 +11,11 @@ const row = props => {
     mdAlignItems,
     lgAlignItems,
     xlAlignItems,
+    justifyContent,
+    smJustifyContent,
+    mdJustifyContent,
+    lgJustifyContent,
+    xlJustifyContent,
     ...otherProps,
   } = props;
 
@@ -31,6 +36,21 @@ const row = props => {
   if (xlAlignItems) {
     dataName = `${dataName} align-items-xl-${xlAlignItems}`
   }
+  if (justifyContent) {
+    dataName = `${dataName} justify-content-${justifyContent}`
+  }
+  if (smJustifyContent) {
+    dataName = `${dataName} justify-content-sm-${smJustifyContent}`
+  }
+  if (mdJustifyContent) {
+    dataName = `${dataName} justify-content-md-${mdJustifyContent}`
+  }
+  if (lgJustifyContent) {
+    dataName = `${dataName} justify-content-lg-${lgJustifyContent}`
+  }
+  if (xlJustifyContent) {
+    dataName = `${dataName} justify-content-xl-${xlJustifyContent}`
+  }
 
   dataName = dataName.trim();
   return <Row
@@ -39,6 +59,11 @@ const row = props => {
     mdAlignItems={mdAlignItems}
     lgAlignItems={lgAlignItems}
     xlAlignItems={xlAlignItems}
+    justifyContent={justifyContent}
+    smJustifyContent={smJustifyContent}
+    mdJustifyContent={mdJustifyContent}
+    lgJustifyContent={lgJustifyContent}
+    xlJustifyContent={xlJustifyContent}
     data-name={dataName}
     {...otherProps}
   >
@@ -53,6 +78,11 @@ row.propTypes = {
   mdAlignItems: PropTypes.string,
   lgAlignItems: PropTypes.string,
   xlAlignItems: PropTypes.string,
+  justifyContent: PropTypes.string,
+  smJustifyContent: PropTypes.string,
+  mdJustifyContent: PropTypes.string,
+  lgJustifyContent: PropTypes.string,
+  xlJustifyContent: PropTypes.string,
 };
 
 row.defaultProps = {
