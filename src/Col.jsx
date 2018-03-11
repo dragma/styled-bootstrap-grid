@@ -11,22 +11,27 @@ const col = (props) => {
     offset,
     auto,
     alignSelf,
+    order,
     sm,
     smOffset,
     smAuto,
     smAlignSelf,
+    smOrder,
     md,
     mdOffset,
     mdAuto,
     mdAlignSelf,
+    mdOrder,
     lg,
     lgOffset,
     lgAuto,
     lgAlignSelf,
+    lgOrder,
     xl,
     xlOffset,
     xlAuto,
     xlAlignSelf,
+    xlOrder,
     children,
     ...otherProps,
   } = props;
@@ -48,6 +53,9 @@ const col = (props) => {
   if (alignSelf) {
     dataName = `${dataName} align-self-${alignSelf}`;
   }
+  if (!isNaN(parseInt(order, 10)) || order === 'first' || order === 'last') {
+    dataName = `${dataName} order-${order}`;
+  }
 
   if (sm) {
     if (!isNaN(parseInt(sm, 10))) {
@@ -64,6 +72,9 @@ const col = (props) => {
   }
   if (smAlignSelf) {
     dataName = `${dataName} align-self-sm-${smAlignSelf}`;
+  }
+  if (!isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
+    dataName = `${dataName} order-sm-${smOrder}`;
   }
 
   if (md) {
@@ -82,6 +93,9 @@ const col = (props) => {
   if (mdAlignSelf) {
     dataName = `${dataName} align-self-md-${mdAlignSelf}`;
   }
+  if (!isNaN(parseInt(mdOrder, 10)) || mdOrder === 'first' || mdOrder === 'last') {
+    dataName = `${dataName} order-md-${mdOrder}`;
+  }
 
   if (lg) {
     if (!isNaN(parseInt(lg, 10))) {
@@ -98,6 +112,9 @@ const col = (props) => {
   }
   if (lgAlignSelf) {
     dataName = `${dataName} align-self-lg-${lgAlignSelf}`;
+  }
+  if (!isNaN(parseInt(lgOrder, 10)) || lgOrder === 'first' || lgOrder === 'last') {
+    dataName = `${dataName} order-lg-${lgOrder}`;
   }
 
   if (xl) {
@@ -116,6 +133,9 @@ const col = (props) => {
   if (xlAlignSelf) {
     dataName = `${dataName} align-self-xl-${xlAlignSelf}`;
   }
+  if (!isNaN(parseInt(xlOrder, 10)) || xlOrder === 'first' || xlOrder === 'last') {
+    dataName = `${dataName} order-xl-${xlOrder}`;
+  }
 
   dataName = dataName.trim();
   return (
@@ -124,26 +144,31 @@ const col = (props) => {
       offset={offset}
       auto={auto}
       alignSelf={alignSelf}
+      order={order}
 
       sm={sm}
       smOffset={smOffset}
       smAuto={smAuto}
       smAlignSelf={smAlignSelf}
+      smOrder={smOrder}
 
       md={md}
       mdOffset={mdOffset}
       mdAuto={mdAuto}
       mdAlignSelf={mdAlignSelf}
+      mdOrder={mdOrder}
 
       lg={lg}
       lgOffset={lgOffset}
       lgAuto={lgAuto}
       lgAlignSelf={lgAlignSelf}
+      lgOrder={lgOrder}
 
       xl={xl}
       xlOffset={xlOffset}
       xlAuto={xlAuto}
       xlAlignSelf={xlAlignSelf}
+      xlOrder={xlOrder}
 
       data-name={dataName}
       {...otherProps}
@@ -171,26 +196,31 @@ col.propTypes = {
   col: stringOrNumberorBooleanReactPropType,
   auto: PropTypes.bool,
   alignSelf: PropTypes.string,
+  order: stringOrNumberReactPropType,
 
   sm: stringOrNumberorBooleanReactPropType,
   smOffset: stringOrNumberReactPropType,
   smAuto: PropTypes.bool,
   smAlignSelf: PropTypes.string,
+  smOrder: stringOrNumberReactPropType,
 
   md: stringOrNumberorBooleanReactPropType,
   mdOffset: stringOrNumberReactPropType,
   mdAuto: PropTypes.bool,
   mdAlignSelf: PropTypes.string,
+  mdOrder: stringOrNumberReactPropType,
 
   lg: stringOrNumberorBooleanReactPropType,
   lgOffset: stringOrNumberReactPropType,
   lgAuto: PropTypes.bool,
   lgAlignSelf: PropTypes.string,
+  lgOrder: stringOrNumberReactPropType,
 
   xl: stringOrNumberorBooleanReactPropType,
   xlOffset: stringOrNumberReactPropType,
   xlAuto: PropTypes.bool,
   xlAlignSelf: PropTypes.string,
+  xlOrder: stringOrNumberReactPropType,
 };
 
 col.defaultProps = {

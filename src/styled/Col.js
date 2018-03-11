@@ -106,6 +106,83 @@ const css = {
     10: `margin-left: 83.333333%;`,
     11: `margin-left: 91.666667%;`,
   },
+  order: {
+    first: `
+      -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+      order: -1;
+    `,
+    last: `
+      -webkit-box-ordinal-group: 14;
+      -ms-flex-order: 13;
+      order: 13;
+    `,
+    0: `
+      -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+      order: 0;
+    `,
+    1: `
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+    `,
+    2: `
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+      order: 2;
+    `,
+    3: `
+      -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+      order: 3;
+    `,
+    4: `
+      -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+      order: 4;
+    `,
+    5: `
+      -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+      order: 5;
+    `,
+    6: `
+      -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+      order: 6;
+    `,
+    7: `
+      -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+      order: 7;
+    `,
+    8: `
+      -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+      order: 8;
+    `,
+    9: `
+      -webkit-box-ordinal-group: 10;
+      -ms-flex-order: 9;
+      order: 9;
+    `,
+    10: `
+      -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+      order: 10;
+    `,
+    11: `
+      -webkit-box-ordinal-group: 12;
+      -ms-flex-order: 11;
+      order: 11;
+    `,
+    12: `
+      -webkit-box-ordinal-group: 13;
+      -ms-flex-order: 12;
+      order: 12;
+    `,
+  },
   alignSelf: {
     auto: `
       -ms-flex-item-align: auto !important;
@@ -145,26 +222,31 @@ const Col = styled.div`
   ${p => p.offset && css.offset[p.offset]}
   ${p => p.auto && css.col.auto}
   ${p => p.alignSelf && css.alignSelf[p.alignSelf]}
+  ${p => p.order && css.order[p.order]}
 
   ${p => p.sm && media.sm`${css.col[p.sm]}`}
   ${p => !isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
   ${p => p.smAuto && media.sm`${css.col.auto}`}
   ${p => p.smAlignSelf && media.sm`${css.alignSelf[p.smAlignSelf]}`}
+  ${p => p.smOrder && media.sm`${css.order[p.smOrder]}`}
 
   ${p => p.md && media.md`${css.col[p.md]}`}
   ${p => !isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
   ${p => p.mdAuto && media.md`${css.col.auto}`}
   ${p => p.mdAlignSelf && media.md`${css.alignSelf[p.mdAlignSelf]}`}
+  ${p => p.mdOrder && media.md`${css.order[p.mdOrder]}`}
 
   ${p => p.lg && media.lg`${css.col[p.lg]}`}
   ${p => !isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
   ${p => p.lgAuto && media.lg`${css.col.auto}`}
   ${p => p.lgAlignSelf && media.lg`${css.alignSelf[p.lgAlignSelf]}`}
+  ${p => p.lgOrder && media.lg`${css.order[p.lgOrder]}`}
 
   ${p => p.xl && media.xl`${css.col[p.xl]}`}
   ${p => !isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
   ${p => p.xlAuto && media.xl`${css.col.auto}`}
   ${p => p.xlAlignSelf && media.xl`${css.alignSelf[p.xlAlignSelf]}`}
+  ${p => p.xlOrder && media.xl`${css.order[p.xlOrder]}`}
 `;
 
 export default Col;
