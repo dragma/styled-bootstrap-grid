@@ -22,124 +22,156 @@ var _styled = require('./styled');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var col = function col(props) {
-  var sm = props.sm,
+  var col = props.col,
+      offset = props.offset,
+      auto = props.auto,
+      sm = props.sm,
       smOffset = props.smOffset,
-      smPush = props.smPush,
+      smAuto = props.smAuto,
       md = props.md,
       mdOffset = props.mdOffset,
-      mdPush = props.mdPush,
+      mdAuto = props.mdAuto,
       lg = props.lg,
       lgOffset = props.lgOffset,
-      lgPush = props.lgPush,
+      lgAuto = props.lgAuto,
       xl = props.xl,
       xlOffset = props.xlOffset,
-      xlPush = props.xlPush,
-      children = props.children;
-
-
-  var propsKeys = ['sm', 'smOffset', 'smPush', 'md', 'mdOffset', 'mdPush', 'lg', 'lgOffset', 'lgPush', 'xl', 'xlOffset', 'xlPush', 'children'];
-
-  var otherProps = (0, _buildProps2.default)(props, propsKeys);
+      xlAuto = props.xlAuto,
+      children = props.children,
+      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'sm', 'smOffset', 'smAuto', 'md', 'mdOffset', 'mdAuto', 'lg', 'lgOffset', 'lgAuto', 'xl', 'xlOffset', 'xlAuto', 'children']);
 
   var dataName = '';
-  // xs
+  if (col) {
+    if (!isNaN(parseInt(col, 10))) {
+      dataName = dataName + ' col-' + col;
+    } else {
+      dataName = dataName + ' col';
+    }
+  }
+  if (!isNaN(parseInt(offset, 10))) {
+    dataName = dataName + ' offset-' + offset;
+  }
+  if (auto) {
+    dataName = dataName + ' col-auto';
+  }
+
   if (sm) {
-    dataName = dataName + 'col-sm-' + sm + ' ';
+    if (!isNaN(parseInt(sm, 10))) {
+      dataName = dataName + ' col-sm-' + sm;
+    } else {
+      dataName = dataName + ' col-sm';
+    }
   }
-  if (smOffset) {
-    dataName = dataName + 'offset-sm-' + smOffset + ' ';
+  if (!isNaN(parseInt(smOffset, 10))) {
+    dataName = dataName + ' offset-sm-' + smOffset;
   }
-  if (smPush) {
-    dataName = dataName + 'push-sm-' + smPush + ' ';
+  if (smAuto) {
+    dataName = dataName + ' col-sm-auto';
   }
 
-  // md
   if (md) {
-    dataName = dataName + 'col-md-' + md + ' ';
+    if (!isNaN(parseInt(md, 10))) {
+      dataName = dataName + ' col-md-' + md;
+    } else {
+      dataName = dataName + ' col-md';
+    }
   }
-  if (mdOffset) {
-    dataName = dataName + 'offset-md-' + mdOffset + ' ';
+  if (!isNaN(parseInt(mdOffset, 10))) {
+    dataName = dataName + ' offset-md-' + mdOffset;
   }
-  if (mdPush) {
-    dataName = dataName + 'push-md-' + mdPush + ' ';
+  if (mdAuto) {
+    dataName = dataName + ' col-md-auto';
   }
 
-  // lg
   if (lg) {
-    dataName = dataName + 'col-lg-' + lg + ' ';
+    if (!isNaN(parseInt(lg, 10))) {
+      dataName = dataName + ' col-lg-' + lg;
+    } else {
+      dataName = dataName + ' col-lg';
+    }
   }
-  if (mdOffset) {
-    dataName = dataName + 'offset-md-' + mdOffset + ' ';
+  if (!isNaN(parseInt(lgOffset, 10))) {
+    dataName = dataName + ' offset-lg-' + lgOffset;
   }
-  if (mdPush) {
-    dataName = dataName + 'push-md-' + mdPush + ' ';
+  if (lgAuto) {
+    dataName = dataName + ' col-lg-auto';
   }
 
-  // xl
   if (xl) {
-    dataName = dataName + 'col-xl-' + xl + ' ';
+    if (!isNaN(parseInt(xl, 10))) {
+      dataName = dataName + ' col-xl-' + xl;
+    } else {
+      dataName = dataName + ' col-xl';
+    }
   }
-  if (xlOffset) {
-    dataName = dataName + 'offset-xl-' + xlOffset + ' ';
+  if (!isNaN(parseInt(xlOffset, 10))) {
+    dataName = dataName + ' offset-xl-' + xlOffset;
   }
-  if (xlPush) {
-    dataName = dataName + 'push-xl-' + xlPush + ' ';
+  if (xlAuto) {
+    dataName = dataName + ' col-xl-auto';
   }
 
+  dataName = dataName.trim();
   return _react2.default.createElement(
     _styled.Col,
     _extends({
+      col: col,
+      offset: offset,
+      auto: auto,
+
       sm: sm,
       smOffset: smOffset,
-      smPush: smPush,
+      smAuto: smAuto,
+
       md: md,
       mdOffset: mdOffset,
-      mdPush: mdPush,
+      mdAuto: mdAuto,
+
       lg: lg,
       lgOffset: lgOffset,
-      lgPush: lgPush,
+      lgAuto: lgAuto,
+
       xl: xl,
       xlOffset: xlOffset,
-      xlPush: xlPush,
+      xlAuto: xlAuto,
+
       'data-name': dataName
     }, otherProps),
     children
   );
 };
 
-var stringOrNumberReactPropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired;
+var stringOrNumberReactPropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]);
+
+var stringOrNumberorBooleanReactPropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.bool]);
 
 col.propTypes = {
   children: _propTypes2.default.any.isRequired,
-  sm: stringOrNumberReactPropType,
-  md: stringOrNumberReactPropType,
-  lg: stringOrNumberReactPropType,
-  xl: stringOrNumberReactPropType,
+  col: stringOrNumberorBooleanReactPropType,
+  auto: _propTypes2.default.bool,
+
+  sm: stringOrNumberorBooleanReactPropType,
   smOffset: stringOrNumberReactPropType,
+  smAuto: _propTypes2.default.bool,
+
+  md: stringOrNumberorBooleanReactPropType,
   mdOffset: stringOrNumberReactPropType,
+  mdAuto: _propTypes2.default.bool,
+
+  lg: stringOrNumberorBooleanReactPropType,
   lgOffset: stringOrNumberReactPropType,
+  lgAuto: _propTypes2.default.bool,
+
+  xl: stringOrNumberorBooleanReactPropType,
   xlOffset: stringOrNumberReactPropType,
-  smPush: stringOrNumberReactPropType,
-  mdPush: stringOrNumberReactPropType,
-  lgPush: stringOrNumberReactPropType,
-  xlPush: stringOrNumberReactPropType
+  xlAuto: _propTypes2.default.bool
 };
 
 col.defaultProps = {
-  children: null,
-  sm: 0,
-  md: 0,
-  lg: 0,
-  xl: 0,
-  smOffset: 0,
-  mdOffset: 0,
-  lgOffset: 0,
-  xlOffset: 0,
-  smPush: 0,
-  mdPush: 0,
-  lgPush: 0,
-  xlPush: 0
+  children: null
 };
 
 exports.default = col;

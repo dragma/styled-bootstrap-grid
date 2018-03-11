@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  margin-left: auto;\n  margin-right: auto;\n  padding-right: 15px;\n  padding-left: 15px;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n'], ['\n  position: relative;\n  margin-left: auto;\n  margin-right: auto;\n  padding-right: 15px;\n  padding-left: 15px;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  padding-right: 15px;\n  padding-left: 15px;\n  margin-right: auto;\n  margin-left: auto;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n'], ['\n  width: 100%;\n  padding-right: 15px;\n  padding-left: 15px;\n  margin-right: auto;\n  margin-left: auto;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    padding-right: 15px;\n    padding-left: 15px;\n  '], ['\n    padding-right: 15px;\n    padding-left: 15px;\n  ']);
 
 var _styledComponents = require('styled-components');

@@ -121,7 +121,7 @@ class App extends Component {
               &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
             </Pre>
             <Pre>
-              &lt;div /&gt;
+              &lt;/div&gt;
             </Pre>
           </Col>
           <Col col={6}>
@@ -131,16 +131,16 @@ class App extends Component {
           </Col>
         </Row>
         <br />
-        <Row alignItems="center">
+        <Row alignItems="center" smAlignItems="center">
           <Col col={6}>
             <Pre>
-              &lt;div class="row align-items-center" &gt;
+              &lt;div class="row align-items-center align-items-sm-center" &gt;
             </Pre>
             <Pre>
               &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
             </Pre>
             <Pre>
-              &lt;div /&gt;
+              &lt;/div&gt;
             </Pre>
           </Col>
           <Col col={6}>
@@ -159,7 +159,7 @@ class App extends Component {
               &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
             </Pre>
             <Pre>
-              &lt;div /&gt;
+              &lt;/div&gt;
             </Pre>
           </Col>
           <Col col={6}>
@@ -178,7 +178,7 @@ class App extends Component {
               &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
             </Pre>
             <Pre>
-              &lt;div /&gt;
+              &lt;/div&gt;
             </Pre>
           </Col>
           <Col col={6}>
@@ -197,7 +197,7 @@ class App extends Component {
               &nbsp;&nbsp;&lt;div class="col-6 offset-6" /&gt;
             </Pre>
             <Pre>
-              &lt;div /&gt;
+              &lt;/div&gt;
             </Pre>
           </Col>
           <Col col={6}>

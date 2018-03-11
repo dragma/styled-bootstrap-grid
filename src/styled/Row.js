@@ -42,6 +42,10 @@ const Row = styled.div`
   margin-right: -15px;
   margin-left: -15px;
   ${p => p.alignItems && css.alignItems[p.alignItems]}
+  ${p => p.smAlignItems && media.sm`${css.alignItems[p.smAlignItems]}`}
+  ${p => p.mdAlignItems && media.md`${css.alignItems[p.mdAlignItems]}`}
+  ${p => p.lgAlignItems && media.lg`${css.alignItems[p.lgAlignItems]}`}
+  ${p => p.xlAlignItems && media.xl`${css.alignItems[p.xlAlignItems]}`}
 `;
 
 export default Row;
