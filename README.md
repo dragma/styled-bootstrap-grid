@@ -195,8 +195,8 @@ Using this `media` object will help you to build media-queries that will fit the
 
 | name | alias | css generated |
 | - | - | - |
-| col | *all* | all sizes: `@media (min-width: 0px) { /* */ }` |
-| sm | *phone* | `@media (min-width: 767px) { /* */ }` |
+| xs | *smaller* | all sizes: `@media (max-width: 575px) { /* */ }` |
+| sm | *phone* | `@media (min-width: 576px) { /* */ }` |
 | md | *tablet* | `@media (min-width: 768px) { /* */ }` |
 | lg | *desktop* | `@media (min-width: 992px) { /* */ }` |
 | xl | *giant* | `@media (min-width: 1200px) { /* */ }` |
