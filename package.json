@@ -1,6 +1,6 @@
 {
   "name": "styled-bootstrap-grid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bootstrap grid system using styled components",
   "main": "dist/index.js",
   "scripts": {
@@ -14,11 +14,15 @@
     "url": "git+https://github.com/dragma/styled-bootstrap-grid.git"
   },
   "keywords": [
-    "styles-components",
+    "styled-components",
     "bootstrap",
+    "react-bootstrap",
     "layout",
     "grid",
-    "grid system"
+    "grid system",
+    "styled grid",
+    "styled layout",
+    "styled bootstrap grid"
   ],
   "author": "Florent Béjina",
   "license": "MIT",
