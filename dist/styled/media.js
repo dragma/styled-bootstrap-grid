@@ -27,7 +27,7 @@ var breakpoints = {
 var media = Object.keys(breakpoints).reduce(function (accumulator, label) {
   if (label === 'xs' || label === 'smaller') {
     accumulator[label] = function () {
-      return (0, _styledComponents.css)(_templateObject, breakpoints[xs], _styledComponents.css.apply(undefined, arguments));
+      return (0, _styledComponents.css)(_templateObject, breakpoints.xs, _styledComponents.css.apply(undefined, arguments));
     };
   } else {
     accumulator[label] = function () {

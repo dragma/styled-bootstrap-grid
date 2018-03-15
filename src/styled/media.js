@@ -16,7 +16,7 @@ const breakpoints = {
 const media = Object.keys(breakpoints).reduce((accumulator, label) => {
   if (label === 'xs' || label === 'smaller') {
     accumulator[label] = (...args) => css`
-      @media (max-width: ${breakpoints[xs]}px) {
+      @media (max-width: ${breakpoints.xs}px) {
         ${css(...args)}
       }
     `;
