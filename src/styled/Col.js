@@ -232,10 +232,7 @@ const Col = styled.div`
     return p.theme.styledBootstrapGrid.getColPadding();
   }}px;
 
-  ${p => {
-    console.log(p);
-    return p.noGutter && css.noGutter;
-  }}
+  ${p => p.noGutter && css.noGutter}
 
   ${p => p.col && css.col[p.col]}
   ${p => p.offset && css.offset[p.offset]}

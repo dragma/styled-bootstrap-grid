@@ -89,7 +89,6 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
   }
   return p.theme.styledBootstrapGrid.getColPadding();
 }, function (p) {
-  console.log(p);
   return p.noGutter && css.noGutter;
 }, function (p) {
   return p.col && css.col[p.col];
