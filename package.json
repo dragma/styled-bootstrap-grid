@@ -1,6 +1,6 @@
 {
   "name": "styled-bootstrap-grid",
-  "version": "1.0.3-1",
+  "version": "1.0.3-2",
   "description": "bootstrap grid system using styled components",
   "main": "dist/index.js",
   "scripts": {
