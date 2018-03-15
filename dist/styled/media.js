@@ -4,8 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n      @media (max-width: ', 'px) {\n        ', '\n      }\n    '], ['\n      @media (max-width: ', 'px) {\n        ', '\n      }\n    ']),
-    _templateObject2 = _taggedTemplateLiteral(['\n      @media (min-width: ', 'px) {\n        ', '\n      }\n    '], ['\n      @media (min-width: ', 'px) {\n        ', '\n      }\n    ']);
+var _templateObject = _taggedTemplateLiteral(['\n    @media (min-width: ', 'px) {\n      ', '\n    }\n  '], ['\n    @media (min-width: ', 'px) {\n      ', '\n    }\n  ']);
 
 var _styledComponents = require('styled-components');
 
@@ -20,19 +19,14 @@ var breakpoints = {
   md: 768,
   phone: 576,
   sm: 576,
-  col: true
+  col: 0,
+  all: 0
 };
 
 var media = Object.keys(breakpoints).reduce(function (accumulator, label) {
-  if (label === 'col') {
-    accumulator[label] = function () {
-      return (0, _styledComponents.css)(_templateObject, breakpoints.sm - 1, _styledComponents.css.apply(undefined, arguments));
-    };
-  } else {
-    accumulator[label] = function () {
-      return (0, _styledComponents.css)(_templateObject2, breakpoints[label], _styledComponents.css.apply(undefined, arguments));
-    };
-  }
+  accumulator[label] = function () {
+    return (0, _styledComponents.css)(_templateObject, breakpoints[label], _styledComponents.css.apply(undefined, arguments));
+  };
   return accumulator;
 }, {});
 

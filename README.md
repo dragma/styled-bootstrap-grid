@@ -195,11 +195,11 @@ Using this `media` object will help you to build media-queries that will fit the
 
 | name | alias | css generated |
 | - | - | - |
-| col | *phone* | `@media (max-width: 766px) { /* */ }`
-| sm | *phone* | `@media (min-width: 767px) { /* */ }`
-| md | *tablet* | `@media (min-width: 768px) { /* */ }`
-| lg | *desktop* | `@media (min-width: 992px) { /* */ }`
-| xl | *giant* | `@media (min-width: 1200px) { /* */ }`
+| col | *all* | all sizes: `@media (min-width: 0px) { /* */ }` |
+| sm | *phone* | `@media (min-width: 767px) { /* */ }` |
+| md | *tablet* | `@media (min-width: 768px) { /* */ }` |
+| lg | *desktop* | `@media (min-width: 992px) { /* */ }` |
+| xl | *giant* | `@media (min-width: 1200px) { /* */ }` |
 
 ## Props definition
 

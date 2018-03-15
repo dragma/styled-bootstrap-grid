@@ -9,23 +9,16 @@ const breakpoints = {
   md: 768,
   phone: 576,
   sm: 576,
-  col: true,
+  col: 0,
+  all: 0,
 };
 
 const media = Object.keys(breakpoints).reduce((accumulator, label) => {
-  if (label === 'col') {
-    accumulator[label] = (...args) => css`
-      @media (max-width: ${breakpoints.sm - 1}px) {
-        ${css(...args)}
-      }
-    `;
-  } else {
-    accumulator[label] = (...args) => css`
-      @media (min-width: ${breakpoints[label]}px) {
-        ${css(...args)}
-      }
-    `;
-  }
+  accumulator[label] = (...args) => css`
+    @media (min-width: ${breakpoints[label]}px) {
+      ${css(...args)}
+    }
+  `;
   return accumulator;
 }, {});
 
