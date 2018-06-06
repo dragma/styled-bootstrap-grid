@@ -18,6 +18,7 @@ exports.default = function (props) {
   var theme = props.gridTheme || {};
   var myTheme = {
     styledBootstrapGrid: {
+      breakpoints: theme.breakpoints || {},
       col: theme.col || {},
       row: theme.row || {},
       container: theme.container || {},
