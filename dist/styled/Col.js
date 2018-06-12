@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['', ''], ['', '']);
 
 var _styledComponents = require('styled-components');
@@ -100,6 +100,16 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
   return p.alignSelf && css.alignSelf[p.alignSelf];
 }, function (p) {
   return p.order && css.order[p.order];
+}, function (p) {
+  return p.xs && _media2.default.xs(_templateObject2, css.col[p.xs]);
+}, function (p) {
+  return !isNaN(parseInt(p.xsOffset, 10)) && _media2.default.xs(_templateObject2, css.offset[p.xsOffset]);
+}, function (p) {
+  return p.xsAuto && _media2.default.xs(_templateObject2, css.col.auto);
+}, function (p) {
+  return p.xsAlignSelf && _media2.default.xs(_templateObject2, css.alignSelf[p.xsAlignSelf]);
+}, function (p) {
+  return p.xsOrder && _media2.default.xs(_templateObject2, css.order[p.xsOrder]);
 }, function (p) {
   return p.sm && _media2.default.sm(_templateObject2, css.col[p.sm]);
 }, function (p) {

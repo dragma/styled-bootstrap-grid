@@ -26,6 +26,11 @@ var col = function col(props) {
       auto = props.auto,
       alignSelf = props.alignSelf,
       order = props.order,
+      xs = props.xs,
+      xsOffset = props.xsOffset,
+      xsAuto = props.xsAuto,
+      xsAlignSelf = props.xsAlignSelf,
+      xsOrder = props.xsOrder,
       sm = props.sm,
       smOffset = props.smOffset,
       smAuto = props.smAuto,
@@ -48,7 +53,7 @@ var col = function col(props) {
       xlOrder = props.xlOrder,
       noGutter = props.noGutter,
       children = props.children,
-      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'alignSelf', 'order', 'sm', 'smOffset', 'smAuto', 'smAlignSelf', 'smOrder', 'md', 'mdOffset', 'mdAuto', 'mdAlignSelf', 'mdOrder', 'lg', 'lgOffset', 'lgAuto', 'lgAlignSelf', 'lgOrder', 'xl', 'xlOffset', 'xlAuto', 'xlAlignSelf', 'xlOrder', 'noGutter', 'children']);
+      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'alignSelf', 'order', 'xs', 'xsOffset', 'xsAuto', 'xsAlignSelf', 'xsOrder', 'sm', 'smOffset', 'smAuto', 'smAlignSelf', 'smOrder', 'md', 'mdOffset', 'mdAuto', 'mdAlignSelf', 'mdOrder', 'lg', 'lgOffset', 'lgAuto', 'lgAlignSelf', 'lgOrder', 'xl', 'xlOffset', 'xlAuto', 'xlAlignSelf', 'xlOrder', 'noGutter', 'children']);
 
   var dataName = '';
   if (col) {
@@ -71,6 +76,28 @@ var col = function col(props) {
     dataName = dataName + ' order-' + order;
   }
 
+  // XS
+  if (xs) {
+    if (!isNaN(parseInt(xs, 10))) {
+      dataName = dataName + ' col-xs-' + xs;
+    } else {
+      dataName = dataName + ' col-xs';
+    }
+  }
+  if (!isNaN(parseInt(xsOffset, 10))) {
+    dataName = dataName + ' offset-xs-' + xsOffset;
+  }
+  if (xsAuto) {
+    dataName = dataName + ' col-xs-auto';
+  }
+  if (xsAlignSelf) {
+    dataName = dataName + ' align-self-xs-' + xsAlignSelf;
+  }
+  if (!isNaN(parseInt(xsOrder, 10)) || xsOrder === 'first' || xsOrder === 'last') {
+    dataName = dataName + ' order-xs-' + xsOrder;
+  }
+
+  // SM
   if (sm) {
     if (!isNaN(parseInt(sm, 10))) {
       dataName = dataName + ' col-sm-' + sm;
@@ -91,6 +118,7 @@ var col = function col(props) {
     dataName = dataName + ' order-sm-' + smOrder;
   }
 
+  // MD
   if (md) {
     if (!isNaN(parseInt(md, 10))) {
       dataName = dataName + ' col-md-' + md;
@@ -111,6 +139,7 @@ var col = function col(props) {
     dataName = dataName + ' order-md-' + mdOrder;
   }
 
+  // LG
   if (lg) {
     if (!isNaN(parseInt(lg, 10))) {
       dataName = dataName + ' col-lg-' + lg;
@@ -131,6 +160,7 @@ var col = function col(props) {
     dataName = dataName + ' order-lg-' + lgOrder;
   }
 
+  // XL
   if (xl) {
     if (!isNaN(parseInt(xl, 10))) {
       dataName = dataName + ' col-xl-' + xl;
@@ -156,42 +186,51 @@ var col = function col(props) {
   }
 
   dataName = dataName.trim();
+
+  var allProps = _extends({
+    col: col,
+    offset: offset,
+    auto: auto,
+    alignSelf: alignSelf,
+    order: order,
+
+    xs: xs,
+    xsOffset: xsOffset,
+    xsAuto: xsAuto,
+    xsAlignSelf: xsAlignSelf,
+    xsOrder: xsOrder,
+
+    sm: sm,
+    smOffset: smOffset,
+    smAuto: smAuto,
+    smAlignSelf: smAlignSelf,
+    smOrder: smOrder,
+
+    md: md,
+    mdOffset: mdOffset,
+    mdAuto: mdAuto,
+    mdAlignSelf: mdAlignSelf,
+    mdOrder: mdOrder,
+
+    lg: lg,
+    lgOffset: lgOffset,
+    lgAuto: lgAuto,
+    lgAlignSelf: lgAlignSelf,
+    lgOrder: lgOrder,
+
+    xl: xl,
+    xlOffset: xlOffset,
+    xlAuto: xlAuto,
+    xlAlignSelf: xlAlignSelf,
+    xlOrder: xlOrder,
+
+    noGutter: noGutter,
+    'data-name': dataName
+  }, otherProps);
+
   return _react2.default.createElement(
     _styled.Col,
-    _extends({
-      col: col,
-      offset: offset,
-      auto: auto,
-      alignSelf: alignSelf,
-      order: order,
-
-      sm: sm,
-      smOffset: smOffset,
-      smAuto: smAuto,
-      smAlignSelf: smAlignSelf,
-      smOrder: smOrder,
-
-      md: md,
-      mdOffset: mdOffset,
-      mdAuto: mdAuto,
-      mdAlignSelf: mdAlignSelf,
-      mdOrder: mdOrder,
-
-      lg: lg,
-      lgOffset: lgOffset,
-      lgAuto: lgAuto,
-      lgAlignSelf: lgAlignSelf,
-      lgOrder: lgOrder,
-
-      xl: xl,
-      xlOffset: xlOffset,
-      xlAuto: xlAuto,
-      xlAlignSelf: xlAlignSelf,
-      xlOrder: xlOrder,
-
-      noGutter: noGutter,
-      'data-name': dataName
-    }, otherProps),
+    allProps,
     children
   );
 };
@@ -208,6 +247,12 @@ col.propTypes = {
   auto: _propTypes2.default.bool,
   alignSelf: _propTypes2.default.string,
   order: stringOrNumberReactPropType,
+
+  xs: stringOrNumberorBooleanReactPropType,
+  xsOffset: stringOrNumberReactPropType,
+  xsAuto: _propTypes2.default.bool,
+  xsAlignSelf: _propTypes2.default.string,
+  xsOrder: stringOrNumberReactPropType,
 
   sm: stringOrNumberorBooleanReactPropType,
   smOffset: stringOrNumberReactPropType,

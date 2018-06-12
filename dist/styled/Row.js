@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['', ''], ['', '']);
 
 var _styledComponents = require('styled-components');
@@ -49,6 +49,8 @@ var Row = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.alignItems && css.alignItems[p.alignItems];
 }, function (p) {
+  return p.smAlignItems && _media2.default.xs(_templateObject2, css.alignItems[p.xsAlignItems]);
+}, function (p) {
   return p.smAlignItems && _media2.default.sm(_templateObject2, css.alignItems[p.smAlignItems]);
 }, function (p) {
   return p.mdAlignItems && _media2.default.md(_templateObject2, css.alignItems[p.mdAlignItems]);
@@ -58,6 +60,8 @@ var Row = _styledComponents2.default.div(_templateObject, function (p) {
   return p.xlAlignItems && _media2.default.xl(_templateObject2, css.alignItems[p.xlAlignItems]);
 }, function (p) {
   return p.justifyContent && css.justifyContent[p.justifyContent];
+}, function (p) {
+  return p.smJustifyContent && _media2.default.xs(_templateObject2, css.justifyContent[p.xsJustifyContent]);
 }, function (p) {
   return p.smJustifyContent && _media2.default.sm(_templateObject2, css.justifyContent[p.smJustifyContent]);
 }, function (p) {

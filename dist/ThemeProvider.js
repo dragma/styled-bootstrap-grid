@@ -48,5 +48,6 @@ exports.default = function (props) {
       }
     }
   };
+
   return _react2.default.createElement(_styledComponents.ThemeProvider, _extends({ theme: myTheme }, props));
 };

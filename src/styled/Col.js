@@ -240,6 +240,12 @@ const Col = styled.div`
   ${p => p.alignSelf && css.alignSelf[p.alignSelf]}
   ${p => p.order && css.order[p.order]}
 
+  ${p => p.xs && media.xs`${css.col[p.xs]}`}
+  ${p => !isNaN(parseInt(p.xsOffset, 10)) && media.xs`${css.offset[p.xsOffset]}`}
+  ${p => p.xsAuto && media.xs`${css.col.auto}`}
+  ${p => p.xsAlignSelf && media.xs`${css.alignSelf[p.xsAlignSelf]}`}
+  ${p => p.xsOrder && media.xs`${css.order[p.xsOrder]}`}
+
   ${p => p.sm && media.sm`${css.col[p.sm]}`}
   ${p => !isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
   ${p => p.smAuto && media.sm`${css.col.auto}`}

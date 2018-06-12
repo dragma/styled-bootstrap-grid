@@ -35,5 +35,6 @@ export default props => {
       }
     }
   };
+
   return <ThemeProvider theme={myTheme} {...props} />;
 }

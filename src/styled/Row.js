@@ -79,12 +79,14 @@ const Row = styled.div`
   }}px;
 
   ${p => p.alignItems && css.alignItems[p.alignItems]}
+  ${p => p.smAlignItems && media.xs`${css.alignItems[p.xsAlignItems]}`}
   ${p => p.smAlignItems && media.sm`${css.alignItems[p.smAlignItems]}`}
   ${p => p.mdAlignItems && media.md`${css.alignItems[p.mdAlignItems]}`}
   ${p => p.lgAlignItems && media.lg`${css.alignItems[p.lgAlignItems]}`}
   ${p => p.xlAlignItems && media.xl`${css.alignItems[p.xlAlignItems]}`}
 
   ${p => p.justifyContent && css.justifyContent[p.justifyContent]}
+  ${p => p.smJustifyContent && media.xs`${css.justifyContent[p.xsJustifyContent]}`}
   ${p => p.smJustifyContent && media.sm`${css.justifyContent[p.smJustifyContent]}`}
   ${p => p.mdJustifyContent && media.md`${css.justifyContent[p.mdJustifyContent]}`}
   ${p => p.lgJustifyContent && media.lg`${css.justifyContent[p.lgJustifyContent]}`}
