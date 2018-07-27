@@ -47,9 +47,9 @@ const customCSS = `
 injectLayoutBaseCSS(customCSS);
 ```
 
-Basicaly, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
+Basically, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
 
-the defaut bootstrap layout CSS is :
+the default bootstrap layout CSS is :
 
 ```css
 @-ms-viewport {
@@ -105,7 +105,7 @@ The package exposes a `GridThemeProvider` that allows few custom theming propert
 - Change the `Row` padding left and right default value
 - Change the `Col` padding left and right default value
 
-The `GridThemeProvider` can be wraped (or wraped-in) the `styled-component`'s `ThemeProvider`.
+The `GridThemeProvider` can be wrapped (or wrapped-in) the `styled-component`'s `ThemeProvider`.
 
 Example :
 
@@ -304,5 +304,5 @@ To run the example
 
 - complete web documentation
 
-Any othre idea ?
+Any other idea ?
 Please [leave a suggestion](https://github.com/dragma/styled-bootstrap-grid/issues).
