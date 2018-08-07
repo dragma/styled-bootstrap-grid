@@ -11,7 +11,7 @@ var _styledComponents = require('styled-components');
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var breakpoints = {
+var defaultBreakpoints = {
   giant: 1200,
   xl: 1200,
   desktop: 992,
@@ -24,14 +24,26 @@ var breakpoints = {
   xs: 575
 };
 
-var media = Object.keys(breakpoints).reduce(function (accumulator, label) {
+var getBreakpoints = function getBreakpoints(props) {
+  if (props.theme && props.theme.grid && props.theme.grid.breakpoints) {
+    return props.theme.grid.breakpoints;
+  } else {
+    return defaultBreakpoints;
+  }
+};
+
+var media = Object.keys(defaultBreakpoints).reduce(function (accumulator, label) {
   if (label === 'xs' || label === 'smaller') {
     accumulator[label] = function () {
-      return (0, _styledComponents.css)(_templateObject, breakpoints.xs, _styledComponents.css.apply(undefined, arguments));
+      return (0, _styledComponents.css)(_templateObject, function (props) {
+        return getBreakpoints(props).xs;
+      }, _styledComponents.css.apply(undefined, arguments));
     };
   } else {
     accumulator[label] = function () {
-      return (0, _styledComponents.css)(_templateObject2, breakpoints[label], _styledComponents.css.apply(undefined, arguments));
+      return (0, _styledComponents.css)(_templateObject2, function (props) {
+        return getBreakpoints(props)[label];
+      }, _styledComponents.css.apply(undefined, arguments));
     };
   }
   return accumulator;

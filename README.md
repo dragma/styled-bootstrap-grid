@@ -101,11 +101,12 @@ export default (props) =>
 
 The package exposes a `GridThemeProvider` that allows few custom theming properties. With this provider you can :
 
+- Define custom breakpoints
 - Change the `Container` padding left and right default value
 - Change the `Row` padding left and right default value
 - Change the `Col` padding left and right default value
 
-The `GridThemeProvider` can be wraped (or wraped-in) the `styled-component`'s `ThemeProvider`.
+The `GridThemeProvider` can be wrapped (or wrapped-in) the `styled-component`'s `ThemeProvider`.
 
 Example :
 
@@ -120,6 +121,18 @@ import App from './whatever/app/folder';
 injectLayoutBaseCSS();
 
 const gridTheme = {
+  breakpoints: { // defaults below
+    giant: 1200,
+    xl: 1200,
+    desktop: 992,
+    lg: 992,
+    tablet: 768,
+    md: 768,
+    phone: 576,
+    sm: 576,
+    smaller: 575,
+    xs: 575,
+  },
   row: {
     padding: 10, // default 15
   },
@@ -214,6 +227,18 @@ Using this `media` object will help you to build media-queries that will fit the
 ```javascript
 
 const gridTheme = {
+  breakpoints: { // defaults below
+    giant: 1200,
+    xl: 1200,
+    desktop: 992,
+    lg: 992,
+    tablet: 768,
+    md: 768,
+    phone: 576,
+    sm: 576,
+    smaller: 575,
+    xs: 575,
+  },
   row: {
     padding: 10, // default 15
   },

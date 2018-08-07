@@ -5,6 +5,7 @@ export default props => {
   const theme = props.gridTheme || {};
   const myTheme = {
     styledBootstrapGrid: {
+      breakpoints: theme.breakpoints || {},
       col: theme.col || {},
       row: theme.row || {},
       container: theme.container || {},
@@ -34,5 +35,6 @@ export default props => {
       }
     }
   };
+
   return <ThemeProvider theme={myTheme} {...props} />;
 }
