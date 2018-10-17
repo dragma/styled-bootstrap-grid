@@ -29,25 +29,28 @@ You also must inject the bootstrap base CSS in your application root file, like 
 ```javascript
 // app.js
 
-import { injectLayoutBaseCSS } from 'styled-bootstrap-grid';
+import { BaseCSS } from 'styled-bootstrap-grid';
 
-injectLayoutBaseCSS();
+export default (props) =>
+  <Whatever>
+    <BaseCSS />
+  </Whatever>;
 
 ```
 
 You also can inject your own css like this :
 
 ```javascript
-const customCSS = `
-  body {
-    // whatever
-  }
-`;
 
-injectLayoutBaseCSS(customCSS);
+import { BaseCSS } from 'styled-bootstrap-grid';
+
+export default (props) =>
+  <Whatever>
+    <BaseCSS css={customCSS} />
+  </Whatever>;
 ```
 
-Basicaly, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
+Basicaly, `BaseCSS` takes a string prop, and append the default bootstrap layout base CSS with this string with it.
 
 the defaut bootstrap layout CSS is :
 
@@ -113,12 +116,10 @@ Example :
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { injectLayoutBaseCSS, GridThemeProvider } from 'styled-bootstrap-grid';
+import { GridThemeProvider } from 'styled-bootstrap-grid';
 import { ThemeProvider } from 'styled-components';
 
 import App from './whatever/app/folder';
-
-injectLayoutBaseCSS();
 
 const gridTheme = {
   breakpoints: { // defaults below

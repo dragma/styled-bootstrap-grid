@@ -19,7 +19,7 @@ const defaultCSS = `
   }
 `;
 
-export default (css = null) => {
+export default ({css}) => {
   if (css == null) {
     return createGlobalStyle`${defaultCSS}`;
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BaseCSS } from './styled-bootstrap-grid';
 import styled from 'styled-components';
 
 import { Container, Row, Col } from './styled-bootstrap-grid';
@@ -19,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <Container>
+        <BaseCSS />
         <TitleRow>
           <Col col={12}>
             <h3>Auto-layout columns: Equal-width</h3>
