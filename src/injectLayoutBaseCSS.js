@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const defaultCSS = `
   @-ms-viewport {
@@ -21,9 +21,9 @@ const defaultCSS = `
 
 export default (css = null) => {
   if (css == null) {
-    return injectGlobal`${defaultCSS}`;
+    return createGlobalStyle`${defaultCSS}`;
   }
-  return injectGlobal`
+  return createGlobalStyle`
     ${defaultCSS}
     ${css}
   `;
