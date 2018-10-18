@@ -93,18 +93,18 @@ const css = {
     `,
   },
   offset: {
-    0: `margin-left: 0;`,
-    1: `margin-left: 8.333333%;`,
-    2: `margin-left: 16.666667%;`,
-    3: `margin-left: 25%;`,
-    4: `margin-left: 33.333333%;`,
-    5: `margin-left: 41.666667%;`,
-    6: `margin-left: 50%;`,
-    7: `margin-left: 58.333333%;`,
-    8: `margin-left: 66.666667%;`,
-    9: `margin-left: 75%;`,
-    10: `margin-left: 83.333333%;`,
-    11: `margin-left: 91.666667%;`,
+    0: 'margin-left: 0;',
+    1: 'margin-left: 8.333333%;',
+    2: 'margin-left: 16.666667%;',
+    3: 'margin-left: 25%;',
+    4: 'margin-left: 33.333333%;',
+    5: 'margin-left: 41.666667%;',
+    6: 'margin-left: 50%;',
+    7: 'margin-left: 58.333333%;',
+    8: 'margin-left: 66.666667%;',
+    9: 'margin-left: 75%;',
+    10: 'margin-left: 83.333333%;',
+    11: 'margin-left: 91.666667%;',
   },
   order: {
     first: `
@@ -213,19 +213,19 @@ const css = {
     margin-right: 0;
     margin-left: 0;
   `,
-}
+};
 
 const Col = styled.div`
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: ${p => {
+  padding-right: ${(p) => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
       return 15;
     }
     return p.theme.styledBootstrapGrid.getColPadding();
   }}px;
-  padding-left: ${p => {
+  padding-left: ${(p) => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
       return 15;
     }
@@ -241,31 +241,31 @@ const Col = styled.div`
   ${p => p.order && css.order[p.order]}
 
   ${p => p.xs && media.xs`${css.col[p.xs]}`}
-  ${p => !isNaN(parseInt(p.xsOffset, 10)) && media.xs`${css.offset[p.xsOffset]}`}
+  ${p => !Number.isNaN(parseInt(p.xsOffset, 10)) && media.xs`${css.offset[p.xsOffset]}`}
   ${p => p.xsAuto && media.xs`${css.col.auto}`}
   ${p => p.xsAlignSelf && media.xs`${css.alignSelf[p.xsAlignSelf]}`}
   ${p => p.xsOrder && media.xs`${css.order[p.xsOrder]}`}
 
   ${p => p.sm && media.sm`${css.col[p.sm]}`}
-  ${p => !isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
+  ${p => !Number.isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
   ${p => p.smAuto && media.sm`${css.col.auto}`}
   ${p => p.smAlignSelf && media.sm`${css.alignSelf[p.smAlignSelf]}`}
   ${p => p.smOrder && media.sm`${css.order[p.smOrder]}`}
 
   ${p => p.md && media.md`${css.col[p.md]}`}
-  ${p => !isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
+  ${p => !Number.isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
   ${p => p.mdAuto && media.md`${css.col.auto}`}
   ${p => p.mdAlignSelf && media.md`${css.alignSelf[p.mdAlignSelf]}`}
   ${p => p.mdOrder && media.md`${css.order[p.mdOrder]}`}
 
   ${p => p.lg && media.lg`${css.col[p.lg]}`}
-  ${p => !isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
+  ${p => !Number.isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
   ${p => p.lgAuto && media.lg`${css.col.auto}`}
   ${p => p.lgAlignSelf && media.lg`${css.alignSelf[p.lgAlignSelf]}`}
   ${p => p.lgOrder && media.lg`${css.order[p.lgOrder]}`}
 
   ${p => p.xl && media.xl`${css.col[p.xl]}`}
-  ${p => !isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
+  ${p => !Number.isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
   ${p => p.xlAuto && media.xl`${css.col.auto}`}
   ${p => p.xlAlignSelf && media.xl`${css.alignSelf[p.xlAlignSelf]}`}
   ${p => p.xlOrder && media.xl`${css.order[p.xlOrder]}`}

@@ -1,5 +1,10 @@
 # styled-bootstrap-grid
+
 [![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid)
+
+## DEPRECATED VERSION
+[styled-components](https://www.npmjs.com/package/styled-components) has launched their v4 module, that has some breaking changes.
+This npm version will be the last to support v3
 
 #### Credits
 This module is based on the [styled-components](https://www.npmjs.com/package/styled-components) module.

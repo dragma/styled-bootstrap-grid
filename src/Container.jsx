@@ -17,12 +17,15 @@ const container = (props) => {
 };
 
 container.propTypes = {
-  children: PropTypes.any,
-  fluid: PropTypes.bool.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
+  fluid: PropTypes.bool,
 };
 
 container.defaultProps = {
-  children: null,
   fluid: false,
 };
 
