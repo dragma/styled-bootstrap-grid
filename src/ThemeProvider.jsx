@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 export default (props) => {
-  const { grittheme: theme = {} } = props;
+  const { gridTheme: theme = {} } = props;
   const myTheme = {
     styledBootstrapGrid: {
       breakpoints: theme.breakpoints || {},

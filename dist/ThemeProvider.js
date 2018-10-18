@@ -15,8 +15,8 @@ var _styledComponents = require('styled-components');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (props) {
-  var _props$grittheme = props.grittheme,
-      theme = _props$grittheme === undefined ? {} : _props$grittheme;
+  var _props$gridTheme = props.gridTheme,
+      theme = _props$gridTheme === undefined ? {} : _props$gridTheme;
 
   var myTheme = {
     styledBootstrapGrid: {
