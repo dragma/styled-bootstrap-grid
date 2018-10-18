@@ -2,9 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid)
 
-## DEPRECATED VERSION
-[styled-components](https://www.npmjs.com/package/styled-components) has launched their v4 module, that has some breaking changes.
-This npm version will be the last to support v3
+## warning
+[styled-components](https://www.npmjs.com/package/styled-components) has launched their v4 module, which has some major changes.
+For a v3.x compatibility chech the version **1.0.5** on [npm](https://www.npmjs.com/package/styled-bootstrap-grid/v/1.0.5) or [github](https://github.com/dragma/styled-bootstrap-grid/tree/v1.0.5).
 
 #### Credits
 This module is based on the [styled-components](https://www.npmjs.com/package/styled-components) module.
