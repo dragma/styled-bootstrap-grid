@@ -21,9 +21,9 @@ exports.default = function (props) {
   var myTheme = {
     styledBootstrapGrid: {
       breakpoints: theme.breakpoints,
-      col: theme.col || {},
-      row: theme.row || {},
-      container: theme.container || {},
+      col: theme.col,
+      row: theme.row,
+      container: theme.container,
       getContainerPadding: function getContainerPadding() {
         if (theme.container) {
           if (!Number.isNaN(parseInt(theme.container.padding, 10))) {

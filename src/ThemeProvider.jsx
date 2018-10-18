@@ -6,9 +6,9 @@ export default (props) => {
   const myTheme = {
     styledBootstrapGrid: {
       breakpoints: theme.breakpoints,
-      col: theme.col || {},
-      row: theme.row || {},
-      container: theme.container || {},
+      col: theme.col,
+      row: theme.row,
+      container: theme.container,
       getContainerPadding: () => {
         if (theme.container) {
           if (!Number.isNaN(parseInt(theme.container.padding, 10))) {
