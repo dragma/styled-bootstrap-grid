@@ -52,9 +52,9 @@ const customCSS = `
 injectLayoutBaseCSS(customCSS);
 ```
 
-Basicaly, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
+Basically, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
 
-the defaut bootstrap layout CSS is :
+the default bootstrap layout CSS is :
 
 ```css
 @-ms-viewport {
@@ -334,5 +334,5 @@ To run the example
 
 - complete web documentation
 
-Any othre idea ?
+Any other idea ?
 Please [leave a suggestion](https://github.com/dragma/styled-bootstrap-grid/issues).
