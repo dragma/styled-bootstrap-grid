@@ -40,12 +40,12 @@ Object.defineProperty(exports, 'Col', {
   }
 });
 
-var _injectLayoutBaseCSS = require('./injectLayoutBaseCSS');
+var _BaseCSS = require('./BaseCSS');
 
-Object.defineProperty(exports, 'injectLayoutBaseCSS', {
+Object.defineProperty(exports, 'BaseCSS', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_injectLayoutBaseCSS).default;
+    return _interopRequireDefault(_BaseCSS).default;
   }
 });
 

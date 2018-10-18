@@ -1,4 +1,6 @@
-import { injectGlobal } from 'styled-components';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { createGlobalStyle } from 'styled-components';
 
 const defaultCSS = `
   @-ms-viewport {
@@ -19,12 +21,7 @@ const defaultCSS = `
   }
 `;
 
-export default (css = null) => {
-  if (css == null) {
-    return injectGlobal`${defaultCSS}`;
-  }
-  return injectGlobal`
-    ${defaultCSS}
-    ${css}
-  `;
-};
+export default createGlobalStyle`
+  ${defaultCSS}
+  ${p => p.css}
+`;;
