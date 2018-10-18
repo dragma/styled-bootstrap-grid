@@ -15,7 +15,9 @@ var _styledComponents = require('styled-components');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (props) {
-  var theme = props.gridTheme || {};
+  var _props$grittheme = props.grittheme,
+      theme = _props$grittheme === undefined ? {} : _props$grittheme;
+
   var myTheme = {
     styledBootstrapGrid: {
       breakpoints: theme.breakpoints || {},
@@ -24,7 +26,7 @@ exports.default = function (props) {
       container: theme.container || {},
       getContainerPadding: function getContainerPadding() {
         if (theme.container) {
-          if (!isNaN(parseInt(theme.container.padding, 10))) {
+          if (!Number.isNaN(parseInt(theme.container.padding, 10))) {
             return theme.container.padding;
           }
         }
@@ -32,7 +34,7 @@ exports.default = function (props) {
       },
       getRowPadding: function getRowPadding() {
         if (theme.row) {
-          if (!isNaN(parseInt(theme.row.padding, 10))) {
+          if (!Number.isNaN(parseInt(theme.row.padding, 10))) {
             return theme.row.padding;
           }
         }
@@ -40,7 +42,7 @@ exports.default = function (props) {
       },
       getColPadding: function getColPadding() {
         if (theme.col) {
-          if (!isNaN(parseInt(theme.col.padding, 10))) {
+          if (!Number.isNaN(parseInt(theme.col.padding, 10))) {
             return theme.col.padding;
           }
         }

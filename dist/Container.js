@@ -40,12 +40,11 @@ var container = function container(props) {
 };
 
 container.propTypes = {
-  children: _propTypes2.default.any,
-  fluid: _propTypes2.default.bool.isRequired
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node, _propTypes2.default.string]).isRequired,
+  fluid: _propTypes2.default.bool
 };
 
 container.defaultProps = {
-  children: null,
   fluid: false
 };
 
