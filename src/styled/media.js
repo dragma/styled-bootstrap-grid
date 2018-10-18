@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const defaultBreakpoints = {
+export const defaultBreakpoints = {
   giant: 1200,
   xl: 1200,
   desktop: 992,
@@ -19,7 +19,10 @@ const getBreakpoints = (props) => {
     && props.theme.styledBootstrapGrid
     && props.theme.styledBootstrapGrid.breakpoints
   ) {
-    return props.theme.styledBootstrapGrid.breakpoints;
+    return {
+      ...defaultBreakpoints,
+      ...props.theme.styledBootstrapGrid.breakpoints,
+    };
   }
   return defaultBreakpoints;
 };

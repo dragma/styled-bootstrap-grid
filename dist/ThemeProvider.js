@@ -20,7 +20,7 @@ exports.default = function (props) {
 
   var myTheme = {
     styledBootstrapGrid: {
-      breakpoints: theme.breakpoints || {},
+      breakpoints: theme.breakpoints,
       col: theme.col || {},
       row: theme.row || {},
       container: theme.container || {},
@@ -50,6 +50,7 @@ exports.default = function (props) {
       }
     }
   };
+  console.log(myTheme);
 
   return _react2.default.createElement(_styledComponents.ThemeProvider, _extends({ theme: myTheme }, props));
 };

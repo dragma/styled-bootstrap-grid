@@ -3,6 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.defaultBreakpoints = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _templateObject = _taggedTemplateLiteral(['\n      @media (max-width: ', 'px) {\n        ', '\n      }\n    '], ['\n      @media (max-width: ', 'px) {\n        ', '\n      }\n    ']),
     _templateObject2 = _taggedTemplateLiteral(['\n      @media (min-width: ', 'px) {\n        ', '\n      }\n    '], ['\n      @media (min-width: ', 'px) {\n        ', '\n      }\n    ']);
@@ -11,7 +14,7 @@ var _styledComponents = require('styled-components');
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var defaultBreakpoints = {
+var defaultBreakpoints = exports.defaultBreakpoints = {
   giant: 1200,
   xl: 1200,
   desktop: 992,
@@ -26,7 +29,7 @@ var defaultBreakpoints = {
 
 var getBreakpoints = function getBreakpoints(props) {
   if (props.theme && props.theme.styledBootstrapGrid && props.theme.styledBootstrapGrid.breakpoints) {
-    return props.theme.styledBootstrapGrid.breakpoints;
+    return _extends({}, defaultBreakpoints, props.theme.styledBootstrapGrid.breakpoints);
   }
   return defaultBreakpoints;
 };
