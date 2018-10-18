@@ -15,11 +15,10 @@ const defaultBreakpoints = {
 
 const getBreakpoints = (props) => {
   if (props.theme && props.theme.grid && props.theme.grid.breakpoints) {
-    return props.theme.grid.breakpoints
-  } else {
-    return defaultBreakpoints
+    return props.theme.grid.breakpoints;
   }
-}
+  return defaultBreakpoints;
+};
 
 const media = Object.keys(defaultBreakpoints).reduce((accumulator, label) => {
   if (label === 'xs' || label === 'smaller') {

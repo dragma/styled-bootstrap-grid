@@ -27,4 +27,4 @@ export default (css = null) => {
     ${defaultCSS}
     ${css}
   `;
-}
+};

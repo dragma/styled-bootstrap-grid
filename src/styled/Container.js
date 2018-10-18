@@ -4,14 +4,22 @@ import media from './media';
 
 const Container = styled.div`
   width: 100%;
-  padding-right: ${p => {
-    if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getContainerPadding) {
+  padding-right: ${(p) => {
+    if (
+      !p.theme
+      || !p.theme.styledBootstrapGrid
+      || !p.theme.styledBootstrapGrid.getContainerPadding
+    ) {
       return 15;
     }
     return p.theme.styledBootstrapGrid.getContainerPadding();
   }}px;
-  padding-left: ${p => {
-    if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getContainerPadding) {
+  padding-left: ${(p) => {
+    if (
+      !p.theme
+      || !p.theme.styledBootstrapGrid
+      || !p.theme.styledBootstrapGrid.getContainerPadding
+    ) {
       return 15;
     }
     return p.theme.styledBootstrapGrid.getContainerPadding();
