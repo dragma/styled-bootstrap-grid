@@ -27,9 +27,8 @@ var defaultBreakpoints = {
 var getBreakpoints = function getBreakpoints(props) {
   if (props.theme && props.theme.grid && props.theme.grid.breakpoints) {
     return props.theme.grid.breakpoints;
-  } else {
-    return defaultBreakpoints;
   }
+  return defaultBreakpoints;
 };
 
 var media = Object.keys(defaultBreakpoints).reduce(function (accumulator, label) {

@@ -103,7 +103,7 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.xs && _media2.default.xs(_templateObject2, css.col[p.xs]);
 }, function (p) {
-  return !isNaN(parseInt(p.xsOffset, 10)) && _media2.default.xs(_templateObject2, css.offset[p.xsOffset]);
+  return !Number.isNaN(parseInt(p.xsOffset, 10)) && _media2.default.xs(_templateObject2, css.offset[p.xsOffset]);
 }, function (p) {
   return p.xsAuto && _media2.default.xs(_templateObject2, css.col.auto);
 }, function (p) {
@@ -113,7 +113,7 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.sm && _media2.default.sm(_templateObject2, css.col[p.sm]);
 }, function (p) {
-  return !isNaN(parseInt(p.smOffset, 10)) && _media2.default.sm(_templateObject2, css.offset[p.smOffset]);
+  return !Number.isNaN(parseInt(p.smOffset, 10)) && _media2.default.sm(_templateObject2, css.offset[p.smOffset]);
 }, function (p) {
   return p.smAuto && _media2.default.sm(_templateObject2, css.col.auto);
 }, function (p) {
@@ -123,7 +123,7 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.md && _media2.default.md(_templateObject2, css.col[p.md]);
 }, function (p) {
-  return !isNaN(parseInt(p.mdOffset, 10)) && _media2.default.md(_templateObject2, css.offset[p.mdOffset]);
+  return !Number.isNaN(parseInt(p.mdOffset, 10)) && _media2.default.md(_templateObject2, css.offset[p.mdOffset]);
 }, function (p) {
   return p.mdAuto && _media2.default.md(_templateObject2, css.col.auto);
 }, function (p) {
@@ -133,7 +133,7 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.lg && _media2.default.lg(_templateObject2, css.col[p.lg]);
 }, function (p) {
-  return !isNaN(parseInt(p.lgOffset, 10)) && _media2.default.lg(_templateObject2, css.offset[p.lgOffset]);
+  return !Number.isNaN(parseInt(p.lgOffset, 10)) && _media2.default.lg(_templateObject2, css.offset[p.lgOffset]);
 }, function (p) {
   return p.lgAuto && _media2.default.lg(_templateObject2, css.col.auto);
 }, function (p) {
@@ -143,7 +143,7 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.xl && _media2.default.xl(_templateObject2, css.col[p.xl]);
 }, function (p) {
-  return !isNaN(parseInt(p.xlOffset, 10)) && _media2.default.xl(_templateObject2, css.offset[p.xlOffset]);
+  return !Number.isNaN(parseInt(p.xlOffset, 10)) && _media2.default.xl(_templateObject2, css.offset[p.xlOffset]);
 }, function (p) {
   return p.xlAuto && _media2.default.xl(_templateObject2, css.col.auto);
 }, function (p) {
