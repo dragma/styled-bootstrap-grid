@@ -2,11 +2,13 @@
 
 [![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid)
 
-## warning
+#### Warning
+
 [styled-components](https://www.npmjs.com/package/styled-components) has launched their v4 module, which has some major changes.
 For a v3.x compatibility chech the version **1.0.5** on [npm](https://www.npmjs.com/package/styled-bootstrap-grid/v/1.0.5) or [github](https://github.com/dragma/styled-bootstrap-grid/tree/v1.0.5).
 
 #### Credits
+
 This module is based on the [styled-components](https://www.npmjs.com/package/styled-components) module.
 
 This module is highly inspired by the awesome work done on the [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) module.
@@ -49,13 +51,19 @@ You also can inject your own css like this :
 
 import { BaseCSS } from 'styled-bootstrap-grid';
 
+const customCSS = `
+  body {
+    color: red;
+  }
+`;
+
 export default (props) =>
   <Whatever>
     <BaseCSS css={customCSS} />
   </Whatever>;
 ```
 
-Basicaly, `BaseCSS` takes a string prop, and append the default bootstrap layout base CSS with this string with it.
+Basicaly, `BaseCSS` takes a string prop, and append the default bootstrap layout base CSS with this string.
 
 the defaut bootstrap layout CSS is :
 

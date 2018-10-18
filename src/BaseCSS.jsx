@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
 const defaultCSS = `
@@ -19,12 +21,7 @@ const defaultCSS = `
   }
 `;
 
-export default ({css}) => {
-  if (css == null) {
-    return createGlobalStyle`${defaultCSS}`;
-  }
-  return createGlobalStyle`
-    ${defaultCSS}
-    ${css}
-  `;
-};
+export default createGlobalStyle`
+  ${defaultCSS}
+  ${p => p.css}
+`;;
