@@ -14,8 +14,12 @@ const defaultBreakpoints = {
 };
 
 const getBreakpoints = (props) => {
-  if (props.theme && props.theme.grid && props.theme.grid.breakpoints) {
-    return props.theme.grid.breakpoints;
+  if (
+    props.theme
+    && props.theme.styledBootstrapGrid
+    && props.theme.styledBootstrapGrid.breakpoints
+  ) {
+    return props.theme.styledBootstrapGrid.breakpoints;
   }
   return defaultBreakpoints;
 };
