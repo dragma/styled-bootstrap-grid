@@ -50,7 +50,6 @@ exports.default = function (props) {
       }
     }
   };
-  console.log(myTheme);
 
   return _react2.default.createElement(_styledComponents.ThemeProvider, _extends({ theme: myTheme }, props));
 };

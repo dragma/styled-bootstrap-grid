@@ -35,7 +35,6 @@ export default (props) => {
       },
     },
   };
-  console.log(myTheme)
 
   return <ThemeProvider theme={myTheme} {...props} />;
 };
