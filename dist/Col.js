@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var col = function col(props) {
+var MyCol = function MyCol(props) {
   var col = props.col,
       offset = props.offset,
       auto = props.auto,
@@ -57,13 +57,13 @@ var col = function col(props) {
 
   var dataName = '';
   if (col) {
-    if (!isNaN(parseInt(col, 10))) {
+    if (!Number.isNaN(parseInt(col, 10))) {
       dataName = dataName + ' col-' + col;
     } else {
       dataName = dataName + ' col';
     }
   }
-  if (!isNaN(parseInt(offset, 10))) {
+  if (!Number.isNaN(parseInt(offset, 10))) {
     dataName = dataName + ' offset-' + offset;
   }
   if (auto) {
@@ -72,19 +72,19 @@ var col = function col(props) {
   if (alignSelf) {
     dataName = dataName + ' align-self-' + alignSelf;
   }
-  if (!isNaN(parseInt(order, 10)) || order === 'first' || order === 'last') {
+  if (!Number.isNaN(parseInt(order, 10)) || order === 'first' || order === 'last') {
     dataName = dataName + ' order-' + order;
   }
 
   // XS
   if (xs) {
-    if (!isNaN(parseInt(xs, 10))) {
+    if (!Number.isNaN(parseInt(xs, 10))) {
       dataName = dataName + ' col-xs-' + xs;
     } else {
       dataName = dataName + ' col-xs';
     }
   }
-  if (!isNaN(parseInt(xsOffset, 10))) {
+  if (!Number.isNaN(parseInt(xsOffset, 10))) {
     dataName = dataName + ' offset-xs-' + xsOffset;
   }
   if (xsAuto) {
@@ -93,19 +93,19 @@ var col = function col(props) {
   if (xsAlignSelf) {
     dataName = dataName + ' align-self-xs-' + xsAlignSelf;
   }
-  if (!isNaN(parseInt(xsOrder, 10)) || xsOrder === 'first' || xsOrder === 'last') {
+  if (!Number.isNaN(parseInt(xsOrder, 10)) || xsOrder === 'first' || xsOrder === 'last') {
     dataName = dataName + ' order-xs-' + xsOrder;
   }
 
   // SM
   if (sm) {
-    if (!isNaN(parseInt(sm, 10))) {
+    if (!Number.isNaN(parseInt(sm, 10))) {
       dataName = dataName + ' col-sm-' + sm;
     } else {
       dataName = dataName + ' col-sm';
     }
   }
-  if (!isNaN(parseInt(smOffset, 10))) {
+  if (!Number.isNaN(parseInt(smOffset, 10))) {
     dataName = dataName + ' offset-sm-' + smOffset;
   }
   if (smAuto) {
@@ -114,19 +114,19 @@ var col = function col(props) {
   if (smAlignSelf) {
     dataName = dataName + ' align-self-sm-' + smAlignSelf;
   }
-  if (!isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
+  if (!Number.isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
     dataName = dataName + ' order-sm-' + smOrder;
   }
 
   // MD
   if (md) {
-    if (!isNaN(parseInt(md, 10))) {
+    if (!Number.isNaN(parseInt(md, 10))) {
       dataName = dataName + ' col-md-' + md;
     } else {
       dataName = dataName + ' col-md';
     }
   }
-  if (!isNaN(parseInt(mdOffset, 10))) {
+  if (!Number.isNaN(parseInt(mdOffset, 10))) {
     dataName = dataName + ' offset-md-' + mdOffset;
   }
   if (mdAuto) {
@@ -135,19 +135,19 @@ var col = function col(props) {
   if (mdAlignSelf) {
     dataName = dataName + ' align-self-md-' + mdAlignSelf;
   }
-  if (!isNaN(parseInt(mdOrder, 10)) || mdOrder === 'first' || mdOrder === 'last') {
+  if (!Number.isNaN(parseInt(mdOrder, 10)) || mdOrder === 'first' || mdOrder === 'last') {
     dataName = dataName + ' order-md-' + mdOrder;
   }
 
   // LG
   if (lg) {
-    if (!isNaN(parseInt(lg, 10))) {
+    if (!Number.isNaN(parseInt(lg, 10))) {
       dataName = dataName + ' col-lg-' + lg;
     } else {
       dataName = dataName + ' col-lg';
     }
   }
-  if (!isNaN(parseInt(lgOffset, 10))) {
+  if (!Number.isNaN(parseInt(lgOffset, 10))) {
     dataName = dataName + ' offset-lg-' + lgOffset;
   }
   if (lgAuto) {
@@ -156,19 +156,19 @@ var col = function col(props) {
   if (lgAlignSelf) {
     dataName = dataName + ' align-self-lg-' + lgAlignSelf;
   }
-  if (!isNaN(parseInt(lgOrder, 10)) || lgOrder === 'first' || lgOrder === 'last') {
+  if (!Number.isNaN(parseInt(lgOrder, 10)) || lgOrder === 'first' || lgOrder === 'last') {
     dataName = dataName + ' order-lg-' + lgOrder;
   }
 
   // XL
   if (xl) {
-    if (!isNaN(parseInt(xl, 10))) {
+    if (!Number.isNaN(parseInt(xl, 10))) {
       dataName = dataName + ' col-xl-' + xl;
     } else {
       dataName = dataName + ' col-xl';
     }
   }
-  if (!isNaN(parseInt(xlOffset, 10))) {
+  if (!Number.isNaN(parseInt(xlOffset, 10))) {
     dataName = dataName + ' offset-xl-' + xlOffset;
   }
   if (xlAuto) {
@@ -177,7 +177,7 @@ var col = function col(props) {
   if (xlAlignSelf) {
     dataName = dataName + ' align-self-xl-' + xlAlignSelf;
   }
-  if (!isNaN(parseInt(xlOrder, 10)) || xlOrder === 'first' || xlOrder === 'last') {
+  if (!Number.isNaN(parseInt(xlOrder, 10)) || xlOrder === 'first' || xlOrder === 'last') {
     dataName = dataName + ' order-xl-' + xlOrder;
   }
 
@@ -239,8 +239,8 @@ var stringOrNumberReactPropType = _propTypes2.default.oneOfType([_propTypes2.def
 
 var stringOrNumberorBooleanReactPropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.bool]);
 
-col.propTypes = {
-  children: _propTypes2.default.any,
+MyCol.propTypes = {
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node, _propTypes2.default.string]).isRequired,
   noGutter: _propTypes2.default.bool,
 
   col: stringOrNumberorBooleanReactPropType,
@@ -279,8 +279,37 @@ col.propTypes = {
   xlOrder: stringOrNumberReactPropType
 };
 
-col.defaultProps = {
-  children: null
+MyCol.defaultProps = {
+  noGutter: null,
+  col: null,
+  auto: null,
+  alignSelf: null,
+  order: null,
+  xs: null,
+  xsOffset: null,
+  xsAuto: null,
+  xsAlignSelf: null,
+  xsOrder: null,
+  sm: null,
+  smOffset: null,
+  smAuto: null,
+  smAlignSelf: null,
+  smOrder: null,
+  md: null,
+  mdOffset: null,
+  mdAuto: null,
+  mdAlignSelf: null,
+  mdOrder: null,
+  lg: null,
+  lgOffset: null,
+  lgAuto: null,
+  lgAlignSelf: null,
+  lgOrder: null,
+  xl: null,
+  xlOffset: null,
+  xlAuto: null,
+  xlAlignSelf: null,
+  xlOrder: null
 };
 
-exports.default = col;
+exports.default = MyCol;

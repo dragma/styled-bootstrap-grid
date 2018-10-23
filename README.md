@@ -1,7 +1,14 @@
 # styled-bootstrap-grid
+
 [![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid)
 
+#### Warning
+
+[styled-components](https://www.npmjs.com/package/styled-components) has launched their v4 module, which has some major changes.
+For a v3.x compatibility chech the version **1.0.5** on [npm](https://www.npmjs.com/package/styled-bootstrap-grid/v/1.0.5) or [github](https://github.com/dragma/styled-bootstrap-grid/tree/v1.0.5).
+
 #### Credits
+
 This module is based on the [styled-components](https://www.npmjs.com/package/styled-components) module.
 
 This module is highly inspired by the awesome work done on the [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) module.
@@ -29,27 +36,36 @@ You also must inject the bootstrap base CSS in your application root file, like 
 ```javascript
 // app.js
 
-import { injectLayoutBaseCSS } from 'styled-bootstrap-grid';
+import { BaseCSS } from 'styled-bootstrap-grid';
 
-injectLayoutBaseCSS();
+export default (props) =>
+  <Whatever>
+    <BaseCSS />
+  </Whatever>;
 
 ```
 
 You also can inject your own css like this :
 
 ```javascript
+
+import { BaseCSS } from 'styled-bootstrap-grid';
+
 const customCSS = `
   body {
-    // whatever
+    color: red;
   }
 `;
 
-injectLayoutBaseCSS(customCSS);
+export default (props) =>
+  <Whatever>
+    <BaseCSS css={customCSS} />
+  </Whatever>;
 ```
 
-Basicaly, `injectLayoutBaseCSS` takes a string in param, and append the default bootstrap layout base CSS with this string with it.
+Basically, `BaseCSS` takes a string prop, and append the default bootstrap layout base CSS with this string.
 
-the defaut bootstrap layout CSS is :
+the default bootstrap layout CSS is :
 
 ```css
 @-ms-viewport {
@@ -113,12 +129,10 @@ Example :
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { injectLayoutBaseCSS, GridThemeProvider } from 'styled-bootstrap-grid';
+import { GridThemeProvider } from 'styled-bootstrap-grid';
 import { ThemeProvider } from 'styled-components';
 
 import App from './whatever/app/folder';
-
-injectLayoutBaseCSS();
 
 const gridTheme = {
   breakpoints: { // defaults below
@@ -329,5 +343,5 @@ To run the example
 
 - complete web documentation
 
-Any othre idea ?
+Any other idea ?
 Please [leave a suggestion](https://github.com/dragma/styled-bootstrap-grid/issues).

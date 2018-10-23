@@ -88,7 +88,7 @@ var row = function row(props) {
 };
 
 row.propTypes = {
-  children: _propTypes2.default.any,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node, _propTypes2.default.string]).isRequired,
   alignItems: _propTypes2.default.string,
   smAlignItems: _propTypes2.default.string,
   mdAlignItems: _propTypes2.default.string,
@@ -102,7 +102,16 @@ row.propTypes = {
 };
 
 row.defaultProps = {
-  children: null
+  alignItems: null,
+  smAlignItems: null,
+  mdAlignItems: null,
+  lgAlignItems: null,
+  xlAlignItems: null,
+  justifyContent: null,
+  smJustifyContent: null,
+  mdJustifyContent: null,
+  lgJustifyContent: null,
+  xlJustifyContent: null
 };
 
 exports.default = row;

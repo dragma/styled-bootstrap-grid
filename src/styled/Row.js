@@ -55,8 +55,8 @@ const css = {
       -ms-flex-pack: distribute !important;
       justify-content: space-around !important;
     `,
-  }
-}
+  },
+};
 
 
 const Row = styled.div`
@@ -65,13 +65,13 @@ const Row = styled.div`
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -${p => {
+  margin-right: -${(p) => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getRowPadding) {
       return 15;
     }
     return p.theme.styledBootstrapGrid.getRowPadding();
   }}px;
-  margin-left: -${p => {
+  margin-left: -${(p) => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getRowPadding) {
       return 15;
     }
