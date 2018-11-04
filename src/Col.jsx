@@ -118,11 +118,11 @@ const MyCol = (props) => {
   if (!Number.isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
     dataName = `${dataName} order-sm-${smOrder}`;
   }
-  if (hiddenXsDown) {
-    dataName = `${dataName} hidden-xs-down`;
+  if (hiddenSmDown) {
+    dataName = `${dataName} hidden-sm-down`;
   }
-  if (hiddenXsUp) {
-    dataName = `${dataName} hidden-xs-up`;
+  if (hiddenSmUp) {
+    dataName = `${dataName} hidden-sm-up`;
   }
 
   // MD
