@@ -209,6 +209,11 @@ const css = {
       align-self: stretch !important;
     `,
   },
+  display: {
+    none: `
+      display: none;
+    `
+  },
   noGutter: `
     margin-right: 0;
     margin-left: 0;
@@ -245,30 +250,40 @@ const Col = styled.div`
   ${p => p.xsAuto && media.xs`${css.col.auto}`}
   ${p => p.xsAlignSelf && media.xs`${css.alignSelf[p.xsAlignSelf]}`}
   ${p => p.xsOrder && media.xs`${css.order[p.xsOrder]}`}
+  ${p => p.hiddenXsDown && media.max.xs`${css.display.none}`}
+  ${p => p.hiddenXsUp && media.min.xs`${css.display.none}`}
 
   ${p => p.sm && media.sm`${css.col[p.sm]}`}
   ${p => !Number.isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
   ${p => p.smAuto && media.sm`${css.col.auto}`}
   ${p => p.smAlignSelf && media.sm`${css.alignSelf[p.smAlignSelf]}`}
   ${p => p.smOrder && media.sm`${css.order[p.smOrder]}`}
+  ${p => p.hiddenSmDown && media.max.sm`${css.display.none}`}
+  ${p => p.hiddenSmUp && media.min.sm`${css.display.none}`}
 
   ${p => p.md && media.md`${css.col[p.md]}`}
   ${p => !Number.isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
   ${p => p.mdAuto && media.md`${css.col.auto}`}
   ${p => p.mdAlignSelf && media.md`${css.alignSelf[p.mdAlignSelf]}`}
   ${p => p.mdOrder && media.md`${css.order[p.mdOrder]}`}
+  ${p => p.hiddenMdDown && media.max.md`${css.display.none}`}
+  ${p => p.hiddenMdUp && media.min.md`${css.display.none}`}
 
   ${p => p.lg && media.lg`${css.col[p.lg]}`}
   ${p => !Number.isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
   ${p => p.lgAuto && media.lg`${css.col.auto}`}
   ${p => p.lgAlignSelf && media.lg`${css.alignSelf[p.lgAlignSelf]}`}
   ${p => p.lgOrder && media.lg`${css.order[p.lgOrder]}`}
+  ${p => p.hiddenLgDown && media.max.lg`${css.display.none}`}
+  ${p => p.hiddenLgUp && media.min.lg`${css.display.none}`}
 
   ${p => p.xl && media.xl`${css.col[p.xl]}`}
   ${p => !Number.isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
   ${p => p.xlAuto && media.xl`${css.col.auto}`}
   ${p => p.xlAlignSelf && media.xl`${css.alignSelf[p.xlAlignSelf]}`}
   ${p => p.xlOrder && media.xl`${css.order[p.xlOrder]}`}
+  ${p => p.hiddenXlDown && media.max.xl`${css.display.none}`}
+  ${p => p.hiddenXlUp && media.min.xl`${css.display.none}`}
 `;
 
 export default Col;
