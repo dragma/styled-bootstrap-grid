@@ -210,8 +210,8 @@ const css = {
     `,
   },
   noGutter: `
-    margin-right: 0;
-    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
   `,
 };
 
