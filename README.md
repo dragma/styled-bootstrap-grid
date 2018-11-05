@@ -330,7 +330,7 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 | xlAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-xl-{value}` |
 | xlOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-xl-{value}` |
 | hiddenXlUp | `undefined` | `boolean` | Hides content from xl breakpoint to infinity |
-| hiddenXldDown | `undefined` | `boolean` | Hides content from xl breakpoint to 0 |
+| hiddenXlDown | `undefined` | `boolean` | Hides content from xl breakpoint to 0 |
 
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 
