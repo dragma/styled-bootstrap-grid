@@ -31,29 +31,39 @@ var MyCol = function MyCol(props) {
       xsAuto = props.xsAuto,
       xsAlignSelf = props.xsAlignSelf,
       xsOrder = props.xsOrder,
+      hiddenXsUp = props.hiddenXsUp,
+      hiddenXsDown = props.hiddenXsDown,
       sm = props.sm,
       smOffset = props.smOffset,
       smAuto = props.smAuto,
       smAlignSelf = props.smAlignSelf,
       smOrder = props.smOrder,
+      hiddenSmUp = props.hiddenSmUp,
+      hiddenSmDown = props.hiddenSmDown,
       md = props.md,
       mdOffset = props.mdOffset,
       mdAuto = props.mdAuto,
       mdAlignSelf = props.mdAlignSelf,
       mdOrder = props.mdOrder,
+      hiddenMdUp = props.hiddenMdUp,
+      hiddenMdDown = props.hiddenMdDown,
       lg = props.lg,
       lgOffset = props.lgOffset,
       lgAuto = props.lgAuto,
       lgAlignSelf = props.lgAlignSelf,
       lgOrder = props.lgOrder,
+      hiddenLgUp = props.hiddenLgUp,
+      hiddenLgDown = props.hiddenLgDown,
       xl = props.xl,
       xlOffset = props.xlOffset,
       xlAuto = props.xlAuto,
       xlAlignSelf = props.xlAlignSelf,
       xlOrder = props.xlOrder,
+      hiddenXlUp = props.hiddenXlUp,
+      hiddenXlDown = props.hiddenXlDown,
       noGutter = props.noGutter,
       children = props.children,
-      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'alignSelf', 'order', 'xs', 'xsOffset', 'xsAuto', 'xsAlignSelf', 'xsOrder', 'sm', 'smOffset', 'smAuto', 'smAlignSelf', 'smOrder', 'md', 'mdOffset', 'mdAuto', 'mdAlignSelf', 'mdOrder', 'lg', 'lgOffset', 'lgAuto', 'lgAlignSelf', 'lgOrder', 'xl', 'xlOffset', 'xlAuto', 'xlAlignSelf', 'xlOrder', 'noGutter', 'children']);
+      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'alignSelf', 'order', 'xs', 'xsOffset', 'xsAuto', 'xsAlignSelf', 'xsOrder', 'hiddenXsUp', 'hiddenXsDown', 'sm', 'smOffset', 'smAuto', 'smAlignSelf', 'smOrder', 'hiddenSmUp', 'hiddenSmDown', 'md', 'mdOffset', 'mdAuto', 'mdAlignSelf', 'mdOrder', 'hiddenMdUp', 'hiddenMdDown', 'lg', 'lgOffset', 'lgAuto', 'lgAlignSelf', 'lgOrder', 'hiddenLgUp', 'hiddenLgDown', 'xl', 'xlOffset', 'xlAuto', 'xlAlignSelf', 'xlOrder', 'hiddenXlUp', 'hiddenXlDown', 'noGutter', 'children']);
 
   var dataName = '';
   if (col) {
@@ -96,6 +106,12 @@ var MyCol = function MyCol(props) {
   if (!Number.isNaN(parseInt(xsOrder, 10)) || xsOrder === 'first' || xsOrder === 'last') {
     dataName = dataName + ' order-xs-' + xsOrder;
   }
+  if (hiddenXsDown) {
+    dataName = dataName + ' hidden-xs-down';
+  }
+  if (hiddenXsUp) {
+    dataName = dataName + ' hidden-xs-up';
+  }
 
   // SM
   if (sm) {
@@ -116,6 +132,12 @@ var MyCol = function MyCol(props) {
   }
   if (!Number.isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
     dataName = dataName + ' order-sm-' + smOrder;
+  }
+  if (hiddenSmDown) {
+    dataName = dataName + ' hidden-sm-down';
+  }
+  if (hiddenSmUp) {
+    dataName = dataName + ' hidden-sm-up';
   }
 
   // MD
@@ -138,6 +160,12 @@ var MyCol = function MyCol(props) {
   if (!Number.isNaN(parseInt(mdOrder, 10)) || mdOrder === 'first' || mdOrder === 'last') {
     dataName = dataName + ' order-md-' + mdOrder;
   }
+  if (hiddenMdDown) {
+    dataName = dataName + ' hidden-xs-down';
+  }
+  if (hiddenMdUp) {
+    dataName = dataName + ' hidden-xs-up';
+  }
 
   // LG
   if (lg) {
@@ -158,6 +186,12 @@ var MyCol = function MyCol(props) {
   }
   if (!Number.isNaN(parseInt(lgOrder, 10)) || lgOrder === 'first' || lgOrder === 'last') {
     dataName = dataName + ' order-lg-' + lgOrder;
+  }
+  if (hiddenLgDown) {
+    dataName = dataName + ' hidden-xs-down';
+  }
+  if (hiddenLgUp) {
+    dataName = dataName + ' hidden-xs-up';
   }
 
   // XL
@@ -180,6 +214,12 @@ var MyCol = function MyCol(props) {
   if (!Number.isNaN(parseInt(xlOrder, 10)) || xlOrder === 'first' || xlOrder === 'last') {
     dataName = dataName + ' order-xl-' + xlOrder;
   }
+  if (hiddenXlDown) {
+    dataName = dataName + ' hidden-xs-down';
+  }
+  if (hiddenXlUp) {
+    dataName = dataName + ' hidden-xs-up';
+  }
 
   if (noGutter) {
     dataName = dataName + ' no-gutter';
@@ -199,30 +239,40 @@ var MyCol = function MyCol(props) {
     xsAuto: xsAuto,
     xsAlignSelf: xsAlignSelf,
     xsOrder: xsOrder,
+    hiddenXsDown: hiddenXsDown,
+    hiddenXsUp: hiddenXsUp,
 
     sm: sm,
     smOffset: smOffset,
     smAuto: smAuto,
     smAlignSelf: smAlignSelf,
     smOrder: smOrder,
+    hiddenSmDown: hiddenSmDown,
+    hiddenSmUp: hiddenSmUp,
 
     md: md,
     mdOffset: mdOffset,
     mdAuto: mdAuto,
     mdAlignSelf: mdAlignSelf,
     mdOrder: mdOrder,
+    hiddenMdDown: hiddenMdDown,
+    hiddenMdUp: hiddenMdUp,
 
     lg: lg,
     lgOffset: lgOffset,
     lgAuto: lgAuto,
     lgAlignSelf: lgAlignSelf,
     lgOrder: lgOrder,
+    hiddenLgDown: hiddenLgDown,
+    hiddenLgUp: hiddenLgUp,
 
     xl: xl,
     xlOffset: xlOffset,
     xlAuto: xlAuto,
     xlAlignSelf: xlAlignSelf,
     xlOrder: xlOrder,
+    hiddenXlDown: hiddenXlDown,
+    hiddenXlUp: hiddenXlUp,
 
     noGutter: noGutter,
     'data-name': dataName

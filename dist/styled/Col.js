@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['', ''], ['', '']);
 
 var _styledComponents = require('styled-components');
@@ -75,7 +75,10 @@ var css = {
     baseline: '\n      -ms-flex-item-align: baseline !important;\n      align-self: baseline !important;\n    ',
     stretch: '\n      -ms-flex-item-align: stretch !important;\n      align-self: stretch !important;\n    '
   },
-  noGutter: '\n    margin-right: 0;\n    margin-left: 0;\n  '
+  display: {
+    none: '\n      display: none;\n    '
+  },
+  noGutter: '\n    padding-right: 0;\n    padding-left: 0;\n  '
 };
 
 var Col = _styledComponents2.default.div(_templateObject, function (p) {
@@ -111,6 +114,10 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.xsOrder && _media2.default.xs(_templateObject2, css.order[p.xsOrder]);
 }, function (p) {
+  return p.hiddenXsDown && _media2.default.max.xs(_templateObject2, css.display.none);
+}, function (p) {
+  return p.hiddenXsUp && _media2.default.min.xs(_templateObject2, css.display.none);
+}, function (p) {
   return p.sm && _media2.default.sm(_templateObject2, css.col[p.sm]);
 }, function (p) {
   return !Number.isNaN(parseInt(p.smOffset, 10)) && _media2.default.sm(_templateObject2, css.offset[p.smOffset]);
@@ -120,6 +127,10 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
   return p.smAlignSelf && _media2.default.sm(_templateObject2, css.alignSelf[p.smAlignSelf]);
 }, function (p) {
   return p.smOrder && _media2.default.sm(_templateObject2, css.order[p.smOrder]);
+}, function (p) {
+  return p.hiddenSmDown && _media2.default.max.sm(_templateObject2, css.display.none);
+}, function (p) {
+  return p.hiddenSmUp && _media2.default.min.sm(_templateObject2, css.display.none);
 }, function (p) {
   return p.md && _media2.default.md(_templateObject2, css.col[p.md]);
 }, function (p) {
@@ -131,6 +142,10 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.mdOrder && _media2.default.md(_templateObject2, css.order[p.mdOrder]);
 }, function (p) {
+  return p.hiddenMdDown && _media2.default.max.md(_templateObject2, css.display.none);
+}, function (p) {
+  return p.hiddenMdUp && _media2.default.min.md(_templateObject2, css.display.none);
+}, function (p) {
   return p.lg && _media2.default.lg(_templateObject2, css.col[p.lg]);
 }, function (p) {
   return !Number.isNaN(parseInt(p.lgOffset, 10)) && _media2.default.lg(_templateObject2, css.offset[p.lgOffset]);
@@ -141,6 +156,10 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
 }, function (p) {
   return p.lgOrder && _media2.default.lg(_templateObject2, css.order[p.lgOrder]);
 }, function (p) {
+  return p.hiddenLgDown && _media2.default.max.lg(_templateObject2, css.display.none);
+}, function (p) {
+  return p.hiddenLgUp && _media2.default.min.lg(_templateObject2, css.display.none);
+}, function (p) {
   return p.xl && _media2.default.xl(_templateObject2, css.col[p.xl]);
 }, function (p) {
   return !Number.isNaN(parseInt(p.xlOffset, 10)) && _media2.default.xl(_templateObject2, css.offset[p.xlOffset]);
@@ -150,6 +169,10 @@ var Col = _styledComponents2.default.div(_templateObject, function (p) {
   return p.xlAlignSelf && _media2.default.xl(_templateObject2, css.alignSelf[p.xlAlignSelf]);
 }, function (p) {
   return p.xlOrder && _media2.default.xl(_templateObject2, css.order[p.xlOrder]);
+}, function (p) {
+  return p.hiddenXlDown && _media2.default.max.xl(_templateObject2, css.display.none);
+}, function (p) {
+  return p.hiddenXlUp && _media2.default.min.xl(_templateObject2, css.display.none);
 });
 
 exports.default = Col;
