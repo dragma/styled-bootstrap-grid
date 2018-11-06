@@ -383,6 +383,52 @@ const App = props => (
         </Pre>
       </Col>
     </Row>
+    <TitleRow>
+      <Col col={12}>
+        <h3>Responsive utilities</h3>
+        <a href="https://v4-alpha.getbootstrap.com/layout/responsive-utilities/">Bootstrap documentation</a>
+      </Col>
+    </TitleRow>
+    <Row>
+      <Col hiddenXsDown col={6}>        
+        &lt;div class="hidden-xs-down" /&gt;
+      </Col>
+      <Col hiddenXsUp col={6}>
+        &lt;div class="hidden-xs-up" /&gt;
+      </Col>
+    </Row>
+    <Row>
+      <Col hiddenSmDown col={6}>        
+        &lt;div class="hidden-sm-down" /&gt;
+      </Col>
+      <Col hiddenSmUp col={6}>
+        &lt;div class="hidden-sm-up" /&gt;
+      </Col>
+    </Row>
+    <Row>
+      <Col hiddenMdDown col={6}>        
+        &lt;div class="hidden-md-down" /&gt;
+      </Col>
+      <Col hiddenMdUp col={6}>
+        &lt;div class="hidden-md-up" /&gt;
+      </Col>
+    </Row>
+    <Row>
+      <Col hiddenLgDown col={6}>        
+        &lt;div class="hidden-lg-down" /&gt;
+      </Col>
+      <Col hiddenLgUp col={6}>
+        &lt;div class="hidden-lg-up" /&gt;
+      </Col>
+    </Row>
+    <Row>
+      <Col hiddenXlDown col={6}>        
+        &lt;div class="hidden-xl-down" /&gt;
+      </Col>
+      <Col hiddenXlUp col={6}>
+        &lt;div class="hidden-xl-up" /&gt;
+      </Col>
+    </Row>
   </Container>
 );
 

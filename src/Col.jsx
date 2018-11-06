@@ -15,26 +15,36 @@ const MyCol = (props) => {
     xsAuto,
     xsAlignSelf,
     xsOrder,
+    hiddenXsUp,
+    hiddenXsDown,
     sm,
     smOffset,
     smAuto,
     smAlignSelf,
     smOrder,
+    hiddenSmUp,
+    hiddenSmDown,
     md,
     mdOffset,
     mdAuto,
     mdAlignSelf,
     mdOrder,
+    hiddenMdUp,
+    hiddenMdDown,
     lg,
     lgOffset,
     lgAuto,
     lgAlignSelf,
     lgOrder,
+    hiddenLgUp,
+    hiddenLgDown,
     xl,
     xlOffset,
     xlAuto,
     xlAlignSelf,
     xlOrder,
+    hiddenXlUp,
+    hiddenXlDown,
     noGutter,
     children,
     ...otherProps
@@ -81,6 +91,12 @@ const MyCol = (props) => {
   if (!Number.isNaN(parseInt(xsOrder, 10)) || xsOrder === 'first' || xsOrder === 'last') {
     dataName = `${dataName} order-xs-${xsOrder}`;
   }
+  if (hiddenXsDown) {
+    dataName = `${dataName} hidden-xs-down`;
+  }
+  if (hiddenXsUp) {
+    dataName = `${dataName} hidden-xs-up`;
+  }
 
   // SM
   if (sm) {
@@ -101,6 +117,12 @@ const MyCol = (props) => {
   }
   if (!Number.isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
     dataName = `${dataName} order-sm-${smOrder}`;
+  }
+  if (hiddenSmDown) {
+    dataName = `${dataName} hidden-sm-down`;
+  }
+  if (hiddenSmUp) {
+    dataName = `${dataName} hidden-sm-up`;
   }
 
   // MD
@@ -123,6 +145,12 @@ const MyCol = (props) => {
   if (!Number.isNaN(parseInt(mdOrder, 10)) || mdOrder === 'first' || mdOrder === 'last') {
     dataName = `${dataName} order-md-${mdOrder}`;
   }
+  if (hiddenMdDown) {
+    dataName = `${dataName} hidden-xs-down`;
+  }
+  if (hiddenMdUp) {
+    dataName = `${dataName} hidden-xs-up`;
+  }
 
   // LG
   if (lg) {
@@ -143,6 +171,12 @@ const MyCol = (props) => {
   }
   if (!Number.isNaN(parseInt(lgOrder, 10)) || lgOrder === 'first' || lgOrder === 'last') {
     dataName = `${dataName} order-lg-${lgOrder}`;
+  }
+  if (hiddenLgDown) {
+    dataName = `${dataName} hidden-xs-down`;
+  }
+  if (hiddenLgUp) {
+    dataName = `${dataName} hidden-xs-up`;
   }
 
   // XL
@@ -165,6 +199,12 @@ const MyCol = (props) => {
   if (!Number.isNaN(parseInt(xlOrder, 10)) || xlOrder === 'first' || xlOrder === 'last') {
     dataName = `${dataName} order-xl-${xlOrder}`;
   }
+  if (hiddenXlDown) {
+    dataName = `${dataName} hidden-xs-down`;
+  }
+  if (hiddenXlUp) {
+    dataName = `${dataName} hidden-xs-up`;
+  }
 
   if (noGutter) {
     dataName = `${dataName} no-gutter`;
@@ -184,30 +224,40 @@ const MyCol = (props) => {
     xsAuto,
     xsAlignSelf,
     xsOrder,
+    hiddenXsDown,
+    hiddenXsUp,
 
     sm,
     smOffset,
     smAuto,
     smAlignSelf,
     smOrder,
+    hiddenSmDown,
+    hiddenSmUp,
 
     md,
     mdOffset,
     mdAuto,
     mdAlignSelf,
     mdOrder,
+    hiddenMdDown,
+    hiddenMdUp,
 
     lg,
     lgOffset,
     lgAuto,
     lgAlignSelf,
     lgOrder,
+    hiddenLgDown,
+    hiddenLgUp,
 
     xl,
     xlOffset,
     xlAuto,
     xlAlignSelf,
     xlOrder,
+    hiddenXlDown,
+    hiddenXlUp,
 
     noGutter,
     'data-name': dataName,

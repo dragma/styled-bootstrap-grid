@@ -302,25 +302,35 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 | order | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-{value}` |
 | noGutter | `undefined` | `boolean` | Equivalent to `no-gutter` |
 | sm | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-sm-*` (or `col-sm` in case of `true`) |
+| hiddenXsUp | `undefined` | `boolean` | Hides content from xs breakpoint to infinity |
+| hiddenXsDown | `undefined` | `boolean` | Hides content from xs breakpoint to 0 |
 | smOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-sm-*` |
 | smAuto | `undefined` | `boolean` | Equivalent to `col-sm-auto` |
 | smAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-sm-{value}` |
 | smOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-sm-{value}` |
+| hiddenSmUp | `undefined` | `boolean` | Hides content from sm breakpoint to infinity |
+| hiddenSmDown | `undefined` | `boolean` | Hides content from sm breakpoint to 0 |
 | md | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-md-*` (or `col-md` in case of `true`) |
 | mdOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-md-*` |
 | mdAuto | `undefined` | `boolean` | Equivalent to `col-md-auto` |
 | mdAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-md-{value}` |
 | mdOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-md-{value}` |
+| hiddenMdUp | `undefined` | `boolean` | Hides content from md breakpoint to infinity |
+| hiddenMdDown | `undefined` | `boolean` | Hides content from md breakpoint to 0 |
 | lg | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-lg-*` (or `col-lg` in case of `true`) |
 | lgOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-lg-*` |
 | lgAuto | `undefined` | `boolean` | Equivalent to `col-lg-auto` |
 | lgAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-lg-{value}` |
 | lgOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-lg-{value}` |
+| hiddenLgUp | `undefined` | `boolean` | Hides content from lg breakpoint to infinity |
+| hiddenLgDown | `undefined` | `boolean` | Hides content from lg breakpoint to 0 |
 | xl | `undefined` | `number` *or* `string` | Goes from 1 to 12. Equivalent to `col-xl-*` (or `col-xl` in case of `true`) |
 | xlOffset | `undefined` | `number` *or* `string` | Goes from 0 to 11. Equivalent to `offset-xl-*` |
 | xlAuto | `undefined` | `boolean` | Equivalent to `col-xl-auto` |
 | xlAlignSelf | `undefined` | `string` | `auto` or `start` or `end` or `center` or `baseline` or `stretch`. Equivalent to `align-self-xl-{value}` |
 | xlOrder | `undefined` | `number` *or* `string` | `first` or `last` or `0` to `12`. Equivalent to `order-xl-{value}` |
+| hiddenXlUp | `undefined` | `boolean` | Hides content from xl breakpoint to infinity |
+| hiddenXlDown | `undefined` | `boolean` | Hides content from xl breakpoint to 0 |
 
 Plus the ones inherited from [styled-components](https://www.npmjs.com/package/styled-components) `div`.
 

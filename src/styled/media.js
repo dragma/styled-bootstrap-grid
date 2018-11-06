@@ -28,19 +28,25 @@ const getBreakpoints = (props) => {
 };
 
 const media = Object.keys(defaultBreakpoints).reduce((accumulator, label) => {
+  accumulator.max = accumulator.max || {};
+  accumulator.min = accumulator.min || {};
+  const minMedia = (...args) => css`
+    @media (min-width: ${props => getBreakpoints(props)[label]}px) {
+      ${css(...args)}
+    }
+  `;
+  const maxMedia = (...args) => css`
+    @media (max-width: ${props => getBreakpoints(props)[label]}px) {
+      ${css(...args)}
+    }
+  `;
   if (label === 'xs' || label === 'smaller') {
-    accumulator[label] = (...args) => css`
-      @media (max-width: ${props => getBreakpoints(props).xs}px) {
-        ${css(...args)}
-      }
-    `;
+    accumulator[label] = maxMedia;
   } else {
-    accumulator[label] = (...args) => css`
-      @media (min-width: ${props => getBreakpoints(props)[label]}px) {
-        ${css(...args)}
-      }
-    `;
+    accumulator[label] = minMedia;
   }
+  accumulator.max[label] = maxMedia;
+  accumulator.min[label] = minMedia;
   return accumulator;
 }, {});
 
