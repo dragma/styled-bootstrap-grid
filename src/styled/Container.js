@@ -28,7 +28,6 @@ const Container = styled.div`
   margin-left: auto;
 
   ${media.sm`
-    ${p => console.log(p.theme)}
     max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('sm')}px;
   `}
 
