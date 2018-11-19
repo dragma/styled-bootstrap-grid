@@ -39,8 +39,9 @@ const Container = styled.div`
     max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('lg')}px;
   `}
 
-  ${media.xl`
-    max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('xl')}px;
+  ${media.giant`
+    ${p => console.log('p', p.theme)}
+    max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('giant')}px;
   `}
 `;
 

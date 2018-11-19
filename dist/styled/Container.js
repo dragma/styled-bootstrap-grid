@@ -5,7 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n  margin-right: auto;\n  margin-left: auto;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n'], ['\n  width: 100%;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n  margin-right: auto;\n  margin-left: auto;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    max-width: ', 'px;\n  '], ['\n    max-width: ', 'px;\n  ']);
+    _templateObject2 = _taggedTemplateLiteral(['\n    max-width: ', 'px;\n  '], ['\n    max-width: ', 'px;\n  ']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    ', '\n    max-width: ', 'px;\n  '], ['\n    ', '\n    max-width: ', 'px;\n  ']);
 
 var _styledComponents = require('styled-components');
 
@@ -35,8 +36,10 @@ var Container = _styledComponents2.default.div(_templateObject, function (p) {
   return p.theme.styledBootstrapGrid.getContainerMaxWidth('md');
 }), _media2.default.lg(_templateObject2, function (p) {
   return p.theme.styledBootstrapGrid.getContainerMaxWidth('lg');
-}), _media2.default.xl(_templateObject2, function (p) {
-  return p.theme.styledBootstrapGrid.getContainerMaxWidth('xl');
+}), _media2.default.giant(_templateObject3, function (p) {
+  return console.log('p', p.theme);
+}, function (p) {
+  return p.theme.styledBootstrapGrid.getContainerMaxWidth('giant');
 }));
 
 exports.default = Container;

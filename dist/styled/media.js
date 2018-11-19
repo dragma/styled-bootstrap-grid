@@ -12,15 +12,23 @@ var _templateObject = _taggedTemplateLiteral(['\n    @media (min-width: ', 'px) 
 
 var _styledComponents = require('styled-components');
 
+var _aliases = require('../aliases');
+
+var _aliases2 = _interopRequireDefault(_aliases);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var defaultBreakpoints = exports.defaultBreakpoints = {
+var defaultBreakpoints = exports.defaultBreakpoints = (0, _aliases2.default)({
   xl: 1200,
   lg: 992,
   md: 768,
   sm: 576,
   xs: 575
-};
+});
+
+console.log('defaultBreakpoints', defaultBreakpoints);
 
 var getBreakpoints = function getBreakpoints(props) {
   if (props.theme && props.theme.styledBootstrapGrid && props.theme.styledBootstrapGrid.breakpoints) {

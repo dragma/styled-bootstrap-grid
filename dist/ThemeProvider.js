@@ -12,6 +12,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _styledComponents = require('styled-components');
 
+var _aliases = require('./aliases');
+
+var _aliases2 = _interopRequireDefault(_aliases);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var defaultContainerMaxWidth = {
@@ -26,47 +30,52 @@ exports.default = function (props) {
   var _props$gridTheme = props.gridTheme,
       theme = _props$gridTheme === undefined ? {} : _props$gridTheme;
 
+  var getContainerPadding = function getContainerPadding() {
+    if (myTheme.styledBootstrapGrid.container) {
+      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.container.padding, 10))) {
+        return myTheme.styledBootstrapGrid.container.padding;
+      }
+    }
+    return 15;
+  };
+  var getContainerMaxWidth = function getContainerMaxWidth(breakpoint) {
+    if (myTheme.styledBootstrapGrid.container && myTheme.styledBootstrapGrid.container.maxWidth) {
+      var size = myTheme.styledBootstrapGrid.container.maxWidth[breakpoint];
+      if (!Number.isNaN(parseInt(size, 10))) {
+        return size;
+      }
+      return defaultContainerMaxWidth[breakpoint];
+    }
+  };
+  var getRowPadding = function getRowPadding() {
+    if (myTheme.styledBootstrapGrid.row) {
+      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.row.padding, 10))) {
+        return myTheme.styledBootstrapGrid.row.padding;
+      }
+    }
+    return 15;
+  };
+  var getColPadding = function getColPadding() {
+    if (myTheme.styledBootstrapGrid.col) {
+      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.col.padding, 10))) {
+        return myTheme.styledBootstrapGrid.col.padding;
+      }
+    }
+    return 15;
+  };
+
   var myTheme = {
     styledBootstrapGrid: {
-      breakpoints: theme.breakpoints,
+      breakpoints: (0, _aliases2.default)(theme.breakpoints),
       col: theme.col,
       row: theme.row,
-      container: _extends({
-        maxWidth: _extends({}, defaultContainerMaxWidth)
-      }, theme.container),
-      getContainerPadding: function getContainerPadding() {
-        if (theme.container) {
-          if (!Number.isNaN(parseInt(theme.container.padding, 10))) {
-            return theme.container.padding;
-          }
-        }
-        return 15;
-      },
-      getContainerMaxWidth: function getContainerMaxWidth(breakpoint) {
-        if (theme.container && theme.container.maxWidth) {
-          var size = theme.container.maxWidth[breakpoint];
-          if (!Number.isNaN(parseInt(size, 10))) {
-            return size;
-          }
-          return defaultContainerMaxWidth[breakpoint];
-        }
-      },
-      getRowPadding: function getRowPadding() {
-        if (theme.row) {
-          if (!Number.isNaN(parseInt(theme.row.padding, 10))) {
-            return theme.row.padding;
-          }
-        }
-        return 15;
-      },
-      getColPadding: function getColPadding() {
-        if (theme.col) {
-          if (!Number.isNaN(parseInt(theme.col.padding, 10))) {
-            return theme.col.padding;
-          }
-        }
-        return 15;
-      }
+      container: _extends({}, theme.container, {
+        maxWidth: _extends({}, (0, _aliases2.default)(defaultContainerMaxWidth), (0, _aliases2.default)((theme.container || {}).maxWidth || {}))
+      }),
+      getContainerPadding: getContainerPadding,
+      getContainerMaxWidth: getContainerMaxWidth,
+      getRowPadding: getRowPadding,
+      getColPadding: getColPadding
     }
   };
 

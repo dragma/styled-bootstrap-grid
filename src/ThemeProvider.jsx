@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import makeAliases from './aliases'
 
 const defaultContainerMaxWidth = {
   xl: 1140,
@@ -10,50 +11,56 @@ const defaultContainerMaxWidth = {
 }
 export default (props) => {
   const { gridTheme: theme = {} } = props;
+  const getContainerPadding = () => {
+    if (myTheme.styledBootstrapGrid.container) {
+      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.container.padding, 10))) {
+        return myTheme.styledBootstrapGrid.container.padding;
+      }
+    }
+    return 15;
+  };
+  const getContainerMaxWidth = (breakpoint) => {
+    if (myTheme.styledBootstrapGrid.container && myTheme.styledBootstrapGrid.container.maxWidth) {
+      const size = myTheme.styledBootstrapGrid.container.maxWidth[breakpoint];
+      if (!Number.isNaN(parseInt(size, 10))) {
+        return size;
+      }
+      return defaultContainerMaxWidth[breakpoint];
+    }
+  };
+  const getRowPadding = () => {
+    if (myTheme.styledBootstrapGrid.row) {
+      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.row.padding, 10))) {
+        return myTheme.styledBootstrapGrid.row.padding;
+      }
+    }
+    return 15;
+  };
+  const getColPadding = () => {
+    if (myTheme.styledBootstrapGrid.col) {
+      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.col.padding, 10))) {
+        return myTheme.styledBootstrapGrid.col.padding;
+      }
+    }
+    return 15;
+  };
+
   const myTheme = {
     styledBootstrapGrid: {
-      breakpoints: theme.breakpoints,
+      breakpoints: makeAliases(theme.breakpoints),
       col: theme.col,
       row: theme.row,
       container: {
-        maxWidth: {
-          ...defaultContainerMaxWidth
-        },
         ...theme.container,
+        maxWidth: {
+          ...makeAliases(defaultContainerMaxWidth),
+          ...makeAliases((theme.container || {}).maxWidth || {}),
+        },
       },
-      getContainerPadding: () => {
-        if (theme.container) {
-          if (!Number.isNaN(parseInt(theme.container.padding, 10))) {
-            return theme.container.padding;
-          }
-        }
-        return 15;
-      },
-      getContainerMaxWidth: (breakpoint) => {
-        if (theme.container && theme.container.maxWidth) {
-          const size = theme.container.maxWidth[breakpoint];
-          if (!Number.isNaN(parseInt(size, 10))) {
-            return size;
-          }
-          return defaultContainerMaxWidth[breakpoint];
-        }
-      },
-      getRowPadding: () => {
-        if (theme.row) {
-          if (!Number.isNaN(parseInt(theme.row.padding, 10))) {
-            return theme.row.padding;
-          }
-        }
-        return 15;
-      },
-      getColPadding: () => {
-        if (theme.col) {
-          if (!Number.isNaN(parseInt(theme.col.padding, 10))) {
-            return theme.col.padding;
-          }
-        }
-        return 15;
-      },
+      getContainerPadding,
+      getContainerMaxWidth,
+      getRowPadding,
+      getColPadding,
     },
   };
 
