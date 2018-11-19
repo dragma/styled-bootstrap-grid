@@ -386,7 +386,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Responsive utilities</h3>
-        <a href="https://v4-alpha.getbootstrap.com/layout/responsive-utilities/">Bootstrap documentation</a>
+        <a href="https://v4-alpha.getbootstrap.com/layout/responsive-utilities/#available-classes">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
