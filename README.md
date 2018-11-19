@@ -141,6 +141,12 @@ const gridTheme = {
     md: 768,
     sm: 576,
     xs: 575,
+    // or you cas uses aliases
+    // giant: 1200,
+    // desktop: 992,
+    // tablet: 768,
+    // phone: 576,
+    // smaller: 575,
   },
   row: {
     padding: 10, // default 15
@@ -156,6 +162,12 @@ const gridTheme = {
       md: 720,
       sm: 540,
       xs: 540,
+      // or you cas uses aliases
+      // giant: 1140,
+      // desktop: 960,
+      // tablet: 720,
+      // phone: 540,
+      // smaller: 540,
     },
   },
 };
@@ -188,14 +200,32 @@ import { media } from 'styled-bootstrap-grid';
 
 const CustomDiv = styled.div`
   color: black;
+  ${media.smaller`
+    color: green;
+  `}
+  ${media.xs`
+    color: green;
+  `}
+  ${media.phone`
+    color: blue;
+  `}
   ${media.sm`
     color: blue;
+  `}
+  ${media.tablet`
+    color: red;
   `}
   ${media.md`
     color: red;
   `}
+  ${media.desktop`
+    color: purple;
+  `}
   ${media.lg`
     color: purple;
+  `}
+  ${media.giant`
+    color: yellow;
   `}
   ${media.xl`
     color: yellow;
@@ -207,13 +237,13 @@ export default CustomDiv;
 
 Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
-| name | css generated |
+| name | *aliases* | css generated |
 | - | - | - |
-| xs | all sizes: `@media (max-width: 575px) { /* */ }` |
-| sm | `@media (min-width: 576px) { /* */ }` |
-| md | `@media (min-width: 768px) { /* */ }` |
-| lg | `@media (min-width: 992px) { /* */ }` |
-| xl | `@media (min-width: 1200px) { /* */ }` |
+| xs | smaller | all sizes: `@media (max-width: 575px) { /* */ }` |
+| sm | phone | `@media (min-width: 576px) { /* */ }` |
+| md | tablet | `@media (min-width: 768px) { /* */ }` |
+| lg | desktop | `@media (min-width: 992px) { /* */ }` |
+| xl | giant | `@media (min-width: 1200px) { /* */ }` |
 
 ## Props definition
 
@@ -235,6 +265,12 @@ const gridTheme = {
     md: 768,
     sm: 576,
     xs: 575,
+    // or you cas uses aliases
+    // giant: 1200,
+    // desktop: 992,
+    // tablet: 768,
+    // phone: 576,
+    // smaller: 575,
   },
   row: {
     padding: 10, // default 15
@@ -250,6 +286,12 @@ const gridTheme = {
       md: 720,
       sm: 540,
       xs: 540,
+      // or you cas uses aliases
+      // giant: 1140,
+      // desktop: 960,
+      // tablet: 720,
+      // phone: 540,
+      // smaller: 540,
     },
   },
 }
