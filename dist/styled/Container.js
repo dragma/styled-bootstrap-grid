@@ -5,10 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n  margin-right: auto;\n  margin-left: auto;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n'], ['\n  width: 100%;\n  padding-right: ', 'px;\n  padding-left: ', 'px;\n  margin-right: auto;\n  margin-left: auto;\n\n  ', '\n\n  ', '\n\n  ', '\n\n  ', '\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    max-width: 540px;\n  '], ['\n    max-width: 540px;\n  ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 720px;\n  '], ['\n    max-width: 720px;\n  ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n    max-width: 960px;\n  '], ['\n    max-width: 960px;\n  ']),
-    _templateObject5 = _taggedTemplateLiteral(['\n    max-width: 1140px;\n  '], ['\n    max-width: 1140px;\n  ']);
+    _templateObject2 = _taggedTemplateLiteral(['\n    ', '\n    max-width: ', 'px;\n  '], ['\n    ', '\n    max-width: ', 'px;\n  ']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    max-width: ', 'px;\n  '], ['\n    max-width: ', 'px;\n  ']);
 
 var _styledComponents = require('styled-components');
 
@@ -32,6 +30,16 @@ var Container = _styledComponents2.default.div(_templateObject, function (p) {
     return 15;
   }
   return p.theme.styledBootstrapGrid.getContainerPadding();
-}, _media2.default.phone(_templateObject2), _media2.default.tablet(_templateObject3), _media2.default.desktop(_templateObject4), _media2.default.giant(_templateObject5));
+}, _media2.default.sm(_templateObject2, function (p) {
+  return console.log(p.theme);
+}, function (p) {
+  return p.theme.styledBootstrapGrid.getContainerMaxWidth('sm');
+}), _media2.default.md(_templateObject3, function (p) {
+  return p.theme.styledBootstrapGrid.getContainerMaxWidth('md');
+}), _media2.default.lg(_templateObject3, function (p) {
+  return p.theme.styledBootstrapGrid.getContainerMaxWidth('lg');
+}), _media2.default.xl(_templateObject3, function (p) {
+  return p.theme.styledBootstrapGrid.getContainerMaxWidth('xl');
+}));
 
 exports.default = Container;

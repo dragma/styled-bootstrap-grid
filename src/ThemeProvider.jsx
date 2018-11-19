@@ -1,6 +1,13 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
+const defaultContainerMaxWidth = {
+  xl: 1140,
+  lg: 960,
+  md: 720,
+  sm: 540,
+  xs: 540,
+}
 export default (props) => {
   const { gridTheme: theme = {} } = props;
   const myTheme = {
@@ -8,7 +15,12 @@ export default (props) => {
       breakpoints: theme.breakpoints,
       col: theme.col,
       row: theme.row,
-      container: theme.container,
+      container: {
+        maxWidth: {
+          ...defaultContainerMaxWidth
+        },
+        ...theme.container,
+      },
       getContainerPadding: () => {
         if (theme.container) {
           if (!Number.isNaN(parseInt(theme.container.padding, 10))) {
@@ -16,6 +28,15 @@ export default (props) => {
           }
         }
         return 15;
+      },
+      getContainerMaxWidth: (breakpoint) => {
+        if (theme.container && theme.container.maxWidth) {
+          const size = theme.container.maxWidth[breakpoint];
+          if (!Number.isNaN(parseInt(size, 10))) {
+            return size;
+          }
+          return defaultContainerMaxWidth[breakpoint];
+        }
       },
       getRowPadding: () => {
         if (theme.row) {

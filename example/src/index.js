@@ -16,6 +16,8 @@ const theme = {
   },
   container: {
     padding: 10,
+    maxWidth: {
+    }
   },
 };
 

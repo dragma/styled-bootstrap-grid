@@ -14,6 +14,14 @@ var _styledComponents = require('styled-components');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var defaultContainerMaxWidth = {
+  xl: 1140,
+  lg: 960,
+  md: 720,
+  sm: 540,
+  xs: 540
+};
+
 exports.default = function (props) {
   var _props$gridTheme = props.gridTheme,
       theme = _props$gridTheme === undefined ? {} : _props$gridTheme;
@@ -23,7 +31,9 @@ exports.default = function (props) {
       breakpoints: theme.breakpoints,
       col: theme.col,
       row: theme.row,
-      container: theme.container,
+      container: _extends({
+        maxWidth: _extends({}, defaultContainerMaxWidth)
+      }, theme.container),
       getContainerPadding: function getContainerPadding() {
         if (theme.container) {
           if (!Number.isNaN(parseInt(theme.container.padding, 10))) {
@@ -31,6 +41,15 @@ exports.default = function (props) {
           }
         }
         return 15;
+      },
+      getContainerMaxWidth: function getContainerMaxWidth(breakpoint) {
+        if (theme.container && theme.container.maxWidth) {
+          var size = theme.container.maxWidth[breakpoint];
+          if (!Number.isNaN(parseInt(size, 10))) {
+            return size;
+          }
+          return defaultContainerMaxWidth[breakpoint];
+        }
       },
       getRowPadding: function getRowPadding() {
         if (theme.row) {

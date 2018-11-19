@@ -15,15 +15,10 @@ var _styledComponents = require('styled-components');
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var defaultBreakpoints = exports.defaultBreakpoints = {
-  giant: 1200,
   xl: 1200,
-  desktop: 992,
   lg: 992,
-  tablet: 768,
   md: 768,
-  phone: 576,
   sm: 576,
-  smaller: 575,
   xs: 575
 };
 

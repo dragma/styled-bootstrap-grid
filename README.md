@@ -136,15 +136,10 @@ import App from './whatever/app/folder';
 
 const gridTheme = {
   breakpoints: { // defaults below
-    giant: 1200,
     xl: 1200,
-    desktop: 992,
     lg: 992,
-    tablet: 768,
     md: 768,
-    phone: 576,
     sm: 576,
-    smaller: 575,
     xs: 575,
   },
   row: {
@@ -155,6 +150,13 @@ const gridTheme = {
   },
   container: {
     padding: 0, // default 15
+    maxWidth: { // defaults below
+      xl: 1140,
+      lg: 960,
+      md: 720,
+      sm: 540,
+      xs: 540,
+    },
   },
 };
 const styledTheme = {
@@ -186,29 +188,14 @@ import { media } from 'styled-bootstrap-grid';
 
 const CustomDiv = styled.div`
   color: black;
-  ${media.col`
-    color: orange;
-  `}
-  ${media.phone`
-    color: blue;
-  `}
   ${media.sm`
     color: blue;
-  `}
-  ${media.tablet`
-    color: red;
   `}
   ${media.md`
     color: red;
   `}
-  ${media.desktop`
-    color: purple;
-  `}
   ${media.lg`
     color: purple;
-  `}
-  ${media.giant`
-    color: yellow;
   `}
   ${media.xl`
     color: yellow;
@@ -220,13 +207,13 @@ export default CustomDiv;
 
 Using this `media` object will help you to build media-queries that will fit the same way as Bootstrap do.
 
-| name | alias | css generated |
+| name | css generated |
 | - | - | - |
-| xs | *smaller* | all sizes: `@media (max-width: 575px) { /* */ }` |
-| sm | *phone* | `@media (min-width: 576px) { /* */ }` |
-| md | *tablet* | `@media (min-width: 768px) { /* */ }` |
-| lg | *desktop* | `@media (min-width: 992px) { /* */ }` |
-| xl | *giant* | `@media (min-width: 1200px) { /* */ }` |
+| xs | all sizes: `@media (max-width: 575px) { /* */ }` |
+| sm | `@media (min-width: 576px) { /* */ }` |
+| md | `@media (min-width: 768px) { /* */ }` |
+| lg | `@media (min-width: 992px) { /* */ }` |
+| xl | `@media (min-width: 1200px) { /* */ }` |
 
 ## Props definition
 
@@ -244,13 +231,9 @@ const gridTheme = {
   breakpoints: { // defaults below
     giant: 1200,
     xl: 1200,
-    desktop: 992,
     lg: 992,
-    tablet: 768,
     md: 768,
-    phone: 576,
     sm: 576,
-    smaller: 575,
     xs: 575,
   },
   row: {
@@ -261,6 +244,13 @@ const gridTheme = {
   },
   container: {
     padding: 0, // default 15
+    maxWidth: { // defaults below
+      xl: 1140,
+      lg: 960,
+      md: 720,
+      sm: 540,
+      xs: 540,
+    },
   },
 }
 

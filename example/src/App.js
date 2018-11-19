@@ -390,43 +390,63 @@ const App = props => (
       </Col>
     </TitleRow>
     <Row>
-      <Col hiddenXsDown col={6}>        
-        &lt;div class="hidden-xs-down" /&gt;
+      <Col hiddenXsDown col={6}>
+        <Pre>
+          &lt;div class="hidden-xs-down" /&gt;
+        </Pre>
       </Col>
       <Col hiddenXsUp col={6}>
-        &lt;div class="hidden-xs-up" /&gt;
+        <Pre>
+          &lt;div class="hidden-xs-up" /&gt;
+        </Pre>
       </Col>
     </Row>
     <Row>
-      <Col hiddenSmDown col={6}>        
-        &lt;div class="hidden-sm-down" /&gt;
+      <Col hiddenSmDown col={6}>
+        <Pre>
+          &lt;div class="hidden-sm-down" /&gt;
+        </Pre>
       </Col>
       <Col hiddenSmUp col={6}>
-        &lt;div class="hidden-sm-up" /&gt;
+        <Pre>
+          &lt;div class="hidden-sm-up" /&gt;
+        </Pre>
       </Col>
     </Row>
     <Row>
-      <Col hiddenMdDown col={6}>        
-        &lt;div class="hidden-md-down" /&gt;
+      <Col hiddenMdDown col={6}>
+        <Pre>
+          &lt;div class="hidden-md-down" /&gt;
+        </Pre>
       </Col>
       <Col hiddenMdUp col={6}>
-        &lt;div class="hidden-md-up" /&gt;
+        <Pre>
+          &lt;div class="hidden-md-up" /&gt;
+        </Pre>
       </Col>
     </Row>
     <Row>
-      <Col hiddenLgDown col={6}>        
-        &lt;div class="hidden-lg-down" /&gt;
+      <Col hiddenLgDown col={6}>
+        <Pre>
+          &lt;div class="hidden-lg-down" /&gt;
+        </Pre>
       </Col>
       <Col hiddenLgUp col={6}>
-        &lt;div class="hidden-lg-up" /&gt;
+        <Pre>
+          &lt;div class="hidden-lg-up" /&gt;
+        </Pre>
       </Col>
     </Row>
     <Row>
-      <Col hiddenXlDown col={6}>        
-        &lt;div class="hidden-xl-down" /&gt;
+      <Col hiddenXlDown col={6}>
+        <Pre>
+          &lt;div class="hidden-xl-down" /&gt;
+        </Pre>
       </Col>
       <Col hiddenXlUp col={6}>
-        &lt;div class="hidden-xl-up" /&gt;
+        <Pre>
+          &lt;div class="hidden-xl-up" /&gt;
+        </Pre>
       </Col>
     </Row>
   </Container>

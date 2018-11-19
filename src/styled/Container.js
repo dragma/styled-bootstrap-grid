@@ -27,20 +27,21 @@ const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
 
-  ${media.phone`
-    max-width: 540px;
+  ${media.sm`
+    ${p => console.log(p.theme)}
+    max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('sm')}px;
   `}
 
-  ${media.tablet`
-    max-width: 720px;
+  ${media.md`
+    max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('md')}px;
   `}
 
-  ${media.desktop`
-    max-width: 960px;
+  ${media.lg`
+    max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('lg')}px;
   `}
 
-  ${media.giant`
-    max-width: 1140px;
+  ${media.xl`
+    max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('xl')}px;
   `}
 `;
 
