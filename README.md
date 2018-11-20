@@ -370,11 +370,9 @@ Plus the ones inherited from [styled-components](https://www.npmjs.com/package/s
 
 To run the example
 
-1. Open a terminal and install `styled-bootstrap-grid`'s dependencies with `npm i`
-2. Run `npm run build:watch`
-3. Open a terminal and  go to `example`'s directory with `cd <styled-bootstrap-grid folder path>/example`
-4. Install `example`'s dependencies with `yarn`
-5. Run `yarn start`
+1. Open a terminal and  go to `example`'s directory with `cd <styled-bootstrap-grid folder path>/example`
+2. Install `example`'s dependencies with `yarn`
+3. Run `yarn start`
 
 ## Dependencies
 
