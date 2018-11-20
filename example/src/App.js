@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {
   Container, Row, Col, BaseCSS,
-} from './styled-bootstrap-grid';
+} from 'styled-bootstrap-grid';
 
 const TitleRow = styled(Row)`
   margin-bottom: 10px;

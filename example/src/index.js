@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-import { GridThemeProvider } from './styled-bootstrap-grid';
+import { GridThemeProvider } from 'styled-bootstrap-grid';
 
 import './index.css';
 import App from './App';
