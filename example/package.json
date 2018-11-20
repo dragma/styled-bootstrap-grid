@@ -7,7 +7,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.1",
-    "styled-components": "^4.0.2"
+    "styled-components": "^4.0.2",
+    "styled-bootstrap-grid": "link:../"
   },
   "scripts": {
     "start": "react-scripts start",
