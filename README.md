@@ -141,7 +141,7 @@ const gridTheme = {
     md: 768,
     sm: 576,
     xs: 575,
-    // or you cas uses aliases
+    // or you can use aliases
     // giant: 1200,
     // desktop: 992,
     // tablet: 768,
@@ -162,7 +162,7 @@ const gridTheme = {
       md: 720,
       sm: 540,
       xs: 540,
-      // or you cas uses aliases
+      // or you can use aliases
       // giant: 1140,
       // desktop: 960,
       // tablet: 720,
@@ -265,7 +265,7 @@ const gridTheme = {
     md: 768,
     sm: 576,
     xs: 575,
-    // or you cas uses aliases
+    // or you can use aliases
     // giant: 1200,
     // desktop: 992,
     // tablet: 768,
@@ -286,7 +286,7 @@ const gridTheme = {
       md: 720,
       sm: 540,
       xs: 540,
-      // or you cas uses aliases
+      // or you can use aliases
       // giant: 1140,
       // desktop: 960,
       // tablet: 720,
