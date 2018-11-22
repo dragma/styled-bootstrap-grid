@@ -7894,6 +7894,10 @@ style-loader@0.19.0:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
+"styled-bootstrap-grid@link:..":
+  version "0.0.0"
+  uid ""
+
 styled-components@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-4.0.2.tgz#7d4409ada019cdd34c25ba68c4577ea95dbcf0c5"

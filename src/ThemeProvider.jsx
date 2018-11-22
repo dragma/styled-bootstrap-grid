@@ -2,13 +2,14 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import makeAliases from './aliases'
 
-const defaultContainerMaxWidth = {
+export const defaultContainerMaxWidth = {
   xl: 1140,
   lg: 960,
   md: 720,
   sm: 540,
   xs: 540,
 }
+
 export default (props) => {
   const { gridTheme: theme = {} } = props;
   const getContainerPadding = () => {
