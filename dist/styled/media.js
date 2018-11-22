@@ -28,8 +28,6 @@ var defaultBreakpoints = exports.defaultBreakpoints = (0, _aliases2.default)({
   xs: 575
 });
 
-console.log('defaultBreakpoints', defaultBreakpoints);
-
 var getBreakpoints = function getBreakpoints(props) {
   if (props.theme && props.theme.styledBootstrapGrid && props.theme.styledBootstrapGrid.breakpoints) {
     return _extends({}, defaultBreakpoints, props.theme.styledBootstrapGrid.breakpoints);

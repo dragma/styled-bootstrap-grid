@@ -14,7 +14,6 @@ const DEFAULT_ALIASES_REVERSE = {
 };
 
 const makeAliases = (breakpoints = {}) => {
-  console.log('breakpoints', breakpoints)
   const data = Object.assign({}, breakpoints);
   Object.keys(breakpoints).forEach(key => {
     if (DEFAULT_ALIASES[key]) {
@@ -27,7 +26,6 @@ const makeAliases = (breakpoints = {}) => {
       data[DEFAULT_ALIASES_REVERSE[key]] = breakpoints[key];
     }
   });
-  console.log('data', data)
   return data;
 }
 

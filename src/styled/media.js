@@ -10,8 +10,6 @@ export const defaultBreakpoints = makeAliases({
   xs: 575,
 });
 
-console.log('defaultBreakpoints', defaultBreakpoints)
-
 const getBreakpoints = (props) => {
   if (
     props.theme

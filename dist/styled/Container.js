@@ -36,9 +36,7 @@ var Container = _styledComponents2.default.div(_templateObject, function (p) {
   return p.theme.styledBootstrapGrid.getContainerMaxWidth('md');
 }), _media2.default.lg(_templateObject2, function (p) {
   return p.theme.styledBootstrapGrid.getContainerMaxWidth('lg');
-}), _media2.default.giant(_templateObject3, function (p) {
-  return console.log('p', p.theme);
-}, function (p) {
+}), _media2.default.giant(_templateObject2, function (p) {
   return p.theme.styledBootstrapGrid.getContainerMaxWidth('giant');
 }));
 
