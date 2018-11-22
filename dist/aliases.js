@@ -21,7 +21,6 @@ var DEFAULT_ALIASES_REVERSE = {
 var makeAliases = function makeAliases() {
   var breakpoints = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-  console.log('breakpoints', breakpoints);
   var data = Object.assign({}, breakpoints);
   Object.keys(breakpoints).forEach(function (key) {
     if (DEFAULT_ALIASES[key]) {
@@ -34,7 +33,6 @@ var makeAliases = function makeAliases() {
       data[DEFAULT_ALIASES_REVERSE[key]] = breakpoints[key];
     }
   });
-  console.log('data', data);
   return data;
 };
 

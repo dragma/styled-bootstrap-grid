@@ -40,7 +40,6 @@ const Container = styled.div`
   `}
 
   ${media.giant`
-    ${p => console.log('p', p.theme)}
     max-width: ${p => p.theme.styledBootstrapGrid.getContainerMaxWidth('giant')}px;
   `}
 `;
