@@ -2,13 +2,6 @@ declare module 'styled-bootstrap-grid' {
     import { css, createGlobalStyle } from 'styled-components';
     import * as React from 'react';
 
-    export const media: { [label: string]: ReturnType<typeof css> };
-    export class Container extends React.Component<ContainerProps> {}
-    export class Row extends React.Component<RowProps> {}
-    export class Col extends React.Component<ColProps> {}
-    export const BaseCSS: ReturnType<typeof createGlobalStyle>;
-    export class GridThemeProvider<P extends ThemeProps = {}> extends React.Component<P> {}
-
     export type Smaller = 'xs' | 'smaller';
     export type Phone = 'sm' | 'phone';
     export type Tablet = 'md' | 'tablet';
@@ -16,22 +9,6 @@ declare module 'styled-bootstrap-grid' {
     export type Giant = 'xl' | 'giant';
 
     export type Media = Smaller | Phone | Tablet | Desktop | Giant;
-
-    export type ThemeProps = {
-        gridTheme?: {
-            breakpoints?: { [key in Media]?: number };
-            row?: {
-                padding?: number;
-            };
-            col?: {
-                padding?: number;
-            };
-            container?: {
-                padding?: number;
-                maxWidth?: { [key in Media]?: number };
-            };
-        };
-    };
 
     type oneToTwelve = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     type zeroToTwelve = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -60,6 +37,22 @@ declare module 'styled-bootstrap-grid' {
 
     export type Column = oneToTwelve | true;
     export type Order = zeroToTwelve | End;
+
+    export type ThemeProps = {
+        gridTheme?: {
+            breakpoints?: { [key in Media]?: number };
+            row?: {
+                padding?: number;
+            };
+            col?: {
+                padding?: number;
+            };
+            container?: {
+                padding?: number;
+                maxWidth?: { [key in Media]?: number };
+            };
+        };
+    };
 
     export type ContainerProps = {
         fluid?: boolean;
@@ -121,4 +114,15 @@ declare module 'styled-bootstrap-grid' {
         hiddenXlUp?: boolean;
         hiddenXlDown?: boolean;
     };
+
+    export const media: {
+        [label: Media]: ReturnType<typeof css>;
+        min: { [label: Media]: ReturnType<typeof css> };
+        max: { [label: Media]: ReturnType<typeof css> };
+    };
+    export class Container extends React.Component<ContainerProps> {}
+    export class Row extends React.Component<RowProps> {}
+    export class Col extends React.Component<ColProps> {}
+    export const BaseCSS: ReturnType<typeof createGlobalStyle>;
+    export class GridThemeProvider<P extends ThemeProps = {}> extends React.Component<P> {}
 }
