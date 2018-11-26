@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Container, ContainerFluid } from './styled';
 
-const container = React.forwardRef((props, ref) => {
+const container = (props, ref) => {
   const {
     fluid,
     children,
@@ -14,7 +14,7 @@ const container = React.forwardRef((props, ref) => {
     return <ContainerFluid data-name="container-fluid" ref={ref} {...otherProps}>{children}</ContainerFluid>;
   }
   return <Container data-name="container" ref={ref} {...otherProps}>{children}</Container>;
-});
+};
 
 container.propTypes = {
   children: PropTypes.oneOfType([
@@ -29,4 +29,4 @@ container.defaultProps = {
   fluid: false,
 };
 
-export default container;
+export default React.forwardRef(container);
