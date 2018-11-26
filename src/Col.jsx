@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Col } from './styled';
 
-const MyCol = (props) => {
+const MyCol = React.forwardRef((props, ref) => {
   const {
     col,
     offset,
@@ -265,11 +265,11 @@ const MyCol = (props) => {
   };
 
   return (
-    <Col {...allProps}>
+    <Col ref={ref} {...allProps}>
       {children}
     </Col>
   );
-};
+});
 
 const stringOrNumberReactPropType = PropTypes.oneOfType([
   PropTypes.string,

@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var row = function row(props) {
+var row = _react2.default.forwardRef(function (props, ref) {
   var children = props.children,
       alignItems = props.alignItems,
       smAlignItems = props.smAlignItems,
@@ -81,11 +81,12 @@ var row = function row(props) {
       mdJustifyContent: mdJustifyContent,
       lgJustifyContent: lgJustifyContent,
       xlJustifyContent: xlJustifyContent,
-      'data-name': dataName
+      'data-name': dataName,
+      ref: ref
     }, otherProps),
     children
   );
-};
+});
 
 row.propTypes = {
   children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node, _propTypes2.default.string]).isRequired,
