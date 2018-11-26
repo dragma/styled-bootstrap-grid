@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Row } from './styled';
 
-const row = (props) => {
+const row = React.forwardRef((props, ref) => {
   const {
     children,
     alignItems,
@@ -66,12 +66,13 @@ const row = (props) => {
       lgJustifyContent={lgJustifyContent}
       xlJustifyContent={xlJustifyContent}
       data-name={dataName}
+      ref={ref}
       {...otherProps}
     >
       {children}
     </Row>
   );
-};
+});
 
 row.propTypes = {
   children: PropTypes.oneOfType([

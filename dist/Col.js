@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var MyCol = function MyCol(props) {
+var MyCol = _react2.default.forwardRef(function (props, ref) {
   var col = props.col,
       offset = props.offset,
       auto = props.auto,
@@ -280,10 +280,10 @@ var MyCol = function MyCol(props) {
 
   return _react2.default.createElement(
     _styled.Col,
-    allProps,
+    _extends({ ref: ref }, allProps),
     children
   );
-};
+});
 
 var stringOrNumberReactPropType = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]);
 

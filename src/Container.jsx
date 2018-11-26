@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Container, ContainerFluid } from './styled';
 
-const container = (props) => {
+const container = React.forwardRef((props, ref) => {
   const {
     fluid,
     children,
@@ -11,10 +11,10 @@ const container = (props) => {
   } = props;
 
   if (fluid) {
-    return <ContainerFluid data-name="container-fluid" {...otherProps}>{children}</ContainerFluid>;
+    return <ContainerFluid data-name="container-fluid" ref={ref} {...otherProps}>{children}</ContainerFluid>;
   }
-  return <Container data-name="container" {...otherProps}>{children}</Container>;
-};
+  return <Container data-name="container" ref={ref} {...otherProps}>{children}</Container>;
+});
 
 container.propTypes = {
   children: PropTypes.oneOfType([
