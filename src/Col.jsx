@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Col } from './styled';
 
-const MyCol = (props, ref) => {
+const MyCol = (props) => {
   const {
     col,
     offset,
@@ -47,6 +47,7 @@ const MyCol = (props, ref) => {
     hiddenXlDown,
     noGutter,
     children,
+    forwardedRef,
     ...otherProps
   } = props;
 
@@ -265,7 +266,7 @@ const MyCol = (props, ref) => {
   };
 
   return (
-    <Col ref={ref} {...allProps}>
+    <Col ref={forwardedRef} {...allProps}>
       {children}
     </Col>
   );
@@ -359,4 +360,4 @@ MyCol.defaultProps = {
   xlOrder: null,
 };
 
-export default React.forwardRef(MyCol);
+export default React.forwardRef((props, ref) => <MyCol forwardedRef={ref} {...props}/>);

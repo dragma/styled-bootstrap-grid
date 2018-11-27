@@ -20,8 +20,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var row = function row(props, ref) {
-  var children = props.children,
+var MyRow = function MyRow(props) {
+  var forwardedRef = props.forwardedRef,
+      children = props.children,
       alignItems = props.alignItems,
       smAlignItems = props.smAlignItems,
       mdAlignItems = props.mdAlignItems,
@@ -32,7 +33,7 @@ var row = function row(props, ref) {
       mdJustifyContent = props.mdJustifyContent,
       lgJustifyContent = props.lgJustifyContent,
       xlJustifyContent = props.xlJustifyContent,
-      otherProps = _objectWithoutProperties(props, ['children', 'alignItems', 'smAlignItems', 'mdAlignItems', 'lgAlignItems', 'xlAlignItems', 'justifyContent', 'smJustifyContent', 'mdJustifyContent', 'lgJustifyContent', 'xlJustifyContent']);
+      otherProps = _objectWithoutProperties(props, ['forwardedRef', 'children', 'alignItems', 'smAlignItems', 'mdAlignItems', 'lgAlignItems', 'xlAlignItems', 'justifyContent', 'smJustifyContent', 'mdJustifyContent', 'lgJustifyContent', 'xlJustifyContent']);
 
   var dataName = 'row';
 
@@ -82,13 +83,13 @@ var row = function row(props, ref) {
       lgJustifyContent: lgJustifyContent,
       xlJustifyContent: xlJustifyContent,
       'data-name': dataName,
-      ref: ref
+      ref: forwardedRef
     }, otherProps),
     children
   );
 };
 
-row.propTypes = {
+MyRow.propTypes = {
   children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node, _propTypes2.default.string]).isRequired,
   alignItems: _propTypes2.default.string,
   smAlignItems: _propTypes2.default.string,
@@ -102,7 +103,7 @@ row.propTypes = {
   xlJustifyContent: _propTypes2.default.string
 };
 
-row.defaultProps = {
+MyRow.defaultProps = {
   alignItems: null,
   smAlignItems: null,
   mdAlignItems: null,
@@ -115,4 +116,6 @@ row.defaultProps = {
   xlJustifyContent: null
 };
 
-exports.default = _react2.default.forwardRef(row);
+exports.default = _react2.default.forwardRef(function (props, ref) {
+  return _react2.default.createElement(MyRow, _extends({ forwardedRef: ref }, props));
+});

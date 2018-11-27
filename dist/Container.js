@@ -20,32 +20,35 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var container = function container(props, ref) {
+var MyContainer = function MyContainer(props) {
   var fluid = props.fluid,
       children = props.children,
-      otherProps = _objectWithoutProperties(props, ['fluid', 'children']);
+      forwardedRef = props.forwardedRef,
+      otherProps = _objectWithoutProperties(props, ['fluid', 'children', 'forwardedRef']);
 
   if (fluid) {
     return _react2.default.createElement(
       _styled.ContainerFluid,
-      _extends({ 'data-name': 'container-fluid', ref: ref }, otherProps),
+      _extends({ 'data-name': 'container-fluid', ref: forwardedRef }, otherProps),
       children
     );
   }
   return _react2.default.createElement(
     _styled.Container,
-    _extends({ 'data-name': 'container', ref: ref }, otherProps),
+    _extends({ 'data-name': 'container', ref: forwardedRef }, otherProps),
     children
   );
 };
 
-container.propTypes = {
+MyContainer.propTypes = {
   children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node, _propTypes2.default.string]).isRequired,
   fluid: _propTypes2.default.bool
 };
 
-container.defaultProps = {
+MyContainer.defaultProps = {
   fluid: false
 };
 
-exports.default = _react2.default.forwardRef(container);
+exports.default = _react2.default.forwardRef(function (props, ref) {
+  return _react2.default.createElement(MyContainer, _extends({ forwardedRef: ref }, props));
+});
