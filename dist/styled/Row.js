@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  margin-right: -', 'px;\n  margin-left: -', 'px;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['', ''], ['', '']);
 
 var _styledComponents = require('styled-components');
@@ -21,17 +21,17 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var css = {
   alignItems: {
-    start: '\n      -webkit-box-align: start !important;\n      -ms-flex-align: start !important;\n      align-items: flex-start !important;\n    ',
-    end: '\n      -webkit-box-align: end !important;\n      -ms-flex-align: end !important;\n      align-items: flex-end !important;\n    ',
-    center: '\n      -webkit-box-align: center !important;\n      -ms-flex-align: center !important;\n      align-items: center !important;\n    ',
-    baseline: '\n      -webkit-box-align: baseline !important;\n      -ms-flex-align: baseline !important;\n      align-items: baseline !important;\n    ',
-    stretch: '\n      -webkit-box-align: stretch !important;\n      -ms-flex-align: stretch !important;\n      align-items: stretch !important;\n    '
+    start: '\n      -ms-flex-align: start !important;\n      align-items: flex-start !important;\n    ',
+    end: '\n      -ms-flex-align: end !important;\n      align-items: flex-end !important;\n    ',
+    center: '\n      -ms-flex-align: center !important;\n      align-items: center !important;\n    ',
+    baseline: '\n      -ms-flex-align: baseline !important;\n      align-items: baseline !important;\n    ',
+    stretch: '\n      -ms-flex-align: stretch !important;\n      align-items: stretch !important;\n    '
   },
   justifyContent: {
-    start: '\n      -webkit-box-pack: start !important;\n      -ms-flex-pack: start !important;\n      justify-content: flex-start !important;\n    ',
-    end: '\n      -webkit-box-pack: end !important;\n      -ms-flex-pack: end !important;\n      justify-content: flex-end !important;\n    ',
-    center: '\n      -webkit-box-pack: center !important;\n      -ms-flex-pack: center !important;\n      justify-content: center !important;\n    ',
-    between: '\n      -webkit-box-pack: justify !important;\n      -ms-flex-pack: justify !important;\n      justify-content: space-between !important;\n    ',
+    start: '\n      -ms-flex-pack: start !important;\n      justify-content: flex-start !important;\n    ',
+    end: '\n      -ms-flex-pack: end !important;\n      justify-content: flex-end !important;\n    ',
+    center: '\n      -ms-flex-pack: center !important;\n      justify-content: center !important;\n    ',
+    between: '\n      -ms-flex-pack: justify !important;\n      justify-content: space-between !important;\n    ',
     around: '\n      -ms-flex-pack: distribute !important;\n      justify-content: space-around !important;\n    '
   }
 };
