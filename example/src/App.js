@@ -29,7 +29,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Auto-layout columns: Equal-width</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#equal-width">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#equal-width">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
@@ -47,7 +47,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Auto-layout columns: Setting one column width</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#setting-one-column-width">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#setting-one-column-width">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
@@ -70,7 +70,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Auto-layout columns: Variable width content</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#variable-width-content">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#variable-width-content">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
@@ -93,7 +93,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Auto-layout columns: Stacked to horizontal</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#stacked-to-horizontal">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#stacked-to-horizontal">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
@@ -116,7 +116,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Alignment: Vertical alignment</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#vertical-alignment">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#vertical-alignment">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row alignItems="start">
@@ -234,7 +234,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Alignment: Horizontal alignment</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#horizontal-alignment">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#horizontal-alignment">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row justifyContent="start">
@@ -334,7 +334,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Reordering: Order classes</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#order-classes">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#order-classes">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
@@ -366,7 +366,7 @@ const App = props => (
     <TitleRow>
       <Col col={12}>
         <h3>Offsetting columns: Offset classes</h3>
-        <a href="https://getbootstrap.com/docs/4.0/layout/grid/#offset-classes">Bootstrap documentation</a>
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/#offset-classes">Bootstrap documentation</a>
       </Col>
     </TitleRow>
     <Row>
@@ -387,6 +387,16 @@ const App = props => (
       <Col col={12}>
         <h3>Responsive utilities</h3>
         <a href="https://v4-alpha.getbootstrap.com/layout/responsive-utilities/#available-classes">Bootstrap documentation</a>
+
+      </Col>
+      <Col col={12}>
+        <div style={{ fontSize: 12, paddingTop: 15, color: 'red' }}>
+          <i>Will be deprecated soon</i>
+          <ul>
+            <li><a href="https://stackoverflow.com/questions/35351353/missing-visible-and-hidden-in-bootstrap-v4">Link 1</a></li>
+            <li><a href="https://getbootstrap.com/docs/4.1/utilities/display/#hiding-elements">Link 2</a></li>
+          </ul>
+        </div>
       </Col>
     </TitleRow>
     <Row>
