@@ -13,10 +13,10 @@ This module is based on the [styled-components](https://www.npmjs.com/package/st
 
 This module is highly inspired by the awesome work done on the [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) module.
 
-This module is also based on the [Twitter Bootstrap](https://getbootstrap.com/) v4.0.0 `bootstrap-grid.css`.
+This module is also based on the [Twitter Bootstrap](https://getbootstrap.com/) v4.1.3 `bootstrap-grid.css`.
 **The css provided to styled bootstrap grid is not mine.**
 
-> For more information about how does this grid system works *(I mean with classes like containers, row, col, offset, push)* , please refer to the official [Twitter Bootstrap layout documentation](https://v4-alpha.getbootstrap.com/layout/overview/).
+> For more information about how does this grid system works *(I mean with classes like containers, row, col, offset, push)* , please refer to the official [Twitter Bootstrap layout documentation](https://getbootstrap.com/docs/4.1/layout/overview/).
 
 ## Install
 
@@ -25,7 +25,7 @@ This module is also based on the [Twitter Bootstrap](https://getbootstrap.com/) 
 ## Prerequisites
 
 > Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`.
-> *from [Bootstrap documentation](https://getbootstrap.com/docs/4.0/getting-started/introduction/#responsive-meta-tag)*
+> *from [Bootstrap documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/#responsive-meta-tag)*
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
