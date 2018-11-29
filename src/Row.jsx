@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Row } from './styled';
 
-const row = (props, ref) => {
+const MyRow = (props) => {
   const {
+    forwardedRef,
     children,
     alignItems,
     smAlignItems,
@@ -66,7 +67,7 @@ const row = (props, ref) => {
       lgJustifyContent={lgJustifyContent}
       xlJustifyContent={xlJustifyContent}
       data-name={dataName}
-      ref={ref}
+      ref={forwardedRef}
       {...otherProps}
     >
       {children}
@@ -74,7 +75,7 @@ const row = (props, ref) => {
   );
 };
 
-row.propTypes = {
+MyRow.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -93,7 +94,7 @@ row.propTypes = {
 };
 
 
-row.defaultProps = {
+MyRow.defaultProps = {
   alignItems: null,
   smAlignItems: null,
   mdAlignItems: null,
@@ -106,4 +107,4 @@ row.defaultProps = {
   xlJustifyContent: null,
 };
 
-export default React.forwardRef(row);
+export default React.forwardRef((props, ref) => <MyRow forwardedRef={ref} {...props} />);

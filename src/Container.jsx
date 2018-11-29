@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 
 import { Container, ContainerFluid } from './styled';
 
-const container = (props, ref) => {
+const MyContainer = (props) => {
   const {
     fluid,
     children,
+    forwardedRef,
     ...otherProps
   } = props;
 
   if (fluid) {
-    return <ContainerFluid data-name="container-fluid" ref={ref} {...otherProps}>{children}</ContainerFluid>;
+    return <ContainerFluid data-name="container-fluid" ref={forwardedRef} {...otherProps}>{children}</ContainerFluid>;
   }
-  return <Container data-name="container" ref={ref} {...otherProps}>{children}</Container>;
+  return <Container data-name="container" ref={forwardedRef} {...otherProps}>{children}</Container>;
 };
 
-container.propTypes = {
+MyContainer.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -25,8 +26,8 @@ container.propTypes = {
   fluid: PropTypes.bool,
 };
 
-container.defaultProps = {
+MyContainer.defaultProps = {
   fluid: false,
 };
 
-export default React.forwardRef(container);
+export default React.forwardRef((props, ref) => <MyContainer forwardedRef={ref} {...props} />);

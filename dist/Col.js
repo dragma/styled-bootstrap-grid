@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var MyCol = function MyCol(props, ref) {
+var MyCol = function MyCol(props) {
   var col = props.col,
       offset = props.offset,
       auto = props.auto,
@@ -63,7 +63,8 @@ var MyCol = function MyCol(props, ref) {
       hiddenXlDown = props.hiddenXlDown,
       noGutter = props.noGutter,
       children = props.children,
-      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'alignSelf', 'order', 'xs', 'xsOffset', 'xsAuto', 'xsAlignSelf', 'xsOrder', 'hiddenXsUp', 'hiddenXsDown', 'sm', 'smOffset', 'smAuto', 'smAlignSelf', 'smOrder', 'hiddenSmUp', 'hiddenSmDown', 'md', 'mdOffset', 'mdAuto', 'mdAlignSelf', 'mdOrder', 'hiddenMdUp', 'hiddenMdDown', 'lg', 'lgOffset', 'lgAuto', 'lgAlignSelf', 'lgOrder', 'hiddenLgUp', 'hiddenLgDown', 'xl', 'xlOffset', 'xlAuto', 'xlAlignSelf', 'xlOrder', 'hiddenXlUp', 'hiddenXlDown', 'noGutter', 'children']);
+      forwardedRef = props.forwardedRef,
+      otherProps = _objectWithoutProperties(props, ['col', 'offset', 'auto', 'alignSelf', 'order', 'xs', 'xsOffset', 'xsAuto', 'xsAlignSelf', 'xsOrder', 'hiddenXsUp', 'hiddenXsDown', 'sm', 'smOffset', 'smAuto', 'smAlignSelf', 'smOrder', 'hiddenSmUp', 'hiddenSmDown', 'md', 'mdOffset', 'mdAuto', 'mdAlignSelf', 'mdOrder', 'hiddenMdUp', 'hiddenMdDown', 'lg', 'lgOffset', 'lgAuto', 'lgAlignSelf', 'lgOrder', 'hiddenLgUp', 'hiddenLgDown', 'xl', 'xlOffset', 'xlAuto', 'xlAlignSelf', 'xlOrder', 'hiddenXlUp', 'hiddenXlDown', 'noGutter', 'children', 'forwardedRef']);
 
   var dataName = '';
   if (col) {
@@ -280,7 +281,7 @@ var MyCol = function MyCol(props, ref) {
 
   return _react2.default.createElement(
     _styled.Col,
-    _extends({ ref: ref }, allProps),
+    _extends({ ref: forwardedRef }, allProps),
     children
   );
 };
@@ -362,4 +363,6 @@ MyCol.defaultProps = {
   xlOrder: null
 };
 
-exports.default = _react2.default.forwardRef(MyCol);
+exports.default = _react2.default.forwardRef(function (props, ref) {
+  return _react2.default.createElement(MyCol, _extends({ forwardedRef: ref }, props));
+});
