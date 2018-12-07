@@ -68,13 +68,13 @@ var MyCol = function MyCol(props) {
 
   var dataName = '';
   if (col) {
-    if (!Number.isNaN(parseInt(col, 10))) {
+    if (isNumber(col)) {
       dataName = dataName + ' col-' + col;
     } else {
       dataName = dataName + ' col';
     }
   }
-  if (!Number.isNaN(parseInt(offset, 10))) {
+  if (isNumber(offset)) {
     dataName = dataName + ' offset-' + offset;
   }
   if (auto) {
@@ -83,19 +83,19 @@ var MyCol = function MyCol(props) {
   if (alignSelf) {
     dataName = dataName + ' align-self-' + alignSelf;
   }
-  if (!Number.isNaN(parseInt(order, 10)) || order === 'first' || order === 'last') {
+  if (isNumber(order) || order === 'first' || order === 'last') {
     dataName = dataName + ' order-' + order;
   }
 
   // XS
   if (xs) {
-    if (!Number.isNaN(parseInt(xs, 10))) {
+    if (isNumber(xs)) {
       dataName = dataName + ' col-xs-' + xs;
     } else {
       dataName = dataName + ' col-xs';
     }
   }
-  if (!Number.isNaN(parseInt(xsOffset, 10))) {
+  if (isNumber(xsOffset)) {
     dataName = dataName + ' offset-xs-' + xsOffset;
   }
   if (xsAuto) {
@@ -104,7 +104,7 @@ var MyCol = function MyCol(props) {
   if (xsAlignSelf) {
     dataName = dataName + ' align-self-xs-' + xsAlignSelf;
   }
-  if (!Number.isNaN(parseInt(xsOrder, 10)) || xsOrder === 'first' || xsOrder === 'last') {
+  if (isNumber(xsOrder) || xsOrder === 'first' || xsOrder === 'last') {
     dataName = dataName + ' order-xs-' + xsOrder;
   }
   if (hiddenXsDown) {
@@ -116,13 +116,13 @@ var MyCol = function MyCol(props) {
 
   // SM
   if (sm) {
-    if (!Number.isNaN(parseInt(sm, 10))) {
+    if (isNumber(sm)) {
       dataName = dataName + ' col-sm-' + sm;
     } else {
       dataName = dataName + ' col-sm';
     }
   }
-  if (!Number.isNaN(parseInt(smOffset, 10))) {
+  if (isNumber(smOffset)) {
     dataName = dataName + ' offset-sm-' + smOffset;
   }
   if (smAuto) {
@@ -131,7 +131,7 @@ var MyCol = function MyCol(props) {
   if (smAlignSelf) {
     dataName = dataName + ' align-self-sm-' + smAlignSelf;
   }
-  if (!Number.isNaN(parseInt(smOrder, 10)) || smOrder === 'first' || smOrder === 'last') {
+  if (isNumber(smOrder) || smOrder === 'first' || smOrder === 'last') {
     dataName = dataName + ' order-sm-' + smOrder;
   }
   if (hiddenSmDown) {
@@ -143,13 +143,13 @@ var MyCol = function MyCol(props) {
 
   // MD
   if (md) {
-    if (!Number.isNaN(parseInt(md, 10))) {
+    if (isNumber(md)) {
       dataName = dataName + ' col-md-' + md;
     } else {
       dataName = dataName + ' col-md';
     }
   }
-  if (!Number.isNaN(parseInt(mdOffset, 10))) {
+  if (isNumber(mdOffset)) {
     dataName = dataName + ' offset-md-' + mdOffset;
   }
   if (mdAuto) {
@@ -158,7 +158,7 @@ var MyCol = function MyCol(props) {
   if (mdAlignSelf) {
     dataName = dataName + ' align-self-md-' + mdAlignSelf;
   }
-  if (!Number.isNaN(parseInt(mdOrder, 10)) || mdOrder === 'first' || mdOrder === 'last') {
+  if (isNumber(mdOrder) || mdOrder === 'first' || mdOrder === 'last') {
     dataName = dataName + ' order-md-' + mdOrder;
   }
   if (hiddenMdDown) {
@@ -170,13 +170,13 @@ var MyCol = function MyCol(props) {
 
   // LG
   if (lg) {
-    if (!Number.isNaN(parseInt(lg, 10))) {
+    if (isNumber(lg)) {
       dataName = dataName + ' col-lg-' + lg;
     } else {
       dataName = dataName + ' col-lg';
     }
   }
-  if (!Number.isNaN(parseInt(lgOffset, 10))) {
+  if (isNumber(lgOffset)) {
     dataName = dataName + ' offset-lg-' + lgOffset;
   }
   if (lgAuto) {
@@ -185,7 +185,7 @@ var MyCol = function MyCol(props) {
   if (lgAlignSelf) {
     dataName = dataName + ' align-self-lg-' + lgAlignSelf;
   }
-  if (!Number.isNaN(parseInt(lgOrder, 10)) || lgOrder === 'first' || lgOrder === 'last') {
+  if (isNumber(lgOrder) || lgOrder === 'first' || lgOrder === 'last') {
     dataName = dataName + ' order-lg-' + lgOrder;
   }
   if (hiddenLgDown) {
@@ -197,13 +197,13 @@ var MyCol = function MyCol(props) {
 
   // XL
   if (xl) {
-    if (!Number.isNaN(parseInt(xl, 10))) {
+    if (isNumber(xl)) {
       dataName = dataName + ' col-xl-' + xl;
     } else {
       dataName = dataName + ' col-xl';
     }
   }
-  if (!Number.isNaN(parseInt(xlOffset, 10))) {
+  if (isNumber(xlOffset)) {
     dataName = dataName + ' offset-xl-' + xlOffset;
   }
   if (xlAuto) {
@@ -212,7 +212,7 @@ var MyCol = function MyCol(props) {
   if (xlAlignSelf) {
     dataName = dataName + ' align-self-xl-' + xlAlignSelf;
   }
-  if (!Number.isNaN(parseInt(xlOrder, 10)) || xlOrder === 'first' || xlOrder === 'last') {
+  if (isNumber(xlOrder) || xlOrder === 'first' || xlOrder === 'last') {
     dataName = dataName + ' order-xl-' + xlOrder;
   }
   if (hiddenXlDown) {

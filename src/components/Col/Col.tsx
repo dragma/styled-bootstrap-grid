@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-import media from './media';
+import { ColCss, ColProps } from './types';
+import { isNumber, suffix } from 'utils';
+import media from 'media';
 
-const css = {
+const css: ColCss = {
   col: {
     true: `
       -ms-flex-preferred-size: 0;
@@ -183,7 +185,7 @@ const css = {
   display: {
     none: `
       display: none;
-    `
+    `,
   },
   noGutter: `
     padding-right: 0;
@@ -191,17 +193,74 @@ const css = {
   `,
 };
 
-const Col = styled.div`
+const getDataName = (p: ColProps) =>
+  [
+    p.col && `col${suffix(p.col)}`,
+    isNumber(p.offset) && `offset-${p.offset}`,
+    p.auto && `col-auto`,
+    p.alignSelf && `align-self-${p.alignSelf}`,
+    isNumber(p.order) || p.order === 'first' || (p.order === 'last' && `order-${p.order}`),
+    p.xs && `col-xs${suffix(p.xs)}`,
+    isNumber(p.xsOffset) && `offset-xs-${p.xsOffset}`,
+    p.xsAuto && `col-xs-auto`,
+    p.xsAlignSelf && `align-self-xs-${p.xsAlignSelf}`,
+    isNumber(p.xsOrder) ||
+      p.xsOrder === 'first' ||
+      (p.xsOrder === 'last' && `order-xs-${p.xsOrder}`),
+    p.hiddenXsDown && `hidden-xs-down`,
+    p.hiddenXsUp && `hidden-xs-up`,
+    p.sm && `col-sm${suffix(p.sm)}`,
+    isNumber(p.smOffset) && `offset-sm-${p.smOffset}`,
+    p.smAuto && `col-sm-auto`,
+    p.smAlignSelf && `align-self-sm-${p.smAlignSelf}`,
+    isNumber(p.smOrder) ||
+      p.smOrder === 'first' ||
+      (p.smOrder === 'last' && `order-sm-${p.smOrder}`),
+    p.hiddenSmDown && `hidden-sm-down`,
+    p.hiddenSmUp && `hidden-sm-up`,
+    p.md && `col-md${suffix(p.md)}`,
+    isNumber(p.mdOffset) && `offset-md-${p.mdOffset}`,
+    p.mdAuto && `col-md-auto`,
+    p.mdAlignSelf && `align-self-md-${p.mdAlignSelf}`,
+    isNumber(p.mdOrder) ||
+      p.mdOrder === 'first' ||
+      (p.mdOrder === 'last' && `order-md-${p.mdOrder}`),
+    p.hiddenMdDown && `hidden-xs-down`,
+    p.hiddenMdUp && `hidden-xs-up`,
+    p.lg && `} col-lg${suffix(p.lg)}`,
+    isNumber(p.lgOffset) && `offset-lg-${p.lgOffset}`,
+    p.lgAuto && `col-lg-auto`,
+    p.lgAlignSelf && `align-self-lg-${p.lgAlignSelf}`,
+    isNumber(p.lgOrder) ||
+      p.lgOrder === 'first' ||
+      (p.lgOrder === 'last' && `order-lg-${p.lgOrder}`),
+    p.hiddenLgDown && `hidden-xs-down`,
+    p.hiddenLgUp && `hidden-xs-up`,
+    p.xl && `col-xl${suffix(p.xl)}`,
+    isNumber(p.xlOffset) && `offset-xl-${p.xlOffset}`,
+    p.xlAuto && `col-xl-auto`,
+    p.xlAlignSelf && `align-self-xl-${p.xlAlignSelf}`,
+    isNumber(p.xlOrder) ||
+      p.xlOrder === 'first' ||
+      (p.xlOrder === 'last' && `order-xl-${p.xlOrder}`),
+    p.hiddenXlDown && `hidden-xs-down`,
+    p.hiddenXlUp && `hidden-xs-up`,
+    p.noGutter && `no-gutter`,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+export default styled.div.attrs<ColProps>(props => ({ 'data-name': process.env.NODE_ENV === 'development' ? getDataName(props) : undefined, }))<ColProps>`
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: ${(p) => {
+  padding-right: ${p => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
       return 15;
     }
     return p.theme.styledBootstrapGrid.getColPadding();
   }}px;
-  padding-left: ${(p) => {
+  padding-left: ${p => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getColPadding) {
       return 15;
     }
@@ -210,51 +269,49 @@ const Col = styled.div`
 
   ${p => p.noGutter && css.noGutter}
 
-  ${p => p.col && css.col[p.col]}
+  ${p => p.col && css.col[p.col === true ? 'true' : p.col]}
   ${p => p.offset && css.offset[p.offset]}
   ${p => p.auto && css.col.auto}
   ${p => p.alignSelf && css.alignSelf[p.alignSelf]}
   ${p => p.order && css.order[p.order]}
 
-  ${p => p.xs && media.xs`${css.col[p.xs]}`}
-  ${p => !Number.isNaN(parseInt(p.xsOffset, 10)) && media.xs`${css.offset[p.xsOffset]}`}
+  ${p => p.xs && media.xs`${css.col[p.xs === true ? 'true' : p.xs]}`}
+  ${p => p.xsOffset && isNumber(p.xsOffset) && media.xs`${css.offset[p.xsOffset]}`}
   ${p => p.xsAuto && media.xs`${css.col.auto}`}
   ${p => p.xsAlignSelf && media.xs`${css.alignSelf[p.xsAlignSelf]}`}
   ${p => p.xsOrder && media.xs`${css.order[p.xsOrder]}`}
   ${p => p.hiddenXsDown && media.max.xs`${css.display.none}`}
   ${p => p.hiddenXsUp && media.min.xs`${css.display.none}`}
 
-  ${p => p.sm && media.sm`${css.col[p.sm]}`}
-  ${p => !Number.isNaN(parseInt(p.smOffset, 10)) && media.sm`${css.offset[p.smOffset]}`}
+  ${p => p.sm && media.sm`${css.col[p.sm === true ? 'true' : p.sm]}`}
+  ${p => p.smOffset && isNumber(p.smOffset) && media.sm`${css.offset[p.smOffset]}`}
   ${p => p.smAuto && media.sm`${css.col.auto}`}
   ${p => p.smAlignSelf && media.sm`${css.alignSelf[p.smAlignSelf]}`}
   ${p => p.smOrder && media.sm`${css.order[p.smOrder]}`}
   ${p => p.hiddenSmDown && media.max.sm`${css.display.none}`}
   ${p => p.hiddenSmUp && media.min.sm`${css.display.none}`}
 
-  ${p => p.md && media.md`${css.col[p.md]}`}
-  ${p => !Number.isNaN(parseInt(p.mdOffset, 10)) && media.md`${css.offset[p.mdOffset]}`}
+  ${p => p.md && media.md`${css.col[p.md === true ? 'true' : p.md]}`}
+  ${p => p.mdOffset && isNumber(p.mdOffset) && media.md`${css.offset[p.mdOffset]}`}
   ${p => p.mdAuto && media.md`${css.col.auto}`}
   ${p => p.mdAlignSelf && media.md`${css.alignSelf[p.mdAlignSelf]}`}
   ${p => p.mdOrder && media.md`${css.order[p.mdOrder]}`}
   ${p => p.hiddenMdDown && media.max.md`${css.display.none}`}
   ${p => p.hiddenMdUp && media.min.md`${css.display.none}`}
 
-  ${p => p.lg && media.lg`${css.col[p.lg]}`}
-  ${p => !Number.isNaN(parseInt(p.lgOffset, 10)) && media.lg`${css.offset[p.lgOffset]}`}
+  ${p => p.lg && media.lg`${css.col[p.lg === true ? 'true' : p.lg]}`}
+  ${p => p.lgOffset && isNumber(p.lgOffset) && media.lg`${css.offset[p.lgOffset]}`}
   ${p => p.lgAuto && media.lg`${css.col.auto}`}
   ${p => p.lgAlignSelf && media.lg`${css.alignSelf[p.lgAlignSelf]}`}
   ${p => p.lgOrder && media.lg`${css.order[p.lgOrder]}`}
   ${p => p.hiddenLgDown && media.max.lg`${css.display.none}`}
   ${p => p.hiddenLgUp && media.min.lg`${css.display.none}`}
 
-  ${p => p.xl && media.xl`${css.col[p.xl]}`}
-  ${p => !Number.isNaN(parseInt(p.xlOffset, 10)) && media.xl`${css.offset[p.xlOffset]}`}
+  ${p => p.xl && media.xl`${css.col[p.xl === true ? 'true' : p.xl]}`}
+  ${p => p.xlOffset && isNumber(p.xlOffset) && media.xl`${css.offset[p.xlOffset]}`}
   ${p => p.xlAuto && media.xl`${css.col.auto}`}
   ${p => p.xlAlignSelf && media.xl`${css.alignSelf[p.xlAlignSelf]}`}
   ${p => p.xlOrder && media.xl`${css.order[p.xlOrder]}`}
   ${p => p.hiddenXlDown && media.max.xl`${css.display.none}`}
   ${p => p.hiddenXlUp && media.min.xl`${css.display.none}`}
 `;
-
-export default Col;

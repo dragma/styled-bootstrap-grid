@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-import media from './media';
+import { RowCss, RowProps } from './types';
+import media from 'media';
 
-const css = {
+const css: RowCss = {
   alignItems: {
     start: `
       -ms-flex-align: start !important;
@@ -49,19 +50,37 @@ const css = {
   },
 };
 
+const getDataName = (p: RowProps) =>
+  [
+    'row',
+    p.alignItems && `align-items-${p.alignItems}`,
+    p.smAlignItems && `align-items-sm-${p.smAlignItems}`,
+    p.mdAlignItems && `align-items-md-${p.mdAlignItems}`,
+    p.lgAlignItems && `align-items-lg-${p.lgAlignItems}`,
+    p.xlAlignItems && `align-items-xl-${p.xlAlignItems}`,
+    p.justifyContent && `justify-content-${p.justifyContent}`,
+    p.smJustifyContent && `justify-content-sm-${p.smJustifyContent}`,
+    p.mdJustifyContent && `justify-content-md-${p.mdJustifyContent}`,
+    p.lgJustifyContent && `justify-content-lg-${p.lgJustifyContent}`,
+    p.xlJustifyContent && `justify-content-xl-$p.{xlJustifyContent}`,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
-const Row = styled.div`
+export default styled.div.attrs<RowProps>(props => ({
+  'data-name': process.env.NODE_ENV === 'development' ? getDataName(props) : undefined,
+}))<RowProps>`
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -${(p) => {
+  margin-right: -${p => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getRowPadding) {
       return 15;
     }
     return p.theme.styledBootstrapGrid.getRowPadding();
   }}px;
-  margin-left: -${(p) => {
+  margin-left: -${p => {
     if (!p.theme || !p.theme.styledBootstrapGrid || !p.theme.styledBootstrapGrid.getRowPadding) {
       return 15;
     }
@@ -69,18 +88,14 @@ const Row = styled.div`
   }}px;
 
   ${p => p.alignItems && css.alignItems[p.alignItems]}
-  ${p => p.smAlignItems && media.xs`${css.alignItems[p.xsAlignItems]}`}
   ${p => p.smAlignItems && media.sm`${css.alignItems[p.smAlignItems]}`}
   ${p => p.mdAlignItems && media.md`${css.alignItems[p.mdAlignItems]}`}
   ${p => p.lgAlignItems && media.lg`${css.alignItems[p.lgAlignItems]}`}
   ${p => p.xlAlignItems && media.xl`${css.alignItems[p.xlAlignItems]}`}
 
   ${p => p.justifyContent && css.justifyContent[p.justifyContent]}
-  ${p => p.smJustifyContent && media.xs`${css.justifyContent[p.xsJustifyContent]}`}
   ${p => p.smJustifyContent && media.sm`${css.justifyContent[p.smJustifyContent]}`}
   ${p => p.mdJustifyContent && media.md`${css.justifyContent[p.mdJustifyContent]}`}
   ${p => p.lgJustifyContent && media.lg`${css.justifyContent[p.lgJustifyContent]}`}
   ${p => p.xlJustifyContent && media.xl`${css.justifyContent[p.xlJustifyContent]}`}
 `;
-
-export default Row;

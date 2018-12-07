@@ -33,7 +33,7 @@ exports.default = function (props) {
 
   var getContainerPadding = function getContainerPadding() {
     if (myTheme.styledBootstrapGrid.container) {
-      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.container.padding, 10))) {
+      if (isNumber(myTheme.styledBootstrapGrid.container.padding)) {
         return myTheme.styledBootstrapGrid.container.padding;
       }
     }
@@ -42,7 +42,7 @@ exports.default = function (props) {
   var getContainerMaxWidth = function getContainerMaxWidth(breakpoint) {
     if (myTheme.styledBootstrapGrid.container && myTheme.styledBootstrapGrid.container.maxWidth) {
       var size = myTheme.styledBootstrapGrid.container.maxWidth[breakpoint];
-      if (!Number.isNaN(parseInt(size, 10))) {
+      if (isNumber(size)) {
         return size;
       }
       return defaultContainerMaxWidth[breakpoint];
@@ -50,7 +50,7 @@ exports.default = function (props) {
   };
   var getRowPadding = function getRowPadding() {
     if (myTheme.styledBootstrapGrid.row) {
-      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.row.padding, 10))) {
+      if (isNumber(myTheme.styledBootstrapGrid.row.padding)) {
         return myTheme.styledBootstrapGrid.row.padding;
       }
     }
@@ -58,7 +58,7 @@ exports.default = function (props) {
   };
   var getColPadding = function getColPadding() {
     if (myTheme.styledBootstrapGrid.col) {
-      if (!Number.isNaN(parseInt(myTheme.styledBootstrapGrid.col.padding, 10))) {
+      if (isNumber(myTheme.styledBootstrapGrid.col.padding)) {
         return myTheme.styledBootstrapGrid.col.padding;
       }
     }

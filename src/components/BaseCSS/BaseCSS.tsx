@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 
-const defaultCSS = `
+import { BaseCSSProps } from './types';
+
+export default createGlobalStyle<BaseCSSProps>`
   @-ms-viewport {
     width: device-width;
   }
@@ -19,9 +19,6 @@ const defaultCSS = `
     -webkit-box-sizing: inherit;
             box-sizing: inherit;
   }
-`;
-
-export default createGlobalStyle`
-  ${defaultCSS}
+  
   ${p => p.css}
-`;;
+`;

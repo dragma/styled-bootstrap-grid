@@ -190,7 +190,7 @@ ReactDOM.render(
 
 ```
 
-### Media
+### MediaTypes
 
 This packages also exposes the `media` element. It can be used in your styled-components like this :
 
