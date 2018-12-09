@@ -1,4 +1,4 @@
-import { MediaAliases, Media } from 'media.types';
+import { MediaAliases, Media } from '../../media.types';
 
 export type Breakpoints = { [key in Media]: number };
 export type PartialBreakpoints = Partial<Breakpoints>;

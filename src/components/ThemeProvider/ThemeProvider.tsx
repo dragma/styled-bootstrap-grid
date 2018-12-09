@@ -1,10 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { DefaultContainerMaxWidth, MyTheme, ThemeProps } from 'components/ThemeProvider/types';
-import { isNumber } from 'utils';
-import makeAliases from 'aliases';
-import { MediaAliases } from 'media.types';
+import { DefaultContainerMaxWidth, MyTheme, ThemeProps } from './ThemeProvider.types';
+import { isNumber } from '../../utils';
+import makeAliases from '../../aliases';
+import { MediaAliases } from '../../media.types';
 
 export const defaultContainerMaxWidth: DefaultContainerMaxWidth = {
   xl: 1140,

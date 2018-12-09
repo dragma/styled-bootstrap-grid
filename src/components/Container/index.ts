@@ -1,2 +1,2 @@
-export * from './types';
+export * from './Container.types';
 export { default } from './Container';

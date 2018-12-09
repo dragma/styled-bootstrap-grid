@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { RowCss, RowProps } from './types';
-import media from 'media';
+import { RowCss, RowProps } from './Row.types';
+import media from '../../media';
 
 const css: RowCss = {
   alignItems: {

@@ -4,7 +4,7 @@ import {
   SimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
-import { Breakpoints, SuperTheme } from 'components/ThemeProvider/types';
+import { Breakpoints, SuperTheme } from './components/ThemeProvider';
 
 export enum MediaLabels {
   xs = 'smaller',

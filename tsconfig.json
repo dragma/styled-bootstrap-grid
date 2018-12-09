@@ -8,9 +8,6 @@
     "esModuleInterop": true,
     "jsx": "react",
     "baseUrl": "src",
-    "paths": {
-      "types/*": ["types/*"]
-    },
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },

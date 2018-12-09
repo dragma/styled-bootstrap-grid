@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { ColCss, ColProps } from './types';
-import { isNumber, suffix } from 'utils';
-import media from 'media';
+import { isNumber, suffix } from '../../utils';
+import media from '../../media';
+import {ColCss, ColProps} from './Col.types';
 
 const css: ColCss = {
   col: {
@@ -250,7 +250,9 @@ const getDataName = (p: ColProps) =>
     .filter(Boolean)
     .join(' ');
 
-export default styled.div.attrs<ColProps>(props => ({ 'data-name': process.env.NODE_ENV === 'development' ? getDataName(props) : undefined, }))<ColProps>`
+export default styled.div.attrs<ColProps>(props => ({
+  'data-name': process.env.NODE_ENV === 'development' ? getDataName(props) : undefined,
+}))<ColProps>`
   position: relative;
   width: 100%;
   min-height: 1px;

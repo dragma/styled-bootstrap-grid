@@ -1,8 +1,8 @@
-import { ContainerProps } from './types';
+import { ContainerProps } from './Container.types';
 import styled from 'styled-components';
 
 import { defaultContainerMaxWidth } from '../ThemeProvider/ThemeProvider';
-import media from 'media';
+import media from '../../media';
 
 export default styled.div.attrs<ContainerProps>(props => ({
   'data-name':

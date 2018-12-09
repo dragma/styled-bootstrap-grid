@@ -1,14 +1,8 @@
-import { Align } from 'components/Col/types';
+import { Align } from '../Col';
 
-export enum Justify {
-  Start = 'start',
-  End = 'end',
-  Center = 'center',
-  Between = 'between',
-  Around = 'around',
-}
+export type Justify = 'start' | 'end' | 'center' | 'between' | 'around';
 
-export interface RowProps {
+export type RowProps = {
   alignItems?: Align;
   smAlignItems?: Align;
   mdAlignItems?: Align;
@@ -19,7 +13,7 @@ export interface RowProps {
   mdJustifyContent?: Justify;
   lgJustifyContent?: Justify;
   xlJustifyContent?: Justify;
-}
+};
 
 export type RowCss = {
   alignItems: { [K in Align]: string };
