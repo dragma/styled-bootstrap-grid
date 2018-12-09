@@ -1,10 +1,10 @@
 import { css } from 'styled-components';
 
-import makeAliases from './aliases';
-import { Media, MediaTagFunction, MediaObject, GetBreakpointsFn } from './media.types';
-import { Breakpoints } from './components/ThemeProvider';
+import makeAliases from '../aliases';
+import { Media, MediaTagFunction, MediaObject, GetBreakpointsFn } from './types';
+import { Breakpoints } from '../components/ThemeProvider';
 
-export const defaultBreakpoints = makeAliases({
+const defaultBreakpoints = makeAliases({
   xl: 1200,
   lg: 992,
   md: 768,

@@ -1,2 +1,2 @@
-export * from './Row.types';
+export * from './types';
 export { default } from './Row';

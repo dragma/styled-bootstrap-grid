@@ -1,2 +1,2 @@
-export * from './BaseCSS.types';
+export * from './types';
 export { default } from './BaseCSS';

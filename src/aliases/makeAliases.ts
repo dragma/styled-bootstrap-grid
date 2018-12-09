@@ -1,5 +1,5 @@
-import { Media, MediaLabels, MediaAliases } from './media.types';
-import { MakeAliases } from './aliases.types';
+import { MakeAliases } from './types';
+import { Media, MediaLabels, MediaAliases } from '../media/types';
 
 const makeAliases: MakeAliases = (breakpoints = {}) => {
   const data = Object.assign({}, breakpoints);

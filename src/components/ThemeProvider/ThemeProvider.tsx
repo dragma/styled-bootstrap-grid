@@ -1,10 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { DefaultContainerMaxWidth, MyTheme, ThemeProps } from './ThemeProvider.types';
+import { DefaultContainerMaxWidth, StyledBootstrapGrid, ThemeProps } from './types';
 import { isNumber } from '../../utils';
 import makeAliases from '../../aliases';
-import { MediaAliases } from '../../media.types';
+import { MediaAliases } from '../../media/types';
 
 export const defaultContainerMaxWidth: DefaultContainerMaxWidth = {
   xl: 1140,
@@ -18,38 +18,38 @@ export default (props: ThemeProps) => {
   const { gridTheme: theme = {} } = props;
 
   const getContainerPadding = () => {
-    if (isNumber(myTheme.container.padding)) {
-      return myTheme.container.padding;
+    if (isNumber(styledBootstrapGridTheme.container.padding)) {
+      return styledBootstrapGridTheme.container.padding;
     }
 
     return 15;
   };
 
   const getContainerMaxWidth = (breakpoint: MediaAliases) => {
-    if (isNumber(myTheme.container.maxWidth[breakpoint])) {
-      return myTheme.container.maxWidth[breakpoint];
+    if (isNumber(styledBootstrapGridTheme.container.maxWidth[breakpoint])) {
+      return styledBootstrapGridTheme.container.maxWidth[breakpoint];
     }
 
     return defaultContainerMaxWidth[breakpoint];
   };
 
   const getRowPadding = () => {
-    if (myTheme.row && isNumber(myTheme.row.padding)) {
-      return myTheme.row.padding;
+    if (styledBootstrapGridTheme.row && isNumber(styledBootstrapGridTheme.row.padding)) {
+      return styledBootstrapGridTheme.row.padding;
     }
 
     return 15;
   };
 
   const getColPadding = () => {
-    if (myTheme.col && isNumber(myTheme.col.padding)) {
-      return myTheme.col.padding;
+    if (styledBootstrapGridTheme.col && isNumber(styledBootstrapGridTheme.col.padding)) {
+      return styledBootstrapGridTheme.col.padding;
     }
 
     return 15;
   };
 
-  const myTheme: MyTheme = {
+  const styledBootstrapGridTheme: StyledBootstrapGrid = {
     breakpoints: makeAliases(theme.breakpoints),
     col: theme.col,
     row: theme.row,
@@ -66,5 +66,5 @@ export default (props: ThemeProps) => {
     getColPadding,
   };
 
-  return <ThemeProvider theme={{ styledBootstrapGrid: myTheme }} {...props} />;
+  return <ThemeProvider theme={{ styledBootstrapGrid: styledBootstrapGridTheme }} {...props} />;
 };

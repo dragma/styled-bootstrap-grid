@@ -1,9 +1,9 @@
-import { MediaAliases, Media } from '../../media.types';
+import { MediaAliases, Media } from '../../media/types';
 
 export type Breakpoints = { [key in Media]: number };
 export type PartialBreakpoints = Partial<Breakpoints>;
 
-export interface Theme {
+interface GridTheme {
   breakpoints?: PartialBreakpoints;
   row?: {
     padding?: number;
@@ -18,12 +18,12 @@ export interface Theme {
 }
 
 export interface ThemeProps {
-  gridTheme?: Theme;
+  gridTheme?: GridTheme;
 }
 
 export type DefaultContainerMaxWidth = { [K in MediaAliases]: number };
 
-export interface MyTheme extends Theme {
+export interface StyledBootstrapGrid extends GridTheme {
   container: {
     padding?: number;
     maxWidth: PartialBreakpoints;
@@ -34,6 +34,6 @@ export interface MyTheme extends Theme {
   getColPadding: any;
 }
 
-export interface SuperTheme {
-  styledBootstrapGrid: MyTheme;
+export interface Theme {
+  styledBootstrapGrid: StyledBootstrapGrid;
 }

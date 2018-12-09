@@ -1,4 +1,4 @@
-import { ContainerProps } from './Container.types';
+import { ContainerProps } from './types';
 import styled from 'styled-components';
 
 import { defaultContainerMaxWidth } from '../ThemeProvider/ThemeProvider';
@@ -6,7 +6,7 @@ import media from '../../media';
 
 export default styled.div.attrs<ContainerProps>(props => ({
   'data-name':
-    process.env.NODE_ENV === 'development' ? `container${props.fluid && '-fluid'}` : undefined,
+    process.env.NODE_ENV !== 'production' ? `container${props.fluid ? '-fluid' : ''}` : undefined,
 }))<ContainerProps>`
   width: 100%;
   padding-right: ${p => {

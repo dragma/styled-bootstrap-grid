@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { BaseCSSProps } from './BaseCSS.types';
+import { BaseCSSProps } from './types';
 
 export default createGlobalStyle<BaseCSSProps>`
   @-ms-viewport {
