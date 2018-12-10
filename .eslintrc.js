@@ -1,5 +1,5 @@
 module.exports = {
-    "extends": "airbnb"
+    "extends": "airbnb",
     rules: {
         'import/no-unresolved': 0,
     }
