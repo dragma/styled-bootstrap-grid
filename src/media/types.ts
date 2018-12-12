@@ -1,7 +1,8 @@
 import {
+  CSSObject,
   FlattenInterpolation,
   Interpolation,
-  SimpleInterpolation,
+  InterpolationFunction,
   ThemedStyledProps,
 } from 'styled-components';
 import { Breakpoints, Theme } from '../components/ThemeProvider';
@@ -25,8 +26,8 @@ export enum MediaAliases {
 export type Media = MediaLabels | MediaAliases;
 
 export type MediaTagFunction<P extends {} = {}, T extends Theme = Theme> = (
-  strings: TemplateStringsArray | NonNullable<SimpleInterpolation>,
-  ...interpolations: Interpolation<ThemedStyledProps<P, T>>[]
+  first: TemplateStringsArray | CSSObject | InterpolationFunction<ThemedStyledProps<P, T>>,
+  ...interpolations: Array<Interpolation<ThemedStyledProps<P, T>>>
 ) => FlattenInterpolation<ThemedStyledProps<P, T>>;
 
 export type MapMediaToQuery = { [Key in Media]: MediaTagFunction };
