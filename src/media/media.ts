@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, CSSObject } from 'styled-components';
 
 import makeAliases from '../aliases';
 import { Media, MediaTagFunction, MediaObject, GetBreakpointsFn } from './types';
@@ -24,13 +24,13 @@ const media: MediaObject = (Object.keys(defaultBreakpoints) as Media[]).reduce(
   (accumulator, label) => {
     const minMedia: MediaTagFunction = (strings, ...interpolations) => css`
       @media (min-width: ${props => getBreakpoints(props)[label]}px) {
-        ${css(strings, ...interpolations)}
+        ${css(strings as CSSObject | TemplateStringsArray, ...interpolations)}
       }
     `;
 
     const maxMedia: MediaTagFunction = (strings, ...interpolations) => css`
       @media (max-width: ${props => getBreakpoints(props)[label]}px) {
-        ${css(strings, ...interpolations)}
+        ${css(strings as CSSObject | TemplateStringsArray, ...interpolations)}
       }
     `;
 

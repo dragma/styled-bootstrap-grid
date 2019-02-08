@@ -32,59 +32,47 @@ export default styled.div.attrs<ContainerProps>(props => ({
   margin-right: auto;
   margin-left: auto;
 
-  ${props =>
-    !props.fluid &&
-    `
-      ${media.sm`
-        max-width: ${p => {
-          if (
-            !p.theme ||
-            !p.theme.styledBootstrapGrid ||
-            !p.theme.styledBootstrapGrid.getContainerMaxWidth
-          ) {
-            return defaultContainerMaxWidth.sm;
-          }
-          return p.theme.styledBootstrapGrid.getContainerMaxWidth('sm');
-        }}px;
-      `}
-    
-      ${media.md`
-        max-width: ${p => {
-          if (
-            !p.theme ||
-            !p.theme.styledBootstrapGrid ||
-            !p.theme.styledBootstrapGrid.getContainerMaxWidth
-          ) {
-            return defaultContainerMaxWidth.md;
-          }
-          return p.theme.styledBootstrapGrid.getContainerMaxWidth('md');
-        }}px;
-      `}
-    
-      ${media.lg`
-        max-width: ${p => {
-          if (
-            !p.theme ||
-            !p.theme.styledBootstrapGrid ||
-            !p.theme.styledBootstrapGrid.getContainerMaxWidth
-          ) {
-            return defaultContainerMaxWidth.lg;
-          }
-          return p.theme.styledBootstrapGrid.getContainerMaxWidth('lg');
-        }}px;
-      `}
-    
-      ${media.xl`
-        max-width: ${p => {
-          if (
-            !p.theme ||
-            !p.theme.styledBootstrapGrid ||
-            !p.theme.styledBootstrapGrid.getContainerMaxWidth
-          ) {
-            return defaultContainerMaxWidth.xl;
-          }
-          return p.theme.styledBootstrapGrid.getContainerMaxWidth('xl');
-        }}px;
-      `}
+  ${p => !p.fluid && media.sm`
+    max-width: ${
+      (
+        !p.theme
+        || !p.theme.styledBootstrapGrid
+        || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+      ) && defaultContainerMaxWidth.sm
+      || p.theme.styledBootstrapGrid.getContainerMaxWidth('sm')
+    }px;
+  `}
+
+  ${p => !p.fluid && media.md`
+    max-width: ${
+    (
+      !p.theme
+      || !p.theme.styledBootstrapGrid
+      || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+    ) && defaultContainerMaxWidth.md
+    || p.theme.styledBootstrapGrid.getContainerMaxWidth('md')
+    }px;
+  `}
+
+  ${p => !p.fluid && media.lg`
+    max-width: ${
+    (
+      !p.theme
+      || !p.theme.styledBootstrapGrid
+      || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+    ) && defaultContainerMaxWidth.lg
+    || p.theme.styledBootstrapGrid.getContainerMaxWidth('lg')
+    }px;
+  `}
+
+  ${p => !p.fluid && media.xl`
+    max-width: ${
+    (
+      !p.theme
+      || !p.theme.styledBootstrapGrid
+      || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+    ) && defaultContainerMaxWidth.xl
+    || p.theme.styledBootstrapGrid.getContainerMaxWidth('xl')
+    }px;
   `}
 `;

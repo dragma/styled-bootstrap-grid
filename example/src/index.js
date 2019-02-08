@@ -19,7 +19,7 @@ const theme = {
     maxWidth: {
       md: 700,
       xl: 800,
-    }
+    },
   },
 };
 
