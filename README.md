@@ -1,6 +1,6 @@
 # styled-bootstrap-grid
 
-[![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid)
+[![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid) ![npm downloads](https://img.shields.io/npm/dt/styled-bootstrap-grid.svg?style=flat) ![npm version](https://img.shields.io/npm/v/styled-bootstrap-grid.svg?style=flat) ![definition types](https://img.shields.io/npm/types/styled-bootstrap-grid.svg)
 
 #### Warning
 
@@ -23,6 +23,8 @@ This module is also based on the [Twitter Bootstrap](https://getbootstrap.com/) 
 `npm i -S styled-bootstrap-grid`
 
 ## Prerequisites
+
+`npm i -S react styled-components`
 
 > Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>`.
 > *from [Bootstrap documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/#responsive-meta-tag)*
