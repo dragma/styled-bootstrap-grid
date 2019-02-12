@@ -35,8 +35,8 @@ export default (p: ColProps) =>
         isNumber(p.mdOrder) ||
           p.mdOrder === 'first' ||
           (p.mdOrder === 'last' && `order-md-${p.mdOrder}`),
-        p.hiddenMdDown && `hidden-xs-down`,
-        p.hiddenMdUp && `hidden-xs-up`,
+        p.hiddenMdDown && `hidden-md-down`,
+        p.hiddenMdUp && `hidden-md-up`,
         p.lg && `col-lg${suffix(p.lg)}`,
         isNumber(p.lgOffset) && `offset-lg-${p.lgOffset}`,
         p.lgAuto && `col-lg-auto`,
@@ -44,8 +44,8 @@ export default (p: ColProps) =>
         isNumber(p.lgOrder) ||
           p.lgOrder === 'first' ||
           (p.lgOrder === 'last' && `order-lg-${p.lgOrder}`),
-        p.hiddenLgDown && `hidden-xs-down`,
-        p.hiddenLgUp && `hidden-xs-up`,
+        p.hiddenLgDown && `hidden-lg-down`,
+        p.hiddenLgUp && `hidden-lg-up`,
         p.xl && `col-xl${suffix(p.xl)}`,
         isNumber(p.xlOffset) && `offset-xl-${p.xlOffset}`,
         p.xlAuto && `col-xl-auto`,
@@ -53,8 +53,8 @@ export default (p: ColProps) =>
         isNumber(p.xlOrder) ||
           p.xlOrder === 'first' ||
           (p.xlOrder === 'last' && `order-xl-${p.xlOrder}`),
-        p.hiddenXlDown && `hidden-xs-down`,
-        p.hiddenXlUp && `hidden-xs-up`,
+        p.hiddenXlDown && `hidden-xl-down`,
+        p.hiddenXlUp && `hidden-xl-up`,
         p.noGutter && `no-gutter`,
       ]
         .filter(Boolean)
