@@ -70,10 +70,6 @@ Basically, `BaseCSS` takes a string prop, and append the default bootstrap layou
 the default bootstrap layout CSS is :
 
 ```css
-@-ms-viewport {
-  width: device-width;
-}
-
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -3,10 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 import { BaseCSSProps } from './types';
 
 export default createGlobalStyle<BaseCSSProps>`
-  @-ms-viewport {
-    width: device-width;
-  }
-
   html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -19,6 +15,6 @@ export default createGlobalStyle<BaseCSSProps>`
     -webkit-box-sizing: inherit;
             box-sizing: inherit;
   }
-  
+
   ${p => p.css}
 `;
