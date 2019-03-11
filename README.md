@@ -1,6 +1,6 @@
 # styled-bootstrap-grid
 
-[![npm version](https://badge.fury.io/js/styled-bootstrap-grid.svg)](https://badge.fury.io/js/styled-bootstrap-grid) ![npm downloads](https://img.shields.io/npm/dt/styled-bootstrap-grid.svg?style=flat) ![npm version](https://img.shields.io/npm/v/styled-bootstrap-grid.svg?style=flat) ![definition types](https://img.shields.io/npm/types/styled-bootstrap-grid.svg)
+![npm downloads](https://img.shields.io/npm/dt/styled-bootstrap-grid.svg?style=flat) ![npm version](https://img.shields.io/npm/v/styled-bootstrap-grid.svg?style=flat) ![definition types](https://img.shields.io/npm/types/styled-bootstrap-grid.svg)
 
 #### Warning
 
