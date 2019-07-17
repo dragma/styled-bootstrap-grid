@@ -29,7 +29,7 @@ const media: MediaObject = (Object.keys(defaultBreakpoints) as Media[]).reduce(
     `;
 
     const maxMedia: MediaTagFunction = (strings, ...interpolations) => css`
-      @media (max-width: ${props => getBreakpoints(props)[label]}px) {
+      @media (max-width: ${props => (getBreakpoints(props)[label] - 1)}px) {
         ${css(strings as CSSObject | TemplateStringsArray, ...interpolations)}
       }
     `;
