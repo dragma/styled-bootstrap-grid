@@ -19,6 +19,7 @@ interface GridTheme {
 
 export interface ThemeProps {
   gridTheme?: GridTheme;
+  children: React.ReactNode;
 }
 
 export type DefaultContainerMaxWidth = { [K in MediaAliases]: number };
