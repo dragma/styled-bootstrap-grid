@@ -154,28 +154,28 @@ const css: ColCss = {
   },
   alignSelf: {
     auto: `
-      -ms-flex-item-align: auto !important;
-      align-self: auto !important;
+      -ms-flex-item-align: auto;
+      align-self: auto;
     `,
     start: `
-      -ms-flex-item-align: start !important;
-      align-self: flex-start !important;
+      -ms-flex-item-align: start;
+      align-self: flex-start;
     `,
     end: `
-      -ms-flex-item-align: end !important;
-      align-self: flex-end !important;
+      -ms-flex-item-align: end;
+      align-self: flex-end;
     `,
     center: `
-      -ms-flex-item-align: center !important;
-      align-self: center !important;
+      -ms-flex-item-align: center;
+      align-self: center;
     `,
     baseline: `
-      -ms-flex-item-align: baseline !important;
-      align-self: baseline !important;
+      -ms-flex-item-align: baseline;
+      align-self: baseline;
     `,
     stretch: `
-      -ms-flex-item-align: stretch !important;
-      align-self: stretch !important;
+      -ms-flex-item-align: stretch;
+      align-self: stretch;
     `,
   },
   display: {

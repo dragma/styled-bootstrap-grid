@@ -3,46 +3,46 @@ import { RowCss } from './types';
 const css: RowCss = {
   alignItems: {
     start: `
-      -ms-flex-align: start !important;
-      align-items: flex-start !important;
+      -ms-flex-align: start;
+      align-items: flex-start;
     `,
     end: `
-      -ms-flex-align: end !important;
-      align-items: flex-end !important;
+      -ms-flex-align: end;
+      align-items: flex-end;
     `,
     center: `
-      -ms-flex-align: center !important;
-      align-items: center !important;
+      -ms-flex-align: center;
+      align-items: center;
     `,
     baseline: `
-      -ms-flex-align: baseline !important;
-      align-items: baseline !important;
+      -ms-flex-align: baseline;
+      align-items: baseline;
     `,
     stretch: `
-      -ms-flex-align: stretch !important;
-      align-items: stretch !important;
+      -ms-flex-align: stretch;
+      align-items: stretch;
     `,
   },
   justifyContent: {
     start: `
-      -ms-flex-pack: start !important;
-      justify-content: flex-start !important;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
     `,
     end: `
-      -ms-flex-pack: end !important;
-      justify-content: flex-end !important;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
     `,
     center: `
-      -ms-flex-pack: center !important;
-      justify-content: center !important;
+      -ms-flex-pack: center;
+      justify-content: center;
     `,
     between: `
-      -ms-flex-pack: justify !important;
-      justify-content: space-between !important;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
     `,
     around: `
-      -ms-flex-pack: distribute !important;
-      justify-content: space-around !important;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
     `,
   },
 };
