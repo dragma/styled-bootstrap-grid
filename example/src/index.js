@@ -13,6 +13,7 @@ const theme = {
   },
   col: {
     padding: 10,
+    gridColumns: 24,
   },
   container: {
     padding: 10,
