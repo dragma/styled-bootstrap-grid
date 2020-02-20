@@ -12,6 +12,7 @@ export enum MediaLabels {
   md = 'tablet',
   lg = 'desktop',
   xl = 'giant',
+  xxl = 'veryGiant',
 }
 
 export enum MediaAliases {
@@ -20,6 +21,7 @@ export enum MediaAliases {
   tablet = 'md',
   desktop = 'lg',
   giant = 'xl',
+  veryGiant = 'xxl',
 }
 
 export type Media = MediaLabels | MediaAliases;

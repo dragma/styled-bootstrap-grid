@@ -1,11 +1,7 @@
-type oneToTwelve = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-type zeroToTwelve = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-type zeroToEleven = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
-
 export type End = 'first' | 'last';
-export type Column = oneToTwelve | true | 'auto';
-export type Order = zeroToTwelve | End;
-export type Offset = zeroToEleven;
+export type Column = number | true | 'auto';
+export type Order = number | End;
+export type Offset = number;
 export type Align = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
 export type AlignSelf = Align | 'auto';
 
@@ -49,14 +45,19 @@ export type ColProps = {
   xlAuto?: boolean;
   xlAlignSelf?: AlignSelf;
   xlOrder?: Order;
+  xxl?: Column;
+  xxlOffset?: Offset;
+  xxlAuto?: boolean;
+  xxlAlignSelf?: AlignSelf;
+  xxlOrder?: Order;
   hiddenXlUp?: boolean;
   hiddenXlDown?: boolean;
 };
 
 export type ColCss = {
-  col: { [K in oneToTwelve | 'true' | 'auto']: string };
-  offset: { [K in Offset]: string };
-  order: { [K in Order]: string };
+  col: any;
+  offset: any;
+  order: any;
   alignSelf: { [K in AlignSelf]: string };
   display: { none: string };
   noGutter: string;
