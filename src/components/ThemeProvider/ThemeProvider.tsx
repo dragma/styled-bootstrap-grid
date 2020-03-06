@@ -7,6 +7,7 @@ import makeAliases from '../../aliases';
 import { MediaAliases } from '../../media/types';
 
 export const defaultContainerMaxWidth: DefaultContainerMaxWidth = {
+  xxl: 1141,
   xl: 1140,
   lg: 960,
   md: 720,
@@ -49,7 +50,16 @@ export default (props: ThemeProps) => {
     return 15;
   };
 
+  const getGridColumns = () => {
+    if (styledBootstrapGridTheme && isNumber(styledBootstrapGridTheme.gridColumns)) {
+      return styledBootstrapGridTheme.gridColumns;
+    }
+
+    return 12;
+  };
+
   const styledBootstrapGridTheme: StyledBootstrapGrid = {
+    gridColumns: theme.gridColumns,
     breakpoints: makeAliases(theme.breakpoints),
     col: theme.col,
     row: theme.row,
@@ -64,6 +74,7 @@ export default (props: ThemeProps) => {
     getContainerMaxWidth,
     getRowPadding,
     getColPadding,
+    getGridColumns,
   };
 
   return <ThemeProvider theme={{ styledBootstrapGrid: styledBootstrapGridTheme }} {...props} />;

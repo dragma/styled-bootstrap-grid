@@ -5,6 +5,7 @@ import { Media, MediaTagFunction, MediaObject, GetBreakpointsFn } from './types'
 import { Breakpoints } from '../components/ThemeProvider';
 
 const defaultBreakpoints = makeAliases({
+  xxl: 1540,
   xl: 1200,
   lg: 992,
   md: 768,

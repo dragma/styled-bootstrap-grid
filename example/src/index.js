@@ -13,12 +13,14 @@ const theme = {
   },
   col: {
     padding: 10,
+    gridColumns: 12,
   },
   container: {
     padding: 10,
     maxWidth: {
       md: 700,
       xl: 800,
+      xxl: 1141,
     },
   },
 };

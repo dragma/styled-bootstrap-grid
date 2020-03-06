@@ -133,13 +133,16 @@ import { ThemeProvider } from 'styled-components';
 import App from './whatever/app/folder';
 
 const gridTheme = {
+  gridColumns: 24, // default 12
   breakpoints: { // defaults below
+    xxl: 1440,
     xl: 1200,
     lg: 992,
     md: 768,
     sm: 576,
     xs: 575,
     // or you can use aliases
+    // veryGiant: 1440,
     // giant: 1200,
     // desktop: 992,
     // tablet: 768,
@@ -155,12 +158,14 @@ const gridTheme = {
   container: {
     padding: 0, // default 15
     maxWidth: { // defaults below
+      xxl: 1141,
       xl: 1140,
       lg: 960,
       md: 720,
       sm: 540,
       xs: 540,
       // or you can use aliases
+      // veryGiant: 1141,
       // giant: 1140,
       // desktop: 960,
       // tablet: 720,
@@ -228,6 +233,12 @@ const CustomDiv = styled.div`
   ${media.xl`
     color: yellow;
   `}
+  ${media.veryGiant`
+    color: orange;
+  `}
+  ${media.xxl`
+    color: orange;
+  `}
 `;
 
 export default CustomDiv;
@@ -242,6 +253,7 @@ Using this `media` object will help you to build media-queries that will fit the
 | md | tablet | `@media (min-width: 768px) { /* */ }` |
 | lg | desktop | `@media (min-width: 992px) { /* */ }` |
 | xl | giant | `@media (min-width: 1200px) { /* */ }` |
+| xxl | veryGiant | `@media (min-width: 1440px) { /* */ }` |
 
 ## Props definition
 
@@ -256,14 +268,16 @@ Using this `media` object will help you to build media-queries that will fit the
 ```javascript
 
 const gridTheme = {
+  gridColumns: 12, // default 12
   breakpoints: { // defaults below
-    giant: 1200,
+    xxl: 1440,
     xl: 1200,
     lg: 992,
     md: 768,
     sm: 576,
     xs: 575,
     // or you can use aliases
+    // veryGiant: 1440,
     // giant: 1200,
     // desktop: 992,
     // tablet: 768,
@@ -279,12 +293,14 @@ const gridTheme = {
   container: {
     padding: 0, // default 15
     maxWidth: { // defaults below
+      xxl: 1141,
       xl: 1140,
       lg: 960,
       md: 720,
       sm: 540,
       xs: 540,
       // or you can use aliases
+      // veryGiant: 1141,
       // giant: 1140,
       // desktop: 960,
       // tablet: 720,
