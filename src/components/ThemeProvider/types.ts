@@ -10,12 +10,12 @@ interface GridTheme {
   };
   col?: {
     padding?: number;
-    gridColumns?: number;
   };
   container?: {
     padding?: number;
     maxWidth?: PartialBreakpoints;
   };
+  gridColumns?: number;
 }
 
 export interface ThemeProps {
@@ -34,7 +34,7 @@ export interface StyledBootstrapGrid extends GridTheme {
   getContainerMaxWidth: any;
   getRowPadding: any;
   getColPadding: any;
-  getColGridColumns: any;
+  getGridColumns: any;
 }
 
 export interface Theme {

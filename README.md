@@ -133,6 +133,7 @@ import { ThemeProvider } from 'styled-components';
 import App from './whatever/app/folder';
 
 const gridTheme = {
+  gridColumns: 24, // default 12
   breakpoints: { // defaults below
     xxl: 1440,
     xl: 1200,
@@ -153,7 +154,6 @@ const gridTheme = {
   },
   col: {
     padding: 5, // default 15
-    gridColumns: 24, // default 12
   },
   container: {
     padding: 0, // default 15
@@ -268,6 +268,7 @@ Using this `media` object will help you to build media-queries that will fit the
 ```javascript
 
 const gridTheme = {
+  gridColumns: 12, // default 12
   breakpoints: { // defaults below
     xxl: 1440,
     xl: 1200,

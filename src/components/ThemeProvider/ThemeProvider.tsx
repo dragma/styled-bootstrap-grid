@@ -50,15 +50,16 @@ export default (props: ThemeProps) => {
     return 15;
   };
 
-  const getColGridColumns = () => {
-    if (styledBootstrapGridTheme.col && isNumber(styledBootstrapGridTheme.col.gridColumns)) {
-      return styledBootstrapGridTheme.col.gridColumns;
+  const getGridColumns = () => {
+    if (styledBootstrapGridTheme && isNumber(styledBootstrapGridTheme.gridColumns)) {
+      return styledBootstrapGridTheme.gridColumns;
     }
 
     return 12;
   };
 
   const styledBootstrapGridTheme: StyledBootstrapGrid = {
+    gridColumns: theme.gridColumns,
     breakpoints: makeAliases(theme.breakpoints),
     col: theme.col,
     row: theme.row,
@@ -73,7 +74,7 @@ export default (props: ThemeProps) => {
     getContainerMaxWidth,
     getRowPadding,
     getColPadding,
-    getColGridColumns,
+    getGridColumns,
   };
 
   return <ThemeProvider theme={{ styledBootstrapGrid: styledBootstrapGridTheme }} {...props} />;
