@@ -32,6 +32,17 @@ export default styled.div.attrs<ContainerProps>(props => ({
   margin-right: auto;
   margin-left: auto;
 
+  ${p => !p.fluid && media.xs`
+    max-width: ${
+      (
+        !p.theme
+        || !p.theme.styledBootstrapGrid
+        || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+      ) && defaultContainerMaxWidth.xs
+      || p.theme.styledBootstrapGrid.getContainerMaxWidth('xs')
+    }px;
+  `}
+
   ${p => !p.fluid && media.sm`
     max-width: ${
       (
@@ -73,6 +84,17 @@ export default styled.div.attrs<ContainerProps>(props => ({
       || !p.theme.styledBootstrapGrid.getContainerMaxWidth
     ) && defaultContainerMaxWidth.xl
     || p.theme.styledBootstrapGrid.getContainerMaxWidth('xl')
+    }px;
+  `}
+  
+  ${p => !p.fluid && media.xxl`
+    max-width: ${
+      (
+        !p.theme
+        || !p.theme.styledBootstrapGrid
+        || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+      ) && defaultContainerMaxWidth.xxl
+      || p.theme.styledBootstrapGrid.getContainerMaxWidth('xxl')
     }px;
   `}
 `;
