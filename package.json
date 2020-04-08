@@ -13,7 +13,6 @@
     "build": "rm -rf dist/ && npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\"",
-    "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
   },
