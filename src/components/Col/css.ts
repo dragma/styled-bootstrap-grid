@@ -32,7 +32,7 @@ let css: ColCss = {
     const singleCol: number = 100 / gridColumns;
     const offsetFlexBasis: number = singleCol * offset;
     const offsetUnit: string = offsetFlexBasis > 0 ? '%' : '';
-    return `margin-left: ${offsetFlexBasis}${offsetUnit}`;
+    return `margin-left: ${offsetFlexBasis}${offsetUnit};`;
   },
   order: (order: any) => {
     switch(order){
