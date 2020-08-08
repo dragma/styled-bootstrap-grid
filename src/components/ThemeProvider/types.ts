@@ -1,4 +1,5 @@
 import { MediaAliases, Media } from '../../media/types';
+import { DefaultTheme } from 'styled-components';
 
 export type Breakpoints = { [key in Media]: number };
 export type PartialBreakpoints = Partial<Breakpoints>;
@@ -37,6 +38,6 @@ export interface StyledBootstrapGrid extends GridTheme {
   getGridColumns: any;
 }
 
-export interface Theme {
+export interface Theme extends DefaultTheme {
   styledBootstrapGrid: StyledBootstrapGrid;
 }
