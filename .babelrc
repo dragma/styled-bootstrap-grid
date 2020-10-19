@@ -1,11 +1,10 @@
 {
   "presets": [
     "@babel/env",
-    "@babel/typescript",
-    "@babel/react"
+    "@babel/react",
+    "@babel/preset-flow"
   ],
   "plugins": [
-    "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread"
   ]
 }

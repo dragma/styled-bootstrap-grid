@@ -1,0 +1,28 @@
+{
+  "files.exclude": {
+    "**/.expo-shared": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "data": true
+  },
+  "files.autoSave": "off",
+	"editor.tabSize": 2,
+	"files.eol": "\n",
+  "eslint.enable": true,
+  "editor.rulers": [100, 120],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "javascript.validate.enable": false,
+  "flow.pathToFlow": "${flowconfigDir}/node_modules/.bin/flow",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true
+  }
+}

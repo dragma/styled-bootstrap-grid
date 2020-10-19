@@ -8,12 +8,13 @@
     "dist/"
   ],
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "build": "rm -rf dist/ && npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\"",
-    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist && mkdir dist",
+    "minify": "yarn terser dist/index.js --output dist/index.js",
+    "build": "yarn clean && yarn babel src -d dist --copy-files",
+    "build:production": "yarn clean && yarn build && yarn minify",
+    "build:watch": "yarn clean && yarn babel src -d dist --copy-files --watch",
+    "dev": "yarn nodemon --exec babel-node src/index.js",
+    "prepublishOnly": "yarn build:production",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
   },
   "repository": {
@@ -38,27 +39,26 @@
   },
   "homepage": "https://github.com/dragma/styled-bootstrap-grid#readme",
   "peerDependencies": {
-    "react": "^0.14.0 || ^16.0.0-0",
-    "styled-components": ">=4"
+    "react": "^16.8.0-0",
+    "styled-components": ">=5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.1",
+    "@babel/eslint-parser": "^7.12.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.12.1",
     "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.1.0",
-    "@types/react": "^16.7.11",
-    "@types/react-dom": "^16.0.11",
-    "@types/styled-components": "^4.1.2",
-    "eslint": "^5.9.0",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.136.0",
     "prettier": "^1.15.3",
-    "typescript": "^3.2.1"
+    "terser": "^5.3.5"
   },
   "dependencies": {}
 }
