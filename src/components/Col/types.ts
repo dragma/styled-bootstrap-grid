@@ -45,13 +45,15 @@ export type ColProps = {
   xlAuto?: boolean;
   xlAlignSelf?: AlignSelf;
   xlOrder?: Order;
+  hiddenXlUp?: boolean;
+  hiddenXlDown?: boolean;
   xxl?: Column;
   xxlOffset?: Offset;
   xxlAuto?: boolean;
   xxlAlignSelf?: AlignSelf;
   xxlOrder?: Order;
-  hiddenXlUp?: boolean;
-  hiddenXlDown?: boolean;
+  hiddenXxlUp?: boolean;
+  hiddenXxlDown?: boolean;
 };
 
 export type ColCss = {

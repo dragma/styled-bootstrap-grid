@@ -86,6 +86,6 @@ export default styled.div.attrs<ColProps>(props => ({
   ${p => p.xxlAuto && media.xxl`${css.col('auto')}`}
   ${p => p.xxlAlignSelf && media.xxl`${css.alignSelf[p.xxlAlignSelf]}`}
   ${p => p.xxlOrder && media.xxl`${css.order(p.xxlOrder)}`}
-  ${p => p.hiddenXlDown && media.max.xxl`${css.display.none}`}
-  ${p => p.hiddenXlUp && media.min.xxl`${css.display.none}`}
+  ${p => p.hiddenXxlDown && media.max.xxl`${css.display.none}`}
+  ${p => p.hiddenXxlUp && media.min.xxl`${css.display.none}`}
 `;
