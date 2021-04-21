@@ -3,7 +3,7 @@ import { MediaAliases, Media } from '../../media/types';
 export type Breakpoints = { [key in Media]: number };
 export type PartialBreakpoints = Partial<Breakpoints>;
 
-interface GridTheme {
+export interface GridTheme {
   breakpoints?: PartialBreakpoints;
   row?: {
     padding?: number;
