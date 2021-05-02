@@ -75,4 +75,15 @@ export default styled.div.attrs<ContainerProps>(props => ({
     || p.theme.styledBootstrapGrid.getContainerMaxWidth('xl')
     }px;
   `}
+
+  ${p => !p.fluid && media.xxl`
+    max-width: ${
+    (
+      !p.theme
+      || !p.theme.styledBootstrapGrid
+      || !p.theme.styledBootstrapGrid.getContainerMaxWidth
+    ) && defaultContainerMaxWidth.xxl
+    || p.theme.styledBootstrapGrid.getContainerMaxWidth('xxl')
+    }px;
+  `}
 `;
