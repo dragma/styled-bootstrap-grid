@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/dragma/styled-bootstrap-grid#readme",
   "peerDependencies": {
-    "react": "^0.14.0 || ^16.0.0-0",
+    "react": "^0.14.0 || >=16",
     "styled-components": ">=4"
   },
   "devDependencies": {
